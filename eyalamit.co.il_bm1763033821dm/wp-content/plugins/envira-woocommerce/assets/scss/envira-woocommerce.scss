@@ -1,0 +1,251 @@
+/**
+* Envira WooCommerce: Form
+*/
+div.envira-woocommerce {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin: 10px 0 20px 0;
+	text-align: center;
+
+	&.envira-woocommerce-hidden {
+		display: none;
+	}
+
+	/**
+	* Variable Product
+	*/
+	table.variations {
+		border: none;
+		margin: 5px 0 -15px;
+		padding: 0;
+
+		tr {
+			td.label {
+				border: none;
+
+				label {
+					float: left;
+					margin: 3px 10px 0 0;
+				}
+			}
+			td.value {
+				border: none;
+
+				select {
+					-webkit-appearance: menulist-button !important;
+					/* -moz-appearance: menulist-button !important; */
+					border: 1px solid #ccc;
+					background: #fff;
+				}
+				a {
+					clear: both;
+					display: block;
+					margin: 5px 0 0 0;
+				}
+				a.reset_variations {
+					text-transform: uppercase;
+					font-size: 13px;
+					line-height: 13px;
+					padding: 5px 10px;
+				}
+			}
+		}
+	}
+	div.single_variation_wrap {
+		clear: both;
+		float: left;
+		width: 100%;
+		margin: 10px 0 0 0;
+
+		/**
+		* Price
+		*/
+		span.price {
+			display: inline-block;
+			font-size: 13px;
+			line-height: 30px;
+			margin-right: 10px;
+		}
+
+		/**
+		* Stock Status
+		*/
+		p.stock {
+			display: inline-block;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		/**
+		* Quantity + Add to cart button
+		*/
+		div.variations_button {
+			display: inline-block;
+		}
+	}
+
+	/**
+	* External Products
+	*/
+	p.cart {
+		a.single_add_to_cart_button.button {
+			display: inline-block;
+			margin: 5px 0 0 0;
+			padding: 9px;
+			background: #ececec;
+			color: #000;
+			border-radius: 3px;
+		}
+	}
+
+	/**
+	* Stock Status
+	*/
+	p.stock {
+		display: block;
+		font-size: 13px;
+		margin: 0 0 5px 0;
+	}
+
+	p.price {
+		del {
+			span.amount { 
+				text-decoration: line-through; 
+			}
+		}
+	}
+
+	/**
+	* Add to Cart Form
+	*/
+	form.cart {
+		display: inline-block;
+
+		/**
+		* Quantity
+		*/
+		div.quantity {
+			display: inline-block;
+
+			input {
+				width: 55px;
+				border: 1px solid #ececec;
+				padding: 5px;
+				background: #fff;
+			}
+		}
+
+		/**
+		* Add to cart button
+		*/
+		button {
+			display: inline-block;
+			padding: 9px;
+			background: #ececec;
+			color: #000;
+			border-radius: 3px;
+		}
+	}
+}
+
+.envirabox-overlay.envira-proofing-no-order #envira-woocommerce .envira-woocommerce,
+.envirabox-overlay.envira-proofing-no-order .envirabox-wrap .envirabox-inner .envira-proofing {
+	display: none;
+}
+
+/**
+* Envira WooCommerce: Lightbox
+*/
+.envirabox-woocommerce {
+	.envirabox-outer {
+		.envirabox-inner {
+			/**
+			* WooCommerce Container
+			*/
+			.envira-woocommerce {
+				display: block;
+				position: absolute;
+				width: auto;
+				right: 0;
+				bottom: 0;
+				margin: 0;
+				padding: 10px;
+				background: rgba(0,0,0,0.4);
+				color: #fff;
+				z-index: 988041;
+
+				&.envira-proofing-hidden {
+					display: none;
+				}
+				.envira-proofing-hidden {
+					display: none;
+				}
+
+				/**
+				* Stock Status
+				*/
+				p.stock {
+					margin: 0 0 10px 0;
+				}
+
+				/**
+				* Variable Product
+				*/
+				a.reset_variations {
+					color: #fff;
+					margin-top: 10px;
+				}
+			}
+			.envira-proofing-hidden {
+				display: none;
+			}
+			form a.reset_variations {
+				visibility: hidden;
+			}
+		}
+	}
+}
+
+
+
+/**
+* Justified
+*/
+
+div.envira-justified-gallery div.envira-woocommerce {
+	position: relative;
+	background-color:rgba(0,0,0,0.3) !important; 
+	z-index: 988010; /* this should be low enough so this doesn't show in any lightbox overlay */
+	padding: 5px 0;
+	p.price {
+		color: #fff;
+		del span.amount {
+			color: #fff;
+		}
+	}
+	span.woocommerce-Price-currencySymbol,
+	div.single_variation_wrap p.stock {
+		color: #fff;
+	}
+	table.variations tr {
+		td.label label,
+		td.value a.reset_variations {
+			color: #fff;
+		}
+	}
+	form.cart button {
+		font-weight: 200;
+		font-size: 12px;
+		line-height: 8px;
+		padding: 8px;
+	}
+	div.quantity input {
+		padding: 3px;
+		font-size: 14px;
+		width: 45px;
+	}
+}
+
+
+
