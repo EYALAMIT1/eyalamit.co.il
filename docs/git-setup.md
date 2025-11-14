@@ -37,3 +37,6 @@ git push -u origin main
 - הקבצים `.env`, `*.sql`, `uploads/`, `cache/` לא יועלו
 - אם יש לך repository קיים, ודא שאתה לא דורס נתונים חשובים
 
+
+
+

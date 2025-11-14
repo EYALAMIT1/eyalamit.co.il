@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * Media Cleanup Script
+ * 
+ * סקריפט לניקוי מדיה לא בשימוש נמצא ב: media-cleanup.php
+ * 
+ * שימוש:
+ * - דרך WP-CLI: wp eval-file wp-content/themes/bridge-child/media-cleanup.php
+ * - ראה MEDIA-CLEANUP-README.md להוראות מפורטות
+ * 
+ * הערה: הסקריפט לא נטען אוטומטית כדי לא להאט את האתר.
+ * יש לטעון אותו ידנית כשצריך.
+ */
+
 // enqueue the child theme stylesheet
 
 Function wp_schools_enqueue_scripts() {

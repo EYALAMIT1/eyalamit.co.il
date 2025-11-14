@@ -1,0 +1,45 @@
+========================================
+פקודות מהירות - העלאה ל-GitHub
+========================================
+
+הקלד את הפקודות הבאות אחת אחרי השנייה:
+
+1. אתחל Git:
+   git init
+
+2. הוסף את GitHub repository:
+   git remote add origin https://github.com/EYALAMIT1/eyalamit.co.il.git
+
+3. הוסף קבצים:
+   git add .
+
+4. צור commit:
+   git commit -m "Initial commit: WordPress site with Docker setup"
+
+5. הגדר branch:
+   git branch -M main
+
+6. העלה ל-GitHub:
+   git push -u origin main
+
+========================================
+הערות חשובות:
+========================================
+
+- בשלב 6 (git push) תתבקש להזין:
+  * Username: השם שלך ב-GitHub
+  * Password: Personal Access Token (לא סיסמה!)
+
+- איך ליצור Token:
+  1. לך ל: https://github.com/settings/tokens
+  2. Generate new token (classic)
+  3. שם: WordPress Site Backup
+  4. בחר: repo (כל הרשאות)
+  5. Generate token
+  6. העתק את ה-Token והשתמש בו כ-Password
+
+- אם תראה "remote origin already exists":
+  git remote set-url origin https://github.com/EYALAMIT1/eyalamit.co.il.git
+
+========================================
+

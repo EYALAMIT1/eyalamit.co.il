@@ -67,3 +67,6 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "Alternatively, use SSH: git remote set-url origin git@github.com:EYALAMIT1/eyalamit.co.il.git" -ForegroundColor Yellow
 }
 
+
+
+
