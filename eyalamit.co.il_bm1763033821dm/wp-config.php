@@ -2,6 +2,8 @@
 define('WP_CACHE', true); // Added by WP Rocket
 define("WP_DEBUG", false);
 define( 'DISALLOW_FILE_EDIT', true );
+define('WP_MEMORY_LIMIT', '512M');
+define('WP_MAX_MEMORY_LIMIT', '512M');
 
 /**
  * The base configuration for WordPress

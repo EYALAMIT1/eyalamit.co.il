@@ -67,7 +67,7 @@ echo.
 
 REM Commit
 echo [6/7] מבצע commit...
-git commit -m "Initial commit: WordPress site with Docker setup and local environment configuration"
+git commit -m "WordPress update 5.2.2 to 6.8.3 + plugins + full documentation" -m "Main changes:" -m "- WordPress updated from 5.2.2 to 6.8.3" -m "- Google Site Kit updated from 1.43.0 to 1.165.0" -m "- Yoast SEO updated from 11.4 to 26.3" -m "- WooCommerce updated from 3.6.4 to 10.3.5" -m "- 12 additional plugins updated" -m "- Added PHP memory settings (512M)" -m "- Created full documentation" -m "- Created Google Site Kit testing guide" -m "- Updated PROJECT-DOCUMENTATION.md"
 if %ERRORLEVEL% EQU 0 (
     echo [OK] Commit בוצע
 ) else (

@@ -66,16 +66,22 @@ def main():
     if not run_command(["git", "add", "."], "מוסיף קבצים"):
         sys.exit(1)
     
-    # Check if there are changes to commit
-    result = subprocess.run(["git", "status", "--porcelain"], 
-                          capture_output=True, text=True)
-    if result.stdout.strip():
-        print("\n[מבצע commit]")
-        commit_msg = "Initial commit: WordPress site with Docker setup and local environment configuration"
-        if not run_command(["git", "commit", "-m", commit_msg], "מבצע commit"):
-            print("Warning: Commit may have failed, but continuing...")
-    else:
-        print("\n[אין שינויים ל-commit]")
+    # Always try to commit (even if no changes - will show appropriate message)
+    print("\n[מבצע commit]")
+    commit_msg = """WordPress update 5.2.2 to 6.8.3 + plugins + full documentation
+
+Main changes:
+- WordPress updated from 5.2.2 to 6.8.3
+- Google Site Kit updated from 1.43.0 to 1.165.0
+- Yoast SEO updated from 11.4 to 26.3
+- WooCommerce updated from 3.6.4 to 10.3.5
+- 12 additional plugins updated
+- Added PHP memory settings (512M)
+- Created full documentation
+- Created Google Site Kit testing guide
+- Updated PROJECT-DOCUMENTATION.md"""
+    if not run_command(["git", "commit", "-m", commit_msg], "מבצע commit"):
+        print("Note: No changes to commit or commit already exists")
     
     # Set branch to main
     print("\n[מגדיר branch ל-main]")
