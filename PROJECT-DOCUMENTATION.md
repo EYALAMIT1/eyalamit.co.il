@@ -219,6 +219,20 @@ backups\backup_YYYY-MM-DD_HH-MM-SS\
 
 ### העלאת שינויים
 
+#### ⚡ הפתרון שעובד (מומלץ):
+
+**השתמש בסקריפט: `ADD-AND-PUSH.bat`**
+
+1. פתח את תיקיית הפרויקט ב-Windows Explorer
+2. לחץ לחיצה כפולה על: `ADD-AND-PUSH.bat`
+3. הסקריפט יעשה הכל אוטומטית
+
+**למה זה עובד?** הסקריפט מוסיף את הקבצים במפורש בשמם המלא, כך שהוא לא דולג על קבצים.
+
+ראה גם: `GIT-COMMIT-PUSH-SOLUTION.md` - תיעוד מפורט של הפתרון שעובד.
+
+#### דרך חלופית (ידנית):
+
 ```cmd
 cd "C:\Users\USER\Pictures\סטודיו נשימה מעגלית\new website AI nov 2025"
 
@@ -258,14 +272,29 @@ git push
 - ✅ **WooCommerce:** עודכן מ-3.6.4 ל-10.3.5
 - ✅ **12 פלאגינים נוספים** עודכנו
 
-### תיעוד מפורט
-📄 **ראה:** [docs/WORDPRESS-UPDATE-2025-11-14.md](docs/WORDPRESS-UPDATE-2025-11-14.md)
+    ### תיעוד מפורט
+    📄 **ראה:** [docs/WORDPRESS-UPDATE-2025-11-14.md](docs/WORDPRESS-UPDATE-2025-11-14.md)
 
-המסמך כולל:
-- תהליך העדכון המלא
-- רשימת כל הפלאגינים שעודכנו
-- בעיות שנתקלנו בהן ופתרונות
-- הוראות להמשך
+    המסמך כולל:
+    - תהליך העדכון המלא
+    - רשימת כל הפלאגינים שעודכנו
+    - בעיות שנתקלנו בהן ופתרונות
+    - הוראות להמשך
+
+    ### הכנה להעלאה לייצור
+    📋 **רשימת בדיקות:** [docs/PRE-PRODUCTION-CHECKLIST.md](docs/PRE-PRODUCTION-CHECKLIST.md)  
+    🚀 **תוכנית פעולה:** [docs/PRODUCTION-DEPLOYMENT-PLAN.md](docs/PRODUCTION-DEPLOYMENT-PLAN.md)
+    
+    ### בדיקות אחרונות
+    ✅ **דוח בדיקות אוטומטיות:** [AUTOMATED-CHECKS-REPORT.md](AUTOMATED-CHECKS-REPORT.md)  
+    ✅ **ניתוח שגיאות Console:** [CONSOLE-ERRORS-ANALYSIS.md](CONSOLE-ERRORS-ANALYSIS.md)  
+    ✅ **מדריך בדיקת שגיאות:** [HOW-TO-CHECK-ERRORS.md](HOW-TO-CHECK-ERRORS.md)  
+    ✅ **בדיקה אחרונה לפני ייצור:** [FINAL-PRE-DEPLOYMENT-CHECK.md](FINAL-PRE-DEPLOYMENT-CHECK.md)
+
+**לפני העלאת האתר לייצור:**
+1. ודא שסיימת את כל הבדיקות המקומיות (ראה רשימת בדיקות)
+2. עקוב אחר התוכנית המפורטת להעלאה לייצור
+3. תמיד גבה את אתר ייצור לפני העתקה!
 
 ---
 
