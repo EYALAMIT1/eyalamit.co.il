@@ -37,6 +37,16 @@ git add AUTOMATED-CHECKS-REPORT.md
 git add HOW-TO-CHECK-ERRORS.md
 git add FINAL-PRE-DEPLOYMENT-CHECK.md
 git add PRE-DEPLOYMENT-SUMMARY.md
+git add FINAL-CHECK-COMPLETE.md
+git add START-DEPLOYMENT-NOW.md
+git add PLUGINS-FULL-LIST.md
+git add FINAL-GIT-COMMIT-CHECKLIST.md
+git add README-BEFORE-DEPLOYMENT.md
+git add FINAL-STATUS-BEFORE-DEPLOYMENT.md
+git add READY-TO-DEPLOY.md
+git add HOW-TO-CHECK-PLUGINS.md
+git add FIX-PLUGIN-UPDATE-ERROR.md
+git add SOLVE-PLUGIN-UPDATE-ISSUE.md
 
 REM WordPress configuration
 git add "eyalamit.co.il_bm1763033821dm/wp-config.php"
@@ -53,7 +63,7 @@ git status --short
 echo.
 
 echo [4] Creating commit...
-git commit -m "Pre-production final check: all tests completed and documented" -m "Main changes:" -m "- Added console errors analysis (no critical errors found)" -m "- Added automated checks report" -m "- Added step-by-step error checking guide" -m "- Added final pre-deployment checklist" -m "- Updated PROJECT-DOCUMENTATION.md with new testing docs" -m "- All local tests completed successfully" -m "- Ready for production deployment"
+git commit -m "Final pre-deployment: all documentation and plugin analysis complete" -m "Main changes:" -m "- Added comprehensive plugins list and update status (PLUGINS-FULL-LIST.md)" -m "- Added console errors analysis (no critical errors found)" -m "- Added automated checks report" -m "- Added step-by-step error checking guide" -m "- Added final pre-deployment checklist and summary" -m "- Added deployment start guide (START-DEPLOYMENT-NOW.md)" -m "- Updated PROJECT-DOCUMENTATION.md with all new docs" -m "- All local tests completed successfully" -m "- Ready for production deployment after plugin updates check"
 echo.
 
 if %ERRORLEVEL% NEQ 0 (

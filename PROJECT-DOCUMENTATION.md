@@ -289,7 +289,9 @@ git push
     ✅ **דוח בדיקות אוטומטיות:** [AUTOMATED-CHECKS-REPORT.md](AUTOMATED-CHECKS-REPORT.md)  
     ✅ **ניתוח שגיאות Console:** [CONSOLE-ERRORS-ANALYSIS.md](CONSOLE-ERRORS-ANALYSIS.md)  
     ✅ **מדריך בדיקת שגיאות:** [HOW-TO-CHECK-ERRORS.md](HOW-TO-CHECK-ERRORS.md)  
-    ✅ **בדיקה אחרונה לפני ייצור:** [FINAL-PRE-DEPLOYMENT-CHECK.md](FINAL-PRE-DEPLOYMENT-CHECK.md)
+    ✅ **בדיקה אחרונה לפני ייצור:** [FINAL-PRE-DEPLOYMENT-CHECK.md](FINAL-PRE-DEPLOYMENT-CHECK.md)  
+    ✅ **רשימת פלאגינים מפורטת:** [PLUGINS-FULL-LIST.md](PLUGINS-FULL-LIST.md)  
+    ✅ **מדריך התחלת העלאה:** [START-DEPLOYMENT-NOW.md](START-DEPLOYMENT-NOW.md)
 
 **לפני העלאת האתר לייצור:**
 1. ודא שסיימת את כל הבדיקות המקומיות (ראה רשימת בדיקות)

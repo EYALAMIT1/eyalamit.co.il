@@ -5,6 +5,10 @@ define( 'DISALLOW_FILE_EDIT', true );
 define('WP_MEMORY_LIMIT', '512M');
 define('WP_MAX_MEMORY_LIMIT', '512M');
 
+// הגדרות נתיבים ל-wp-content (פתרון בעיית עדכון פלאגינים ב-Docker)
+define('WP_CONTENT_DIR', ABSPATH . 'wp-content');
+define('WP_CONTENT_URL', 'http://localhost:8080/wp-content');
+
 /**
  * The base configuration for WordPress
  *
