@@ -48,6 +48,7 @@ new website AI nov 2025/
 │   ├── backlog-ideas.md              # רעיונות לעתיד
 │   ├── WORDPRESS-UPDATE-2025-11-14.md # תיעוד עדכון WordPress
 │   ├── check-google-site-kit.md      # מדריך בדיקת Google Site Kit
+│   ├── HANDLING-LONG-PATHS.md        # פתרון בעיית נתיבים ארוכים ב-Windows
 │   └── nginx.conf                    # הגדרות Nginx
 ├── backups/                           # תיקיית גיבויים מקומיים
 │   └── backup_YYYY-MM-DD_HH-MM-SS/   # תיקיות גיבוי עם תאריך ושעה
@@ -324,6 +325,7 @@ git push
 - **`docs/smoke-tests.md`** - רשימת בדיקות תקינות
 - **`docs/WORDPRESS-UPDATE-2025-11-14.md`** - תיעוד עדכון WordPress (14/11/2025)
 - **`docs/check-google-site-kit.md`** - מדריך בדיקת Google Site Kit
+- **`docs/HANDLING-LONG-PATHS.md`** - פתרון בעיית נתיבים ארוכים ב-Windows (16/11/2025)
 
 ---
 
