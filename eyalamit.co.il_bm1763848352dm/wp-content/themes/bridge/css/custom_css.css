@@ -1,0 +1,25 @@
+
+
+.woo_pp_cart_buttons_div {display: none;}
+.product {width: 1100px;  margin: 0 auto;}
+.checkbox input[type="checkbox"] {    margin-left: 0px;
+    margin-right: -20px;}
+@media only screen and (max-width: 1024px) {
+.col-sm-12 { width: 100%; padding:0px}
+.product {width: 900px}
+.SpecialTitleLeft{padding:0px!important}
+.q_accordion_holder.accordion h4.ui-accordion-header {width: 80%!important;}
+#TicketOrderBut, #BuyBook0, #BuyBook1, #BuyBook2, #BuyBook95{width: 80%!important;}
+.GreenAccordeon {width: 95%!important;}
+}
+@media only screen and (max-width: 480px) {
+	.container_inner {width:100%; margin: 0px;}
+      .boxed div.section .section_inner, .carousel-inner .slider_content_outer, .container_inner, .container_inner nav.content_menu, .full_width .parallax_content, .steps_holder_inner, 
+     div.grid_section .section_inner, nav.content_menu ul {width: 350px;}
+	.container {padding:0 8px 0 8px}
+	 .halfW {width: 95%; margin: 10px;}
+      .product {width: 350px;}
+}
+
+nav.mobile_menu ul li a, nav.mobile_menu ul li h3 {font-size:16px}
+.mobile_menu_button .fa{font-size:26px}

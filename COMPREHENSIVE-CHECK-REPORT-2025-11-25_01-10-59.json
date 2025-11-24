@@ -1,0 +1,158 @@
+{
+  "summary": {
+    "timestamp": "2025-11-25_01-10-59",
+    "total_checks": 29,
+    "passed": 15,
+    "failed": 14,
+    "warnings": 5,
+    "errors": 5,
+    "success_rate": 51.72
+  },
+  "errors": [
+    "Port 8080 (main site) is not accessible",
+    "Could not determine WordPress version",
+    "Database connection failed",
+    "Cookie Consent Notice plugin is not active",
+    "Homepage not accessible: HTTPConnectionPool(host='localhost', port=8080): Read timed out. (read timeout=15)"
+  ],
+  "warnings": [
+    "Critical plugin google-site-kit is not active",
+    "Critical plugin wordpress-seo is not active",
+    "Critical plugin woocommerce is not active",
+    "Homepage load time is 9.68s - consider optimization",
+    "Response size is 505.19 KB - consider optimization"
+  ],
+  "results": {
+    "docker": {
+      "wordpress": {
+        "status": "running",
+        "container": "newwebsiteainov2025take2-wordpress-1"
+      },
+      "nginx": {
+        "status": "running",
+        "container": "newwebsiteainov2025take2-nginx-1"
+      },
+      "db": {
+        "status": "running",
+        "container": "newwebsiteainov2025take2-db-1",
+        "health": "healthy"
+      },
+      "phpmyadmin": {
+        "status": "running",
+        "container": "newwebsiteainov2025take2-phpmyadmin-1"
+      },
+      "port_8080": {
+        "status": "closed",
+        "error": "HTTPConnectionPool(host='localhost', port=8080): Read timed out. (read timeout=5)"
+      },
+      "port_8081": {
+        "status": "open",
+        "response": 200
+      }
+    },
+    "wordpress": {
+      "version": "unknown",
+      "version_check": false,
+      "db_version": "unknown",
+      "db_version_check": false,
+      "wp_debug": false,
+      "disallow_file_edit": true,
+      "memory_limit": null,
+      "db_connection": false,
+      "php_version": "8.2",
+      "php_version_check": true
+    },
+    "plugins": {
+      "active_plugins": [],
+      "plugin_count": 0,
+      "plugin_google-site-kit": {
+        "active": false
+      },
+      "plugin_wordpress-seo": {
+        "active": false
+      },
+      "plugin_woocommerce": {
+        "active": false
+      },
+      "updates_available": 0,
+      "cookie_plugin": {
+        "active": false,
+        "file_exists": true
+      }
+    },
+    "cookie_notice": {
+      "functions": {
+        "enqueue_cookie_consent_scripts": true,
+        "add_cookie_consent_notice": true,
+        "wp_enqueue_scripts": true,
+        "wp_footer": true
+      },
+      "javascript_present": true,
+      "css_present": true,
+      "html_present": true,
+      "plugin_file_valid": true,
+      "html_in_page": {
+        "cookie-consent-notice": true,
+        "cookie-consent-checkbox": true,
+        "cookie-consent-accept": true,
+        "cookie-consent-content": true
+      },
+      "javascript_in_page": true,
+      "css_in_page": true
+    },
+    "accessibility": {
+      "homepage": {
+        "accessible": false,
+        "error": "HTTPConnectionPool(host='localhost', port=8080): Read timed out. (read timeout=15)"
+      },
+      "admin": {
+        "accessible": false,
+        "error": "HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /wp-admin/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002DCEB52D0D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+      },
+      "rest_api": {
+        "status_code": 200,
+        "accessible": true
+      },
+      "important_pages": []
+    },
+    "errors": {
+      "wordpress_logs": {
+        "fatal_errors": 0,
+        "php_errors": 0,
+        "warnings": 0,
+        "sample_errors": []
+      },
+      "debug_log": {
+        "exists": false
+      },
+      "nginx_logs": {
+        "errors": 0
+      }
+    },
+    "compatibility": {
+      "php_version": "8.2.29",
+      "php_compatible": true
+    },
+    "performance": {
+      "homepage_load_time": {
+        "average": 9.68,
+        "min": 4.61,
+        "max": 12.63,
+        "times": [
+          12.63,
+          11.81,
+          4.61
+        ]
+      },
+      "response_size": 505.19
+    },
+    "security": {
+      "wp_debug": false,
+      "disallow_file_edit": true,
+      "security_score": 2
+    },
+    "woocommerce": {
+      "active": false
+    }
+  }
+}

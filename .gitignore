@@ -1,0 +1,45 @@
+# WordPress
+eyalamit.co.il_bm1763848352dm/wp-content/uploads/
+eyalamit.co.il_bm1763848352dm/wp-content/cache/
+eyalamit.co.il_bm1763848352dm/wp-content/backups/
+eyalamit.co.il_bm1763848352dm/wp-content/upgrade/
+eyalamit.co.il_bm1763848352dm/wp-content/debug.log
+eyalamit.co.il_bm1763848352dm/wp-config.php
+
+# Git submodules / nested repositories
+eyalamit.co.il_bm1763848352dm/eyal-amit-github/
+
+# Backups
+backups/
+*.zip
+*.sql
+
+# Environment files
+env.local
+*.env.local
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+check-errors-output.txt
+diagnose-output.txt
+fix-plugins-output.txt
+php8-issues.txt
+
+
+eyalamit.co.il_bm1763848352dm/eyal-amit-github/ 

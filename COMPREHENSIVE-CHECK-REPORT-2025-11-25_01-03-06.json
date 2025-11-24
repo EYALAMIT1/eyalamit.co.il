@@ -1,0 +1,167 @@
+{
+  "summary": {
+    "timestamp": "2025-11-25_01-03-06",
+    "total_checks": 29,
+    "passed": 11,
+    "failed": 18,
+    "warnings": 6,
+    "errors": 11,
+    "success_rate": 37.93
+  },
+  "errors": [
+    "Port 8080 (main site) is not accessible",
+    "Could not determine WordPress version",
+    "Database connection failed",
+    "Cookie Consent Notice plugin is not active",
+    "Cookie notice function enqueue_cookie_consent_scripts not found in plugin file",
+    "Cookie notice function add_cookie_consent_notice not found in plugin file",
+    "Cookie notice function wp_enqueue_scripts not found in plugin file",
+    "Cookie notice function wp_footer not found in plugin file",
+    "Cookie notice JavaScript not found",
+    "Cookie notice CSS not found",
+    "Cookie notice HTML structure not found"
+  ],
+  "warnings": [
+    "Critical plugin google-site-kit is not active",
+    "Critical plugin wordpress-seo is not active",
+    "Critical plugin woocommerce is not active",
+    "REST API not accessible: HTTPConnectionPool(host='localhost', port=8080): Read timed out. (read timeout=10)",
+    "Homepage load time is 12.23s - consider optimization",
+    "Response size is 505.19 KB - consider optimization"
+  ],
+  "results": {
+    "docker": {
+      "wordpress": {
+        "status": "running",
+        "container": "newwebsiteainov2025take2-wordpress-1"
+      },
+      "nginx": {
+        "status": "running",
+        "container": "newwebsiteainov2025take2-nginx-1"
+      },
+      "db": {
+        "status": "running",
+        "container": "newwebsiteainov2025take2-db-1",
+        "health": "healthy"
+      },
+      "phpmyadmin": {
+        "status": "running",
+        "container": "newwebsiteainov2025take2-phpmyadmin-1"
+      },
+      "port_8080": {
+        "status": "closed",
+        "error": "HTTPConnectionPool(host='localhost', port=8080): Read timed out. (read timeout=5)"
+      },
+      "port_8081": {
+        "status": "open",
+        "response": 200
+      }
+    },
+    "wordpress": {
+      "version": "unknown",
+      "version_check": false,
+      "db_version": "unknown",
+      "db_version_check": false,
+      "wp_debug": false,
+      "disallow_file_edit": true,
+      "memory_limit": null,
+      "db_connection": false,
+      "php_version": "8.2",
+      "php_version_check": true
+    },
+    "plugins": {
+      "active_plugins": [],
+      "plugin_count": 0,
+      "plugin_google-site-kit": {
+        "active": false
+      },
+      "plugin_wordpress-seo": {
+        "active": false
+      },
+      "plugin_woocommerce": {
+        "active": false
+      },
+      "updates_available": 0,
+      "cookie_plugin": {
+        "active": false,
+        "file_exists": true
+      }
+    },
+    "cookie_notice": {
+      "functions": {
+        "enqueue_cookie_consent_scripts": false,
+        "add_cookie_consent_notice": false,
+        "wp_enqueue_scripts": false,
+        "wp_footer": false
+      },
+      "javascript_present": false,
+      "css_present": false,
+      "html_present": false,
+      "plugin_file_valid": false,
+      "html_in_page": {
+        "cookie-consent-notice": true,
+        "cookie-consent-checkbox": true,
+        "cookie-consent-accept": true,
+        "cookie-consent-content": true
+      },
+      "javascript_in_page": true,
+      "css_in_page": true
+    },
+    "accessibility": {
+      "homepage": {
+        "status_code": 200,
+        "response_time": 15.02,
+        "size": 517310,
+        "accessible": true
+      },
+      "admin": {
+        "accessible": false,
+        "error": "HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /wp-admin/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002587CA6C9E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+      },
+      "rest_api": {
+        "accessible": false,
+        "error": "HTTPConnectionPool(host='localhost', port=8080): Read timed out. (read timeout=10)"
+      },
+      "important_pages": []
+    },
+    "errors": {
+      "wordpress_logs": {
+        "fatal_errors": 0,
+        "php_errors": 0,
+        "warnings": 0,
+        "sample_errors": []
+      },
+      "debug_log": {
+        "exists": false
+      },
+      "nginx_logs": {
+        "errors": 0
+      }
+    },
+    "compatibility": {
+      "php_version": "8.2.29",
+      "php_compatible": true
+    },
+    "performance": {
+      "homepage_load_time": {
+        "average": 12.23,
+        "min": 12.03,
+        "max": 12.38,
+        "times": [
+          12.03,
+          12.38,
+          12.28
+        ]
+      },
+      "response_size": 505.19
+    },
+    "security": {
+      "wp_debug": false,
+      "disallow_file_edit": true,
+      "security_score": 2
+    },
+    "woocommerce": {
+      "active": false
+    }
+  }
+}
