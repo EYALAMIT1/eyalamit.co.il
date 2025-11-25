@@ -118,6 +118,8 @@ if (-not $SkipFiles) {
         Write-Host "[ERROR] Site directory not found: $SiteDir" -ForegroundColor Red
         exit 1
     }
+    # Use 7-Zip directly instead of robocopy for better long path support
+    # This avoids the long path issues with robocopy
     $excludes = @(
         "wp-content/cache",
         "wp-content/upgrade",
@@ -126,32 +128,6 @@ if (-not $SkipFiles) {
         ".git",
         "backups"
     )
-    $tempDir = Join-Path $backupFolder "temp_files"
-    New-Item -ItemType Directory -Force -Path $tempDir | Out-Null
-
-    $sourcePath = (Resolve-Path $SiteDir).Path
-    $destPath = (Resolve-Path $tempDir).Path
-    $roboArgs = @(
-        "`"$sourcePath`"",
-        "`"$destPath`"",
-        "/E","/COPY:DAT","/R:2","/W:2","/NFL","/NDL","/NJH","/NJS","/NP"
-    )
-    $excludePaths = @()
-    foreach ($ex in $excludes) {
-        $exFull = Join-Path $SiteDir $ex
-        if (Test-Path $exFull) {
-            $excludePaths += "`"$(Resolve-Path $exFull).Path`""
-        }
-    }
-    if ($excludePaths.Count -gt 0) {
-        $roboArgs += "/XD"
-        $roboArgs += $excludePaths
-    }
-    $roboProcess = Start-Process -FilePath "robocopy.exe" -ArgumentList $roboArgs -Wait -PassThru -NoNewWindow
-    $roboExit = $roboProcess.ExitCode
-    if ($roboExit -gt 7) {
-        throw "Robocopy failed with exit code $roboExit"
-    }
 
     # Function to add long path prefix for Windows
     function Add-LongPathPrefix {
@@ -182,17 +158,15 @@ if (-not $SkipFiles) {
     }
     
     if ($sevenZip) {
-        # Use 7-Zip with long path support (-spf2 parameter)
-        # Prepare paths with long path prefix if needed
-        $tempDirFor7z = $tempDir
+        # Use 7-Zip directly on source directory with long path support
+        # This avoids robocopy long path issues
+        $sourcePathFor7z = $SiteDir
         $outputFileFor7z = $filesBackupFile
         
-        # Check if paths are long or if we should use long path prefix anyway for safety
-        if ($tempDir.Length -gt 260 -or $filesBackupFile.Length -gt 260) {
-            $tempDirFor7z = Add-LongPathPrefix $tempDir
-            $outputFileFor7z = Add-LongPathPrefix $filesBackupFile
-            Write-Host "[INFO] Using long path prefix for archive creation" -ForegroundColor Gray
-        }
+        # Always use long path prefix for safety with 7-Zip
+        $sourcePathFor7z = Add-LongPathPrefix $SiteDir
+        $outputFileFor7z = Add-LongPathPrefix $filesBackupFile
+        Write-Host "[INFO] Using 7-Zip directly with long path support" -ForegroundColor Gray
         
         # Build 7-Zip command with long path support
         # -spf2: Use full paths with long path support
@@ -206,8 +180,17 @@ if (-not $SkipFiles) {
             "-mx=3",                # Compression level
             "-r",                   # Recurse subdirectories
             "`"$outputFileFor7z`"", # Output file
-            "`"$tempDirFor7z\*`""   # Source files
+            "`"$sourcePathFor7z\*`"" # Source files (directly from source, no temp copy)
         )
+        
+        # Add exclusions
+        foreach ($exclude in $excludes) {
+            $excludePath = Join-Path $SiteDir $exclude
+            if (Test-Path $excludePath) {
+                $excludePathFor7z = Add-LongPathPrefix $excludePath
+                $7zipArgs += "-xr!`"$excludePathFor7z\*`""
+            }
+        }
         
         # Add -bb0 to suppress 7-Zip progress output
         $7zipArgsWithQuiet = $7zipArgs + @("-bb0")
@@ -230,20 +213,12 @@ if (-not $SkipFiles) {
             Remove-Item $tempStderr -ErrorAction SilentlyContinue
         }
         
-        Write-Host "[INFO] Archive created with long path support" -ForegroundColor Gray
+        Write-Host "[INFO] Archive created with long path support (direct from source)" -ForegroundColor Gray
     } else {
-        Write-Host "[WARNING] 7-Zip not found. Falling back to .NET Compression (may not support long paths)" -ForegroundColor Yellow
-        Add-Type -AssemblyName System.IO.Compression.FileSystem
-        if (Test-Path $filesBackupFile) { Remove-Item $filesBackupFile -Force }
-        try {
-            [System.IO.Compression.ZipFile]::CreateFromDirectory($tempDir, $filesBackupFile)
-        } catch {
-            Write-Host "[ERROR] .NET Compression failed: $_" -ForegroundColor Red
-            Write-Host "[ERROR] This may be due to long file paths. Please install 7-Zip for full support." -ForegroundColor Red
-            throw "Failed to create archive. Install 7-Zip for long path support."
-        }
+        Write-Host "[ERROR] 7-Zip not found. This script requires 7-Zip for long path support." -ForegroundColor Red
+        Write-Host "[ERROR] Please install 7-Zip from https://www.7-zip.org/" -ForegroundColor Red
+        throw "7-Zip is required for backup with long path support"
     }
-    Remove-Item -LiteralPath $tempDir -Recurse -Force -ErrorAction SilentlyContinue
 
     if (-not (Test-Path $filesBackupFile)) {
         Write-Host "[ERROR] Failed to create $filesBackupFile" -ForegroundColor Red
