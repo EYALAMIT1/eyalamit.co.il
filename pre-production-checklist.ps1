@@ -237,5 +237,12 @@ Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "Press any key to close this window..." -ForegroundColor Yellow
 Write-Host "========================================" -ForegroundColor Cyan
-$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+try {
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+} catch {
+    # If ReadKey fails, use pause command
+    Write-Host ""
+    Write-Host "Press Enter to continue..."
+    Read-Host
+}
 
