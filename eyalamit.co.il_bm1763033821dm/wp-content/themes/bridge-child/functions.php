@@ -1,18 +1,5 @@
 <?php
 
-/**
- * Media Cleanup Script
- * 
- * סקריפט לניקוי מדיה לא בשימוש נמצא ב: media-cleanup.php
- * 
- * שימוש:
- * - דרך WP-CLI: wp eval-file wp-content/themes/bridge-child/media-cleanup.php
- * - ראה MEDIA-CLEANUP-README.md להוראות מפורטות
- * 
- * הערה: הסקריפט לא נטען אוטומטית כדי לא להאט את האתר.
- * יש לטעון אותו ידנית כשצריך.
- */
-
 // enqueue the child theme stylesheet
 
 Function wp_schools_enqueue_scripts() {
@@ -32,22 +19,10 @@ add_filter( 'meta_content', 'shortcode_unautop'  );
 add_filter( 'meta_content', 'prepend_attachment' );
  
 function my_meta_func( $atts ) {
-	global $post;
-
-	$args = shortcode_atts(
-		array(
-			'field' => 'feature-description-details',
-		),
-		$atts,
-		'my-meta'
-	);
-
-	if ( ! $post instanceof WP_Post ) {
-		return '';
-	}
-
-	$text = get_post_meta( $post->ID, $args['field'], true );
-
-	return apply_filters( 'meta_content', $text );
+extract( shortcode_atts( array(
+'field' => 'feature-description-details',
+), $atts ) );
+$text = get_post_meta($post->ID, $field, true);
+return apply_filters('meta_content',$text);
 }
 add_shortcode('my-meta', 'my_meta_func');
