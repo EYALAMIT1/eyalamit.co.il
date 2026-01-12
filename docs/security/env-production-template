@@ -1,0 +1,61 @@
+# WordPress Production Environment Variables
+# IMPORTANT: This file should be encrypted before deployment
+
+# Database Configuration
+DB_NAME=deveyala_uprdb
+DB_USER=deveyala_uprdb
+DB_PASSWORD=SECURE_DB_PASSWORD_HERE
+DB_HOST=localhost
+DB_CHARSET=utf8mb4
+DB_COLLATE=
+
+# WordPress Configuration
+WP_ENV=production
+WP_HOME=https://www.eyalamit.co.il
+WP_SITEURL=https://www.eyalamit.co.il
+WP_DEBUG=false
+WP_DEBUG_LOG=false
+WP_DEBUG_DISPLAY=false
+
+# Security Settings
+WP_CACHE=true
+DISALLOW_FILE_EDIT=true
+FORCE_SSL_ADMIN=true
+
+# Authentication Keys and Salts
+AUTH_KEY=your_unique_auth_key_here
+SECURE_AUTH_KEY=your_unique_secure_auth_key_here
+LOGGED_IN_KEY=your_unique_logged_in_key_here
+NONCE_KEY=your_unique_nonce_key_here
+AUTH_SALT=your_unique_auth_salt_here
+SECURE_AUTH_SALT=your_unique_secure_auth_salt_here
+LOGGED_IN_SALT=your_unique_logged_in_salt_here
+NONCE_SALT=your_unique_nonce_salt_here
+
+# Email Configuration
+WP_MAIL_SMTP_HOST=smtp.sendgrid.net
+WP_MAIL_SMTP_PORT=587
+WP_MAIL_SMTP_USER=apikey
+WP_MAIL_SMTP_PASS=your_sendgrid_api_key_here
+WP_MAIL_FROM=wordpress@eyalamit.co.il
+WP_MAIL_FROM_NAME=Eyal Amit
+
+# Security Headers
+SECURITY_HEADERS_ENABLED=true
+CSP_ENABLED=true
+
+# Wordfence Configuration
+WORDFENCE_API_KEY=your_wordfence_api_key_here
+
+# Performance Settings
+WP_MEMORY_LIMIT=512M
+WP_MAX_MEMORY_LIMIT=512M
+OPCACHE_ENABLE=true
+
+# Backup Configuration
+BACKUP_RETENTION_DAYS=30
+BACKUP_ENCRYPTION_KEY=your_backup_encryption_key_here
+
+# Monitoring
+UPTIME_ROBOT_API_KEY=your_uptime_robot_key_here
+GOOGLE_ANALYTICS_ID=your_ga_tracking_id_here
