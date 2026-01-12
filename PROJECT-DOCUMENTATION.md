@@ -1,5 +1,14 @@
 # תיעוד פרויקט - אתר WordPress של אייל
 
+## ⚠️ **מסמך חובה - נהלי עבודה וגבולות גזרה**
+
+**לפני תחילת כל עבודה בפרויקט, חובה לקרוא את:**
+📋 **[נהלי עבודה וגבולות גזרה (SOP)](docs/sop/STANDARD-OPERATING-PROCEDURES.md)**
+
+**מסמך זה מגדיר את אופן הפעולה המחייב בפרויקט. סטייה מנהלים אלו עלולה לגרום לעיכובים בפריסה.**
+
+---
+
 ## מידע כללי
 
 - **שם הפרויקט:** אתר WordPress - eyalamit.co.il
@@ -317,7 +326,8 @@ git push
 - **`git-push-now.bat`** - העלאה מהירה ל-GitHub
 - **`git_push.py`** - סקריפט Python להעלאה
 
-### תיעוד
+### תיעוד - חובה
+- 📋 **`docs/sop/STANDARD-OPERATING-PROCEDURES.md`** - **נהלי עבודה וגבולות גזרה (SOP) - חובה לקריאה!**
 - **`PROJECT-DOCUMENTATION.md`** - מסמך זה
 - **`BACKUP-GUIDE.md`** - מדריך מפורט לגיבוי
 - **`STEP-BY-STEP-GITHUB-BACKUP.md`** - מדריך שלב-שלב להעלאה ל-GitHub
