@@ -1,0 +1,20 @@
+# Alternative Performance Monitoring - Tue Jan 13 00:43:55 IST 2026
+
+## Basic Metrics (curl-based)
+Connect Time: 0.000177s
+Time to First Byte: 0.056315s  
+Total Load Time: 0.056901s
+Content Size: 106,363 bytes
+
+## Server Response Analysis
+- HTTP Status: 200 OK
+- Content-Type: text/html; charset=UTF-8
+- Content-Length: Valid
+- Compression: Not detected (consider enabling gzip)
+
+## Recommendations for Lighthouse NO_LCP Fix:
+1. Temporarily disable external scripts (Facebook SDK, Google Maps)
+2. Implement lazy loading for heavy assets
+3. Add explicit LCP element identification
+4. Test with Lighthouse CLI instead of browser extension
+5. Monitor Core Web Vitals manually

@@ -1,0 +1,35 @@
+TEXT-ONLY LIGHTHOUSE EVIDENCE PROTOCOL v6.1
+=========================================
+
+CEO DIRECTIVE: Performance Baseline Metrics
+Environment: localhost:9090 (Emergency Restored Site)
+Lighthouse Version: 13.0.1
+Test Configuration: Mobile Emulation
+
+REQUIRED METRICS (Text-Only Format):
+===================================
+
+Performance Score: 55%
+
+LCP (Largest Contentful Paint): 12.5 seconds
+
+CLS (Cumulative Layout Shift): 0.221
+
+ADDITIONAL CONTEXT:
+==================
+
+- Test completed with run warnings: "The page loaded too slowly to finish within the time limit. Results may be incomplete."
+- HTTPS issue detected: 1 insecure request (Google Fonts)
+- Mobile emulation applied
+- Navigation mode used
+
+PROTOCOL COMPLIANCE:
+===================
+
+- Text-only evidence format: MAINTAINED
+- CEO directive: EXECUTED
+- Protocol v6.1: ACTIVE
+- Evidence boundaries: RESPECTED
+
+END OF TEXT-ONLY EVIDENCE
+========================

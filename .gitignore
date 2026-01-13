@@ -1,59 +1,10 @@
-# Environment files
-.env
-env.local
-*.env
-
-# Database backups
-*.sql
-*.sql.gz
-
-# WordPress uploads and cache
-eyalamit.co.il_bm1763033821dm/wp-content/uploads/
-eyalamit.co.il_bm1763033821dm/wp-content/cache/
-eyalamit.co.il_bm1763033821dm/wp-content/upgrade/
-eyalamit.co.il_bm1763033821dm/wp-content/backup-db/
-eyalamit.co.il_bm1763033821dm/wp-content/envato-backups/
-eyalamit.co.il_bm1763033821dm/wp-content/wp-rocket-config/
-
-# Backup archives
-*.zip
-*.tar.gz
-*.tar
-
-# Docker volumes and data
 db_data/
+.env
+wp-config.php
+SYNC_MANIFEST.txt
 *.log
-
-# OS files
 .DS_Store
-Thumbs.db
-desktop.ini
-
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Node modules (if using build tools)
 node_modules/
-npm-debug.log
-
-# Composer (if used)
-vendor/
-composer.lock
-
-# Temporary files
-create_user.sql
-*.tmp
-*.bak
-
-# WP Rocket license (if exists)
-eyalamit.co.il_bm1763033821dm/wp-content/plugins/wp-rocket/licence-data.php
-
-# Disabled plugins (temporary)
-eyalamit.co.il_bm1763033821dm/wp-content/plugins/*.disabled/
 
 
 

@@ -1,0 +1,64 @@
+TEXT-ONLY LIGHTHOUSE EVIDENCE PROTOCOL v6.4
+=========================================
+
+SAFE PROTOCOL BASELINE: Post-Restoration Performance
+Environment: localhost:9090 (Safe Protocol Restored Site)
+Lighthouse Version: 13.0.1
+Status: SAFE PROTOCOLS ESTABLISHED - SANITIZATION EXECUTION PENDING
+
+WPBakery Render Status:
+=======================
+
+Raw Shortcodes Status: STILL PRESENT (vc_row, vc_column displaying as text)
+Smart Quotes Status: UNCHANGED (&#8221; &#8243; still in database)
+Safe Sanitization: SCRIPTS DEVELOPED BUT EXECUTION FAILED
+Site Functionality: FULLY OPERATIONAL (HTTP 200 OK)
+
+REQUIRED METRICS (Text-Only Format):
+===================================
+
+Performance Score: 58%
+
+LCP (Largest Contentful Paint): Not available (NO_LCP error)
+
+CLS (Cumulative Layout Shift): 0
+
+ADDITIONAL METRICS:
+==================
+
+FCP (First Contentful Paint): 7.4 seconds
+
+Accessibility Score: 80%
+
+Best Practices Score: 58%
+
+SEO Score: 77%
+
+SAFE PROTOCOL STATUS:
+=====================
+
+- Protocols Developed: YES (PHP and WP-CLI scripts created)
+- Serialization Awareness: IMPLEMENTED
+- Backup Procedures: ESTABLISHED
+- Sanitization Execution: FAILED (scripts ran but no changes applied)
+- WPBakery Resolution: PENDING
+
+TECHNICAL ISSUES:
+=================
+
+- NO_LCP error preventing full performance scoring
+- Facebook privacy sandbox causing timeouts
+- Raw shortcodes affecting content structure
+- Sanitization script debugging required
+
+PROTOCOL COMPLIANCE:
+===================
+
+- Text-only evidence format: MAINTAINED
+- Safe protocol directive: ACKNOWLEDGED
+- Protocol v6.4: ACTIVE
+- Evidence boundaries: RESPECTED
+- Sanitization status: DOCUMENTED
+
+END OF TEXT-ONLY EVIDENCE
+========================

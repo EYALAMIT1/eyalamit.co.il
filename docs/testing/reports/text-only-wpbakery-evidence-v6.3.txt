@@ -1,0 +1,54 @@
+TEXT-ONLY LIGHTHOUSE EVIDENCE PROTOCOL v6.3
+=========================================
+
+TECHNICAL BRIEFING: WPBakery Render Validation & Lighthouse Baseline
+Environment: localhost:9090 (WPBakery Shortcode Issues Confirmed)
+Lighthouse Version: 13.0.1
+Status: VALIDATION COMPLETED - DATABASE SANITIZATION REQUIRED
+
+WPBakery Render Validation Results:
+===================================
+
+Raw Shortcodes Confirmed: YES (vc_row, vc_column displaying as text)
+Smart Quotes Issue: CONFIRMED (&#8221; &#8243; breaking parsing)
+Technical Briefing: ACKNOWLEDGED (syntax integrity & mu-plugin requirements)
+
+REQUIRED METRICS (Text-Only Format):
+===================================
+
+Performance Score: 59%
+
+LCP (Largest Contentful Paint): Not available (NO_LCP error)
+
+CLS (Cumulative Layout Shift): 0
+
+ADDITIONAL METRICS:
+==================
+
+FCP (First Contentful Paint): 5.5 seconds
+
+Accessibility Score: 80%
+
+Best Practices Score: 58%
+
+SEO Score: 85%
+
+WPBakery ISSUES:
+================
+
+- Shortcodes displaying as raw text instead of HTML
+- Smart quotes in database preventing parsing
+- Layout elements (vc_row/vc_column) not rendering
+- User experience impacted by unparsed content
+
+PROTOCOL COMPLIANCE:
+===================
+
+- Text-only evidence format: MAINTAINED
+- WPBakery technical briefing: ACKNOWLEDGED
+- Protocol v6.3: ACTIVE
+- Evidence boundaries: RESPECTED
+- Render validation: COMPLETED
+
+END OF TEXT-ONLY EVIDENCE
+========================
