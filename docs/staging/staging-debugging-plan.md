@@ -13,7 +13,28 @@
 
 ## 🔍 שלב 1: זיהוי הבעיות
 
-### 1.1 בדיקת שגיאות Console
+### 1.1 שגיאות קריטיות שזוהו
+**שגיאות CORS Policy:**
+```
+Access to image/font at 'http://localhost:9090/...' from origin 'http://eyalamit-co-il-2026.s887.upress.link' has been blocked by CORS policy
+```
+
+**שגיאות JavaScript:**
+```
+Uncaught TypeError: Cannot read properties of undefined (reading 'create')
+Could not find element "u_1_1h_k3"
+DataStore.get: namespace is required, got undefined
+```
+
+**פתרון ראשוני - הרץ ב-phpMyAdmin:**
+```sql
+-- CRITICAL FIX: Replace localhost:9090 references
+UPDATE wp_posts SET post_content = REPLACE(post_content, 'http://localhost:9090', 'http://eyalamit-co-il-2026.s887.upress.link');
+UPDATE wp_postmeta SET meta_value = REPLACE(meta_value, 'http://localhost:9090', 'http://eyalamit-co-il-2026.s887.upress.link');
+UPDATE wp_options SET option_value = REPLACE(option_value, 'http://localhost:9090', 'http://eyalamit-co-il-2026.s887.upress.link') WHERE option_name LIKE '%url%';
+```
+
+### 1.2 בדיקת שגיאות Console
 **כלי:** Chrome DevTools → Console
 **מה לבדוק:**
 - JavaScript errors
@@ -57,6 +78,22 @@ SELECT * FROM wp_options WHERE option_name = 'active_plugins';
 ---
 
 ## 🛠️ שלב 2: תיקון בעיות נפוצות
+
+### 2.0 תיקון CORS ומקורות קבצים (PRIORITY 1)
+**אחרי עדכון בסיס הנתונים:**
+1. **Regenerate Elementor CSS:**
+   - WordPress Admin → Elementor → Tools → General → Regenerate CSS
+   - זה יעדכן את כל הקישורים ל-CSS
+
+2. **Flush Permalinks:**
+   - Settings → Permalinks → Save Changes
+   - זה יעדכן routing פנימי
+
+3. **Clear WooCommerce transients:**
+   - WooCommerce → Status → Tools → Clear transients
+
+4. **Reset Elementor cache:**
+   - Elementor → Tools → General → Regenerate CSS & Data
 
 ### 2.1 תיקון Theme Files
 **אם theme files חסרים:**

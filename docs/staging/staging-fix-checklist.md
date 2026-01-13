@@ -16,7 +16,27 @@
 
 ## 🔧 תיקונים דחופים
 
-### 1. **תיקון Permalinks (ראשון!)**
+### 0. **תיקון CORS - localhost:9090 (ראשון וחשוב ביותר!)**
+**שגיאה:** `Access to image/font at 'http://localhost:9090/...' has been blocked by CORS policy`
+
+**פתרון ב-phpMyAdmin:**
+```sql
+-- CRITICAL: Replace localhost:9090 references
+UPDATE wp_posts SET post_content = REPLACE(post_content, 'http://localhost:9090', 'http://eyalamit-co-il-2026.s887.upress.link');
+UPDATE wp_postmeta SET meta_value = REPLACE(meta_value, 'http://localhost:9090', 'http://eyalamit-co-il-2026.s887.upress.link');
+UPDATE wp_options SET option_value = REPLACE(option_value, 'http://localhost:9090', 'http://eyalamit-co-il-2026.s887.upress.link') WHERE option_name LIKE '%url%';
+
+-- Verification
+SELECT COUNT(*) as localhost_remaining FROM wp_posts WHERE post_content LIKE '%localhost%';
+SELECT COUNT(*) as localhost_meta_remaining FROM wp_postmeta WHERE meta_value LIKE '%localhost%';
+```
+
+**אחרי SQL - בצע:**
+1. **Regenerate Elementor CSS:** Admin → Elementor → Tools → General → Regenerate CSS
+2. **Flush Permalinks:** Settings → Permalinks → Save Changes
+3. **Clear browser cache** ורענן את הדף
+
+### 1. **תיקון Permalinks (שני!)**
 **למה:** זה מתקן הרבה בעיות routing ו-404
 
 **איך:**
