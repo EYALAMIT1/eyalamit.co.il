@@ -108,6 +108,39 @@ Task ID: EA-V11-PRE-DEPLOYMENT-TEST
 
 ---
 
+🚀 משימה פעילה: בדיקות מקיפות סופיות לפני פריסה
+ענף פעיל: wp-6.9-elementor-migration
+סטטוס: 🟡 IN_PROGRESS
+מנכ"ל מאשר: אייל עמית
+Task ID: EA-V11-PRE-DEPLOYMENT-FINAL-TESTING
+**תאריך התחלה:** 2026-01-14
+
+**מטרת המשימה:**
+בדיקות מקיפות סופיות לפני פריסה בפועל - Selenium לכל עמודים + וידוא תפקוד תוספים.
+
+**היקף הבדיקות:**
+- Selenium על כל 81 עמודים + 54 פוסטים
+- בדיקת רינדור נכון של כל התוספים הפעילים
+- Zero Console Errors בכל העמודים
+- תפקוד מלא של WooCommerce, Contact Forms, Galleries
+- בדיקת קישורים שבורים ובעיות רינדור
+
+**צוותים מעורבים:**
+- 🧪 צוות 2 (QA): ביצוע כל הבדיקות המקיפות
+
+**קבצים רלוונטיים:**
+- docs/sitemap/COMPREHENSIVE-SITE-MAPPING-2026-01-13_23-00-56.json
+- docs/testing/reports/plugin-usage-analysis-report.md
+- tests/console_verification_test.py
+
+**קריטריון הצלחה:**
+- ✅ Selenium עובר על כל העמודים ללא שגיאות
+- ✅ כל התוספים מוצגים נכון בעמודים
+- ✅ Zero Console Errors
+- ✅ דוח מקיף עם אישור לפריסה
+
+---
+
 🚀 משימה הבאה: Phase 5 - פריסה ובדיקות קבלה
 ענף פעיל: wp-6.9-elementor-migration
 סטטוס: ⚪ PENDING (ממתין להשלמת Pre-Deployment Testing)
@@ -185,6 +218,35 @@ Task ID: EA-V11-PHASE-3
 **Phase 4:** 🟢 COMPLETED
 
 **מוכן לשלב הבא:** ממתין להנחיות המנכ"ל לשלב הבא (Phase 5 או שלב אחר)
+
+---
+
+⏸️ Phase 2.3 - COMPLETED (2026-01-14)
+
+---
+
+🎯 משימה מתוכננת לאחר Phase 5: השלמות פרימיום
+ענף פעיל: wp-6.9-elementor-migration
+סטטוס: 📅 PLANNED_FOR_POST_LAUNCH
+מנכ"ל מאשר: אייל עמית
+Task ID: EA-V11-PREMIUM-COMPLETION
+**תאריך התחלה:** לאחר פריסה לפיתוח, לפני מעבר לאתר החי
+
+**מטרת המשימה:**
+התקנת תוספים פרימיום קריטיים לאחר השלמת הפריסה לפיתוח.
+
+**תוספים להתקנה:**
+- LayerSlider (~$25-50) - שחזור sliders בעמודים
+- Toolset Suite (~$100-200) - קשרי גומלין ב-42 פוסטים
+- Envato WordPress Toolkit (כלול עם theme) - עדכוני theme
+
+**צוותים מעורבים:**
+- 🛠️ צוות 1 (Development): התקנת תוספים ורכישת רישיונות
+
+**תנאי ביצוע:**
+- לאחר השלמת Phase 5 בהצלחה
+- לפני מעבר לאתר החי
+- תקציב מאושר לרישיונות פרימיום
 
 ---
 

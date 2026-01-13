@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-14 00:02:02",
+    "generated_by": "Team 4 - Database Specialists",
+    "purpose": "Pre-deployment comprehensive site mapping",
+    "authority": "CEO Eyal Amit - Serialization-Aware Operations",
+    "database": "eyalamit_db",
+    "site_url": "http://localhost:9090",
+    "method": "Direct database queries via Docker"
+  },
+  "content": {
+    "pages": [],
+    "posts": [],
+    "attachments": [],
+    "categories": [],
+    "tags": [],
+    "users": []
+  },
+  "relationships": {
+    "page_attachments": [],
+    "post_attachments": [],
+    "category_posts": [],
+    "tag_posts": [],
+    "user_content": []
+  },
+  "validation": {
+    "orphaned_files": [],
+    "missing_files": [],
+    "broken_links": [],
+    "redirects": []
+  },
+  "statistics": {
+    "total_pages": 81,
+    "total_posts": 54,
+    "total_attachments": 319,
+    "total_categories": 6,
+    "total_tags": 126,
+    "total_users": 24,
+    "orphaned_attachments": 319,
+    "missing_attachments": 0,
+    "broken_links_count": 0,
+    "redirects_count": 0
+  },
+  "summary": {
+    "total_content_items": 454,
+    "content_types": ["pages", "posts", "attachments", "categories", "tags", "users"],
+    "issues_found": 319,
+    "recommendations": [
+      "Review 319 orphaned attachment files for cleanup",
+      "Investigate 0 potentially missing attachment files",
+      "Validate all URLs before deployment",
+      "Check for broken internal links"
+    ]
+  }
+}

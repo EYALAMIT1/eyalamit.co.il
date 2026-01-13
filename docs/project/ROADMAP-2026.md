@@ -18,3 +18,6 @@ Critical CSS, WebP, Security Headers. כל הטכנולוגיות מוטמעות
 
 [ממתין] שלב 5: פריסה ובדיקות קבלה (FINAL ⚪)
 Git Deployment ל-uPress ו-Redis Cache.
+
+[תוכנן] שלב 6: השלמות פרימיום (POST-LAUNCH 🟡)
+התקנת תוספים פרימיום קריטיים (LayerSlider, Toolset Suite, Envato Toolkit) לאחר פריסה לפיתוח ולפני מעבר לאתר החי.

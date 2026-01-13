@@ -1,0 +1,314 @@
+{
+  "metadata": {
+    "test_start": "2026-01-14T00:40:09.342224",
+    "total_urls_tested": 5,
+    "passed_tests": 5,
+    "failed_tests": 0,
+    "console_errors_total": 5,
+    "plugin_functionality": {},
+    "test_end": "2026-01-14T00:40:16.639609"
+  },
+  "test_results": [
+    {
+      "url": "http://host.docker.internal:9090/%d7%a6%d7%95%d7%a8-%d7%a7%d7%a9%d7%a8/",
+      "title": "צור קשר",
+      "type": "page",
+      "id": 1452,
+      "test_time": "2026-01-14T00:40:12.693285",
+      "load_status": "success",
+      "load_time_ms": 1192.02,
+      "console_errors": [
+        {
+          "level": "ERROR",
+          "message": "Could not capture console: Message: HTTP method not allowed\n",
+          "source": "capture_error"
+        }
+      ],
+      "plugin_checks": {
+        "woocommerce": {
+          "status": "not_present",
+          "cart_buttons": 0,
+          "product_elements": 0,
+          "wc_elements": 0
+        },
+        "elementor": {
+          "status": "not_present",
+          "elementor_elements": 0,
+          "elementor_scripts": 0
+        },
+        "contact_form_7": {
+          "status": "not_present",
+          "forms_found": 0,
+          "scripts_found": 0
+        },
+        "envira_gallery": {
+          "status": "not_present",
+          "galleries_found": 0,
+          "scripts_found": 0
+        },
+        "yoast_seo": {
+          "status": "present",
+          "schema_scripts": 2,
+          "canonical_tags": 1,
+          "meta_descriptions": 0
+        }
+      },
+      "page_errors": [],
+      "page_title_actual": "המרכז לטיפול בדיג'רידו - סטודיו נשימה מעגלית - אייל עמית דידג'רידו | צור קשר",
+      "broken_images": 0,
+      "http_status": "unknown"
+    },
+    {
+      "url": "http://host.docker.internal:9090/%d7%9b%d7%aa%d7%91%d7%95%d7%aa-%d7%91%d7%aa%d7%a7%d7%a9%d7%95%d7%a8%d7%aa-%d7%90%d7%95%d7%93%d7%95%d7%aa-%d7%9e%d7%95%d7%a4%d7%a2-%d7%94%d7%a1%d7%99%d7%a4%d7%95%d7%a8%d7%99%d7%9d-%d7%a9%d7%9c-%d7%90/",
+      "title": "מן התקשורת - כתבות בעיתונות אודות ״עכשיו!!!! מופע הסיפורים של אייל עמית - תופעת יחיד&quot;",
+      "type": "page",
+      "id": 2267,
+      "test_time": "2026-01-14T00:40:14.134271",
+      "load_status": "success",
+      "load_time_ms": 278.5,
+      "console_errors": [
+        {
+          "level": "ERROR",
+          "message": "Could not capture console: Message: HTTP method not allowed\n",
+          "source": "capture_error"
+        }
+      ],
+      "plugin_checks": {
+        "woocommerce": {
+          "status": "not_present",
+          "cart_buttons": 0,
+          "product_elements": 0,
+          "wc_elements": 0
+        },
+        "elementor": {
+          "status": "not_present",
+          "elementor_elements": 0,
+          "elementor_scripts": 0
+        },
+        "contact_form_7": {
+          "status": "not_present",
+          "forms_found": 0,
+          "scripts_found": 0
+        },
+        "envira_gallery": {
+          "status": "not_present",
+          "galleries_found": 0,
+          "scripts_found": 0
+        },
+        "yoast_seo": {
+          "status": "present",
+          "schema_scripts": 2,
+          "canonical_tags": 1,
+          "meta_descriptions": 0
+        }
+      },
+      "page_errors": [],
+      "page_title_actual": "המרכז לטיפול בדיג'רידו - סטודיו נשימה מעגלית - אייל עמית דידג'רידו | מן התקשורת - כתבות בעיתונות אודות ״עכשיו!!!! מופע הסיפורים של אייל עמית - תופעת יחיד\"",
+      "broken_images": 0,
+      "http_status": "unknown"
+    },
+    {
+      "url": "http://host.docker.internal:9090/%d7%aa%d7%92%d7%95%d7%91%d7%95%d7%aa-%d7%92%d7%95%d7%9c%d7%a9%d7%99%d7%9d-%d7%90%d7%95%d7%93%d7%95%d7%aa-%d7%b4%d7%9e%d7%95%d7%a4%d7%a2-%d7%94%d7%a1%d7%99%d7%a4%d7%95%d7%a8%d7%99%d7%9d-%d7%a9%d7%9c/",
+      "title": "ביקורות גולשים אודות: עכשיו!!!!! - מופע הסיפורים הקצרים של אייל עמית - תופעת יחיד",
+      "type": "page",
+      "id": 2271,
+      "test_time": "2026-01-14T00:40:14.622758",
+      "load_status": "success",
+      "load_time_ms": 274.47,
+      "console_errors": [
+        {
+          "level": "ERROR",
+          "message": "Could not capture console: Message: HTTP method not allowed\n",
+          "source": "capture_error"
+        }
+      ],
+      "plugin_checks": {
+        "woocommerce": {
+          "status": "not_present",
+          "cart_buttons": 0,
+          "product_elements": 0,
+          "wc_elements": 0
+        },
+        "elementor": {
+          "status": "not_present",
+          "elementor_elements": 0,
+          "elementor_scripts": 0
+        },
+        "contact_form_7": {
+          "status": "not_present",
+          "forms_found": 0,
+          "scripts_found": 0
+        },
+        "envira_gallery": {
+          "status": "not_present",
+          "galleries_found": 0,
+          "scripts_found": 0
+        },
+        "yoast_seo": {
+          "status": "present",
+          "schema_scripts": 2,
+          "canonical_tags": 1,
+          "meta_descriptions": 0
+        }
+      },
+      "page_errors": [],
+      "page_title_actual": "המרכז לטיפול בדיג'רידו - סטודיו נשימה מעגלית - אייל עמית דידג'רידו | ביקורות גולשים אודות: עכשיו!!!!! - מופע הסיפורים הקצרים של אייל עמית - תופעת יחיד",
+      "broken_images": 0,
+      "http_status": "unknown"
+    },
+    {
+      "url": "http://host.docker.internal:9090/%d7%9e%d7%95%d7%96%d7%94-%d7%94%d7%95%d7%a6%d7%90%d7%94-%d7%9c%d7%90%d7%95%d7%a8/%d7%95%d7%9b%d7%aa%d7%91%d7%aa-%d7%90%d7%95%d7%98%d7%95%d7%91%d7%99%d7%95%d7%92%d7%a8%d7%a4%d7%99%d7%94-%d7%91%d7%a1%d7%99%d7%a4%d7%95%d7%a8%d7%99%d7%9d/",
+      "title": "<span class=\"bigblue\">וכתבת</span> אייל עמית",
+      "type": "page",
+      "id": 2415,
+      "test_time": "2026-01-14T00:40:14.993531",
+      "load_status": "success",
+      "load_time_ms": 294.94,
+      "console_errors": [
+        {
+          "level": "ERROR",
+          "message": "Could not capture console: Message: HTTP method not allowed\n",
+          "source": "capture_error"
+        }
+      ],
+      "plugin_checks": {
+        "woocommerce": {
+          "status": "not_present",
+          "cart_buttons": 0,
+          "product_elements": 0,
+          "wc_elements": 0
+        },
+        "elementor": {
+          "status": "not_present",
+          "elementor_elements": 0,
+          "elementor_scripts": 0
+        },
+        "contact_form_7": {
+          "status": "not_present",
+          "forms_found": 0,
+          "scripts_found": 0
+        },
+        "envira_gallery": {
+          "status": "not_present",
+          "galleries_found": 0,
+          "scripts_found": 0
+        },
+        "yoast_seo": {
+          "status": "present",
+          "schema_scripts": 2,
+          "canonical_tags": 1,
+          "meta_descriptions": 0
+        }
+      },
+      "page_errors": [],
+      "page_title_actual": "המרכז לטיפול בדיג'רידו - סטודיו נשימה מעגלית - אייל עמית דידג'רידו | וכתבת אייל עמית",
+      "broken_images": 2,
+      "http_status": "unknown"
+    },
+    {
+      "url": "http://host.docker.internal:9090/shop/",
+      "title": "חנות",
+      "type": "page",
+      "id": 12034,
+      "test_time": "2026-01-14T00:40:15.383286",
+      "load_status": "success",
+      "load_time_ms": 214.19,
+      "console_errors": [
+        {
+          "level": "ERROR",
+          "message": "Could not capture console: Message: HTTP method not allowed\n",
+          "source": "capture_error"
+        }
+      ],
+      "plugin_checks": {
+        "woocommerce": {
+          "status": "not_present",
+          "cart_buttons": 0,
+          "product_elements": 0,
+          "wc_elements": 0
+        },
+        "elementor": {
+          "status": "not_present",
+          "elementor_elements": 0,
+          "elementor_scripts": 0
+        },
+        "contact_form_7": {
+          "status": "not_present",
+          "forms_found": 0,
+          "scripts_found": 0
+        },
+        "envira_gallery": {
+          "status": "not_present",
+          "galleries_found": 0,
+          "scripts_found": 0
+        },
+        "yoast_seo": {
+          "status": "present",
+          "schema_scripts": 2,
+          "canonical_tags": 1,
+          "meta_descriptions": 0
+        }
+      },
+      "page_errors": [],
+      "page_title_actual": "המרכז לטיפול בדיג'רידו - סטודיו נשימה מעגלית - אייל עמית דידג'רידו | חנות",
+      "broken_images": 0,
+      "http_status": "unknown"
+    }
+  ],
+  "plugin_analysis": {
+    "woocommerce": {
+      "pages_with": 0,
+      "total_pages": 5
+    },
+    "elementor": {
+      "pages_with": 0,
+      "total_pages": 5
+    },
+    "contact_form_7": {
+      "pages_with": 0,
+      "total_pages": 5
+    },
+    "envira_gallery": {
+      "pages_with": 0,
+      "total_pages": 5
+    },
+    "yoast_seo": {
+      "pages_with": 5,
+      "total_pages": 5
+    }
+  },
+  "console_errors": [
+    {
+      "level": "ERROR",
+      "message": "Could not capture console: Message: HTTP method not allowed\n",
+      "source": "capture_error"
+    },
+    {
+      "level": "ERROR",
+      "message": "Could not capture console: Message: HTTP method not allowed\n",
+      "source": "capture_error"
+    },
+    {
+      "level": "ERROR",
+      "message": "Could not capture console: Message: HTTP method not allowed\n",
+      "source": "capture_error"
+    },
+    {
+      "level": "ERROR",
+      "message": "Could not capture console: Message: HTTP method not allowed\n",
+      "source": "capture_error"
+    },
+    {
+      "level": "ERROR",
+      "message": "Could not capture console: Message: HTTP method not allowed\n",
+      "source": "capture_error"
+    }
+  ],
+  "performance_issues": [],
+  "summary": {
+    "success_rate": 100.0,
+    "error_rate": 100.0,
+    "zero_console_compliance": false,
+    "performance_issues_count": 0
+  }
+}

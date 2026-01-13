@@ -1,0 +1,110 @@
+{
+  "run_id": "predeploy-sweep-20260114-000654",
+  "generated_at": "2026-01-14T00:06:54.605206",
+  "mapping_file": "/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il/docs/sitemap/ACCURATE-SITE-MAPPING-AFTER-ARCHIVE-2026-01-13_22-02-59.json",
+  "site_url_original": "http://host.docker.internal:9090",
+  "counts": {
+    "pages_posts_targeted": 3,
+    "attachments_targeted": 0,
+    "total_items_in_mapping": 454
+  },
+  "items": [
+    {
+      "kind": "page",
+      "id": 1452,
+      "title": "צור קשר",
+      "url_original": "http://localhost:9090/%d7%a6%d7%95%d7%a8-%d7%a7%d7%a9%d7%a8/",
+      "url_selenium": "http://host.docker.internal:9090/%d7%a6%d7%95%d7%a8-%d7%a7%d7%a9%d7%a8/",
+      "has_shortcodes": false,
+      "has_vc_content": false,
+      "has_elementor_flag": false,
+      "ok": true,
+      "final_url": "http://host.docker.internal:9090/%d7%a6%d7%95%d7%a8-%d7%a7%d7%a9%d7%a8/",
+      "title_runtime": "המרכז לטיפול בדיג'רידו - סטודיו נשימה מעגלית - אייל עמית דידג'רידו | צור קשר",
+      "markers": {
+        "bodyClass": "wp-singular page-template-default page page-id-1452 wp-theme-bridge wp-child-theme-bridge-child  qode-title-hidden footer_responsive_adv qode-child-theme-ver-1.0.0 qode-theme-ver-13.0 qode-theme-bridge",
+        "hasCF7": false,
+        "hasElementor": false,
+        "hasEnvira": false,
+        "hasWoo": false,
+        "hasWooCart": false,
+        "hasWooCheckout": false,
+        "hasWpCriticalError": false,
+        "is404": false,
+        "readyState": "complete",
+        "textLen": 686,
+        "title": "המרכז לטיפול בדיג'רידו - סטודיו נשימה מעגלית - אייל עמית דידג'רידו | צור קשר"
+      },
+      "errors": [],
+      "timing_ms": 2481
+    },
+    {
+      "kind": "page",
+      "id": 2267,
+      "title": "מן התקשורת - כתבות בעיתונות אודות ״עכשיו!!!! מופע הסיפורים של אייל עמית - תופעת יחיד&quot;",
+      "url_original": "http://localhost:9090/%d7%9b%d7%aa%d7%91%d7%95%d7%aa-%d7%91%d7%aa%d7%a7%d7%a9%d7%95%d7%a8%d7%aa-%d7%90%d7%95%d7%93%d7%95%d7%aa-%d7%9e%d7%95%d7%a4%d7%a2-%d7%94%d7%a1%d7%99%d7%a4%d7%95%d7%a8%d7%99%d7%9d-%d7%a9%d7%9c-%d7%90/",
+      "url_selenium": "http://host.docker.internal:9090/%d7%9b%d7%aa%d7%91%d7%95%d7%aa-%d7%91%d7%aa%d7%a7%d7%a9%d7%95%d7%a8%d7%aa-%d7%90%d7%95%d7%93%d7%95%d7%aa-%d7%9e%d7%95%d7%a4%d7%a2-%d7%94%d7%a1%d7%99%d7%a4%d7%95%d7%a8%d7%99%d7%9d-%d7%a9%d7%9c-%d7%90/",
+      "has_shortcodes": true,
+      "has_vc_content": false,
+      "has_elementor_flag": false,
+      "ok": true,
+      "final_url": "http://host.docker.internal:9090/%d7%9b%d7%aa%d7%91%d7%95%d7%aa-%d7%91%d7%aa%d7%a7%d7%a9%d7%95%d7%a8%d7%aa-%d7%90%d7%95%d7%93%d7%95%d7%aa-%d7%9e%d7%95%d7%a4%d7%a2-%d7%94%d7%a1%d7%99%d7%a4%d7%95%d7%a8%d7%99%d7%9d-%d7%a9%d7%9c-%d7%90/",
+      "title_runtime": "המרכז לטיפול בדיג'רידו - סטודיו נשימה מעגלית - אייל עמית דידג'רידו | מן התקשורת - כתבות בעיתונות אודות ״עכשיו!!!! מופע הסיפורים של אייל עמית - תופעת יחיד\"",
+      "markers": {
+        "bodyClass": "wp-singular page-template-default page page-id-2267 wp-theme-bridge wp-child-theme-bridge-child  qode-title-hidden footer_responsive_adv qode-child-theme-ver-1.0.0 qode-theme-ver-13.0 qode-theme-bridge",
+        "hasCF7": false,
+        "hasElementor": false,
+        "hasEnvira": false,
+        "hasWoo": false,
+        "hasWooCart": false,
+        "hasWooCheckout": false,
+        "hasWpCriticalError": false,
+        "is404": false,
+        "readyState": "complete",
+        "textLen": 1627,
+        "title": "המרכז לטיפול בדיג'רידו - סטודיו נשימה מעגלית - אייל עמית דידג'רידו | מן התקשורת - כתבות בעיתונות אודות ״עכשיו!!!! מופע הסיפורים של אייל עמית - תופעת יחיד\""
+      },
+      "errors": [],
+      "timing_ms": 391
+    },
+    {
+      "kind": "page",
+      "id": 2271,
+      "title": "ביקורות גולשים אודות: עכשיו!!!!! - מופע הסיפורים הקצרים של אייל עמית - תופעת יחיד",
+      "url_original": "http://localhost:9090/%d7%aa%d7%92%d7%95%d7%91%d7%95%d7%aa-%d7%92%d7%95%d7%9c%d7%a9%d7%99%d7%9d-%d7%90%d7%95%d7%93%d7%95%d7%aa-%d7%b4%d7%9e%d7%95%d7%a4%d7%a2-%d7%94%d7%a1%d7%99%d7%a4%d7%95%d7%a8%d7%99%d7%9d-%d7%a9%d7%9c/",
+      "url_selenium": "http://host.docker.internal:9090/%d7%aa%d7%92%d7%95%d7%91%d7%95%d7%aa-%d7%92%d7%95%d7%9c%d7%a9%d7%99%d7%9d-%d7%90%d7%95%d7%93%d7%95%d7%aa-%d7%b4%d7%9e%d7%95%d7%a4%d7%a2-%d7%94%d7%a1%d7%99%d7%a4%d7%95%d7%a8%d7%99%d7%9d-%d7%a9%d7%9c/",
+      "has_shortcodes": false,
+      "has_vc_content": false,
+      "has_elementor_flag": false,
+      "ok": true,
+      "final_url": "http://host.docker.internal:9090/%d7%aa%d7%92%d7%95%d7%91%d7%95%d7%aa-%d7%92%d7%95%d7%9c%d7%a9%d7%99%d7%9d-%d7%90%d7%95%d7%93%d7%95%d7%aa-%d7%b4%d7%9e%d7%95%d7%a4%d7%a2-%d7%94%d7%a1%d7%99%d7%a4%d7%95%d7%a8%d7%99%d7%9d-%d7%a9%d7%9c/",
+      "title_runtime": "המרכז לטיפול בדיג'רידו - סטודיו נשימה מעגלית - אייל עמית דידג'רידו | ביקורות גולשים אודות: עכשיו!!!!! - מופע הסיפורים הקצרים של אייל עמית - תופעת יחיד",
+      "markers": {
+        "bodyClass": "wp-singular page-template-default page page-id-2271 wp-theme-bridge wp-child-theme-bridge-child  qode-title-hidden footer_responsive_adv qode-child-theme-ver-1.0.0 qode-theme-ver-13.0 qode-theme-bridge",
+        "hasCF7": false,
+        "hasElementor": false,
+        "hasEnvira": false,
+        "hasWoo": false,
+        "hasWooCart": false,
+        "hasWooCheckout": false,
+        "hasWpCriticalError": false,
+        "is404": false,
+        "readyState": "complete",
+        "textLen": 31146,
+        "title": "המרכז לטיפול בדיג'רידו - סטודיו נשימה מעגלית - אייל עמית דידג'רידו | ביקורות גולשים אודות: עכשיו!!!!! - מופע הסיפורים הקצרים של אייל עמית - תופעת יחיד"
+      },
+      "errors": [],
+      "timing_ms": 327
+    }
+  ],
+  "summary": {
+    "ok_count": 3,
+    "fail_count": 0,
+    "plugin_marker_hits": {
+      "woo": 0,
+      "envira": 0,
+      "cf7": 0,
+      "elementor": 0
+    }
+  }
+}
