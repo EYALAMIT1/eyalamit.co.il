@@ -1,32 +1,30 @@
-🚀 משימה פעילה: עדכון תוספים קריטיים
-ענף פעיל: wp-6.9-elementor-migration
-סטטוס: 🟡 READY_TO_START
+🚀 משימה פעילה: השלמות פרימיום (POST-LAUNCH)
+ענף פעיל: main (רישמי)
+סטטוס: 🟡 READY_FOR_PREMIUM_PLUGINS
 מנכ"ל מאשר: אייל עמית
-Task ID: EA-V11-CRITICAL-PLUGINS-UPDATE
+Task ID: EA-V11-PREMIUM-COMPLETION
 **תאריך התחלה:** 2026-01-14
 
 **מטרת המשימה:**
-לעדכן את 3 התוספים הקריטיים לגרסאות האחרונות לפני פריסה לייצור.
+לרכוש ולהתקין את התוספים הפרימיום הקריטיים שזוהו (LayerSlider, Toolset Suite, Envato WordPress Toolkit) לאחר פריסה לסביבת הפיתוח ולפני המעבר לאתר החי.
 
-**תוספים לעדכון:**
-1. Site Kit by Google: 1.43.0 → 1.170.0
-2. Yoast SEO: 11.4 → 26.7
-3. Elementor: 3.25.10 → 3.34.1
+**תוספים לטיפול:**
+1. LayerSlider (~$25-50) - שחזור sliders בעמודים
+2. Toolset Suite (~$100-200) - שחזור קשרי גומלין ב-42 פוסטים
+3. Envato WordPress Toolkit (כלול עם theme) - עדכוני theme
+4. WP Rocket (~$49) - שיפור ביצועים (אופציונלי)
+5. PayPal Express Checkout - תשלום WooCommerce (אופציונלי)
+6. LTR RTL Admin Content - תמיכת עברית (אופציונלי)
 
 **צוותים מעורבים:**
-- 🛠️ צוות 1 (Development): עדכון התוספים
-- 🧪 צוות 2 (QA): אימות אחרי העדכונים
-- 🚦 צוות 3 (Gatekeeper): תזמור והכנת הודעות הפעלה
-
-**קבצים רלוונטיים:**
-- `docs/communication/TEAM1-CRITICAL-PLUGINS-UPDATE.md` - הודעה מפורטת לצוות 1
-- `docs/testing/reports/wordpress-updates-comprehensive-check.json` - דוח בדיקת עדכונים
+- 🛠️ צוות 1 (Development): רכישה, התקנה, הגדרה ואימות
+- 🧪 צוות 2 (QA): בדיקות פונקציונליות לאחר ההתקנה
 
 **קריטריון הצלחה:**
-- ✅ כל 3 התוספים עודכנו לגרסאות האחרונות
-- ✅ האתר עובד תקין אחרי העדכונים
-- ✅ אין שגיאות Console
-- ✅ כל התוספים עובדים תקין
+- ✅ כל התוספים הפרימיום הקריטיים הותקנו והוגדרו
+- ✅ כל הפונקציונליות המשויכת לתוספים עובדת תקין
+- ✅ אין שגיאות Console חדשות
+- ✅ האתר יציב ומוכן למעבר לאתר החי
 
 ---
 
