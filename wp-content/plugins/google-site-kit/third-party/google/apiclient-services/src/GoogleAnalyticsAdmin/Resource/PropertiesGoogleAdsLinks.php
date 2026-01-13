@@ -17,15 +17,15 @@
  */
 namespace Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\Resource;
 
-use Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1alphaGoogleAdsLink;
-use Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1alphaListGoogleAdsLinksResponse;
+use Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1betaGoogleAdsLink;
+use Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1betaListGoogleAdsLinksResponse;
 use Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleProtobufEmpty;
 /**
  * The "googleAdsLinks" collection of methods.
  * Typical usage is:
  *  <code>
  *   $analyticsadminService = new Google\Service\GoogleAnalyticsAdmin(...);
- *   $googleAdsLinks = $analyticsadminService->googleAdsLinks;
+ *   $googleAdsLinks = $analyticsadminService->properties_googleAdsLinks;
  *  </code>
  */
 class PropertiesGoogleAdsLinks extends \Google\Site_Kit_Dependencies\Google\Service\Resource
@@ -34,15 +34,16 @@ class PropertiesGoogleAdsLinks extends \Google\Site_Kit_Dependencies\Google\Serv
      * Creates a GoogleAdsLink. (googleAdsLinks.create)
      *
      * @param string $parent Required. Example format: properties/1234
-     * @param GoogleAnalyticsAdminV1alphaGoogleAdsLink $postBody
+     * @param GoogleAnalyticsAdminV1betaGoogleAdsLink $postBody
      * @param array $optParams Optional parameters.
-     * @return GoogleAnalyticsAdminV1alphaGoogleAdsLink
+     * @return GoogleAnalyticsAdminV1betaGoogleAdsLink
+     * @throws \Google\Service\Exception
      */
-    public function create($parent, \Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1alphaGoogleAdsLink $postBody, $optParams = [])
+    public function create($parent, \Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1betaGoogleAdsLink $postBody, $optParams = [])
     {
         $params = ['parent' => $parent, 'postBody' => $postBody];
         $params = \array_merge($params, $optParams);
-        return $this->call('create', [$params], \Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1alphaGoogleAdsLink::class);
+        return $this->call('create', [$params], \Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1betaGoogleAdsLink::class);
     }
     /**
      * Deletes a GoogleAdsLink on a property (googleAdsLinks.delete)
@@ -51,6 +52,7 @@ class PropertiesGoogleAdsLinks extends \Google\Site_Kit_Dependencies\Google\Serv
      * properties/1234/googleAdsLinks/5678
      * @param array $optParams Optional parameters.
      * @return GoogleProtobufEmpty
+     * @throws \Google\Service\Exception
      */
     public function delete($name, $optParams = [])
     {
@@ -72,13 +74,14 @@ class PropertiesGoogleAdsLinks extends \Google\Site_Kit_Dependencies\Google\Serv
      * `ListGoogleAdsLinks` call. Provide this to retrieve the subsequent page. When
      * paginating, all other parameters provided to `ListGoogleAdsLinks` must match
      * the call that provided the page token.
-     * @return GoogleAnalyticsAdminV1alphaListGoogleAdsLinksResponse
+     * @return GoogleAnalyticsAdminV1betaListGoogleAdsLinksResponse
+     * @throws \Google\Service\Exception
      */
     public function listPropertiesGoogleAdsLinks($parent, $optParams = [])
     {
         $params = ['parent' => $parent];
         $params = \array_merge($params, $optParams);
-        return $this->call('list', [$params], \Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1alphaListGoogleAdsLinksResponse::class);
+        return $this->call('list', [$params], \Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1betaListGoogleAdsLinksResponse::class);
     }
     /**
      * Updates a GoogleAdsLink on a property (googleAdsLinks.patch)
@@ -86,20 +89,21 @@ class PropertiesGoogleAdsLinks extends \Google\Site_Kit_Dependencies\Google\Serv
      * @param string $name Output only. Format:
      * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId} Note:
      * googleAdsLinkId is not the Google Ads customer ID.
-     * @param GoogleAnalyticsAdminV1alphaGoogleAdsLink $postBody
+     * @param GoogleAnalyticsAdminV1betaGoogleAdsLink $postBody
      * @param array $optParams Optional parameters.
      *
      * @opt_param string updateMask Required. The list of fields to be updated.
      * Field names must be in snake case (e.g., "field_to_update"). Omitted fields
      * will not be updated. To replace the entire entity, use one path with the
      * string "*" to match all fields.
-     * @return GoogleAnalyticsAdminV1alphaGoogleAdsLink
+     * @return GoogleAnalyticsAdminV1betaGoogleAdsLink
+     * @throws \Google\Service\Exception
      */
-    public function patch($name, \Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1alphaGoogleAdsLink $postBody, $optParams = [])
+    public function patch($name, \Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1betaGoogleAdsLink $postBody, $optParams = [])
     {
         $params = ['name' => $name, 'postBody' => $postBody];
         $params = \array_merge($params, $optParams);
-        return $this->call('patch', [$params], \Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1alphaGoogleAdsLink::class);
+        return $this->call('patch', [$params], \Google\Site_Kit_Dependencies\Google\Service\GoogleAnalyticsAdmin\GoogleAnalyticsAdminV1betaGoogleAdsLink::class);
     }
 }
 // Adding a class alias for backwards compatibility with the previous class name.

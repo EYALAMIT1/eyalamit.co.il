@@ -11,11 +11,12 @@
 namespace Google\Site_Kit\Core\Assets;
 
 use Google\Site_Kit\Context;
+use Google\Site_Kit\Core\Modules\Module_Sharing_Settings;
 use Google\Site_Kit\Core\Permissions\Permissions;
-use Google\Site_Kit\Core\Storage\Cache;
-use Google\Site_Kit\Core\Util\BC_Functions;
+use Google\Site_Kit\Core\Storage\Options;
 use Google\Site_Kit\Core\Util\Feature_Flags;
 use WP_Dependencies;
+use WP_Post_Type;
 
 /**
  * Class managing assets.
@@ -76,7 +77,7 @@ final class Assets {
 	 * @since 1.37.0 Enqueues Block Editor assets.
 	 */
 	public function register() {
-		$register_callback = function() {
+		$register_callback = function () {
 			if ( ! is_admin() ) {
 				return;
 			}
@@ -93,7 +94,7 @@ final class Assets {
 
 		add_filter(
 			'script_loader_tag',
-			function( $tag, $handle ) {
+			function ( $tag, $handle ) {
 				return $this->add_async_defer_attribute( $tag, $handle );
 			},
 			10,
@@ -101,24 +102,19 @@ final class Assets {
 		);
 
 		// All other asset-related general logic should only be active when the
-		// current user can actually use Site Kit (which only is so if they can
-		// authenticate).
-		if ( ! current_user_can( Permissions::AUTHENTICATE ) ) {
+		// current user can actually use Site Kit.
+		if ( false === (
+				current_user_can( Permissions::VIEW_SPLASH ) || current_user_can( Permissions::VIEW_DASHBOARD )
+			)
+		) {
 			return;
 		}
 
 		$this->add_amp_dev_mode_attributes( $this->get_assets() );
 
 		add_action(
-			'admin_enqueue_scripts',
-			function() {
-				$this->enqueue_minimal_admin_script();
-			}
-		);
-
-		add_action(
 			'admin_print_scripts-edit.php',
-			function() {
+			function () {
 				global $post_type;
 				if ( 'post' !== $post_type ) {
 					// For CONTEXT_ADMIN_POSTS we only load scripts for the 'post' post type.
@@ -128,7 +124,7 @@ final class Assets {
 
 				array_walk(
 					$assets,
-					function( Asset $asset ) {
+					function ( Asset $asset ) {
 						if ( $asset->has_context( Asset::CONTEXT_ADMIN_POSTS ) ) {
 							$this->enqueue_asset( $asset->get_handle() );
 						}
@@ -137,14 +133,32 @@ final class Assets {
 			}
 		);
 
+		if ( is_admin() ) {
+			add_action(
+				'enqueue_block_assets',
+				function () {
+					$assets = $this->get_assets();
+
+					array_walk(
+						$assets,
+						function ( $asset ) {
+							if ( $asset->has_context( Asset::CONTEXT_ADMIN_BLOCK_EDITOR ) ) {
+								$this->enqueue_asset( $asset->get_handle() );
+							}
+						}
+					);
+				}
+			);
+		}
+
 		add_action(
 			'enqueue_block_editor_assets',
-			function() {
+			function () {
 				$assets = $this->get_assets();
 
 				array_walk(
 					$assets,
-					function( $asset ) {
+					function ( $asset ) {
 						if ( $asset->has_context( Asset::CONTEXT_ADMIN_POST_EDITOR ) ) {
 							$this->enqueue_asset( $asset->get_handle() );
 						}
@@ -153,14 +167,14 @@ final class Assets {
 			}
 		);
 
-		$scripts_print_callback = function() {
+		$scripts_print_callback = function () {
 			$scripts = wp_scripts();
 			$this->run_before_print_callbacks( $scripts, $scripts->queue );
 		};
 		add_action( 'wp_print_scripts', $scripts_print_callback );
 		add_action( 'admin_print_scripts', $scripts_print_callback );
 
-		$styles_print_callback = function() {
+		$styles_print_callback = function () {
 			$styles = wp_styles();
 			$this->run_before_print_callbacks( $styles, $styles->queue );
 		};
@@ -217,8 +231,8 @@ final class Assets {
 	 */
 	protected function get_fonts_src() {
 		$font_families = array(
-			'Google+Sans:300,300i,400,400i,500,500i,700,700i',
-			'Roboto:300,300i,400,400i,500,500i,700,700i',
+			'Google+Sans+Text:400,500',
+			'Google+Sans+Display:400,500,700',
 		);
 
 		$filtered_font_families = apply_filters( 'googlesitekit_font_families', $font_families );
@@ -262,7 +276,7 @@ final class Assets {
 			'script_loader_tag',
 			function ( $tag, $handle ) use ( $assets ) {
 				// TODO: 'hoverintent-js' can be removed from here at some point, see https://github.com/ampproject/amp-wp/pull/3928.
-				if ( $this->context->is_amp() && ( isset( $assets[ $handle ] ) && $assets[ $handle ] instanceof Script || 'hoverintent-js' === $handle ) ) {
+				if ( $this->context->is_amp() && ( isset( $assets[ $handle ] ) && ( $assets[ $handle ] instanceof Script || 'hoverintent-js' === $handle ) ) ) {
 					$tag = preg_replace( '/(?<=<script)(?=\s|>)/i', ' data-ampdevmode', $tag );
 				}
 				return $tag;
@@ -285,12 +299,39 @@ final class Assets {
 	}
 
 	/**
-	 * Enqueues the minimal admin script for the entire admin.
+	 * Forms an array of dependencies based on the necessary context.
 	 *
-	 * @since 1.0.0
+	 * @since 1.87.0
+	 *
+	 * @param string $context The context for which dependencies should be formed.
+	 * @return array The array of dependencies.
 	 */
-	private function enqueue_minimal_admin_script() {
-		$this->enqueue_asset( 'googlesitekit-base' );
+	private function get_asset_dependencies( $context = '' ) {
+		$dependencies = array(
+			'googlesitekit-tracking-data',
+			'googlesitekit-runtime',
+			'googlesitekit-i18n',
+			'googlesitekit-vendor',
+			'googlesitekit-commons',
+			'googlesitekit-data',
+			'googlesitekit-datastore-forms',
+			'googlesitekit-datastore-location',
+			'googlesitekit-datastore-site',
+			'googlesitekit-datastore-user',
+			'googlesitekit-datastore-ui',
+			'googlesitekit-widgets',
+			'googlesitekit-notifications',
+		);
+
+		if ( 'dashboard' === $context || 'dashboard-sharing' === $context ) {
+			array_push( $dependencies, 'googlesitekit-components' );
+		}
+
+		if ( 'dashboard-sharing' === $context ) {
+			array_push( $dependencies, 'googlesitekit-dashboard-sharing-data' );
+		}
+
+		return $dependencies;
 	}
 
 	/**
@@ -307,22 +348,8 @@ final class Assets {
 			return $this->assets;
 		}
 
-		$base_url = $this->context->url( 'dist/assets/' );
-
-		$dependencies = array(
-			'googlesitekit-runtime',
-			'googlesitekit-i18n',
-			'googlesitekit-vendor',
-			'googlesitekit-commons',
-			'googlesitekit-base',
-			'googlesitekit-data',
-			'googlesitekit-datastore-forms',
-			'googlesitekit-datastore-location',
-			'googlesitekit-datastore-site',
-			'googlesitekit-datastore-user',
-			'googlesitekit-datastore-ui',
-			'googlesitekit-widgets',
-		);
+		$base_url     = $this->context->url( 'dist/assets/' );
+		$dependencies = $this->get_asset_dependencies();
 
 		// Register plugin scripts.
 		$assets = array(
@@ -357,7 +384,7 @@ final class Assets {
 				'googlesitekit-user-data',
 				array(
 					'global'        => '_googlesitekitUserData',
-					'data_callback' => function() {
+					'data_callback' => function () {
 						return $this->get_inline_user_data();
 					},
 				)
@@ -379,7 +406,7 @@ final class Assets {
 						$preload_paths = apply_filters( 'googlesitekit_apifetch_preload_paths', array() );
 						$preloaded     = array_reduce(
 							array_unique( $preload_paths ),
-							array( BC_Functions::class, 'rest_preload_api_request' ),
+							'rest_preload_api_request',
 							array()
 						);
 
@@ -389,6 +416,33 @@ final class Assets {
 							'preloadedData' => $preloaded,
 							'rootURL'       => esc_url_raw( get_rest_url() ),
 						);
+					},
+				)
+			),
+			new Script_Data(
+				'googlesitekit-dashboard-sharing-data',
+				array(
+					'global'        => '_googlesitekitDashboardSharingData',
+					'data_callback' => function () {
+						return $this->get_inline_dashboard_sharing_data();
+					},
+				)
+			),
+			new Script_Data(
+				'googlesitekit-tracking-data',
+				array(
+					'global'        => '_googlesitekitTrackingData',
+					'data_callback' => function () {
+						return $this->get_inline_tracking_data();
+					},
+				)
+			),
+			new Script_Data(
+				'googlesitekit-modules-data',
+				array(
+					'global'        => '_googlesitekitModulesData',
+					'data_callback' => function () {
+						return $this->get_inline_modules_data();
 					},
 				)
 			),
@@ -426,21 +480,16 @@ final class Assets {
 			),
 			// Admin assets.
 			new Script(
-				'googlesitekit-activation',
+				'googlesitekit-components',
 				array(
-					'src'          => $base_url . 'js/googlesitekit-activation.js',
-					'dependencies' => $dependencies,
+					'src' => $base_url . 'js/googlesitekit-components.js',
 				)
 			),
 			new Script(
-				'googlesitekit-base',
+				'googlesitekit-activation',
 				array(
-					'src'          => $base_url . 'js/googlesitekit-base.js',
-					'dependencies' => array(
-						'googlesitekit-base-data',
-						'googlesitekit-i18n',
-					),
-					'execution'    => 'defer',
+					'src'          => $base_url . 'js/googlesitekit-activation.js',
+					'dependencies' => $this->get_asset_dependencies( 'dashboard' ),
 				)
 			),
 			// Begin JSR Assets.
@@ -472,6 +521,7 @@ final class Assets {
 						'googlesitekit-data',
 						'googlesitekit-api',
 						'googlesitekit-user-data',
+						'googlesitekit-datastore-site',
 					),
 				)
 			),
@@ -536,6 +586,18 @@ final class Assets {
 					'dependencies' => array(
 						'googlesitekit-data',
 						'googlesitekit-i18n',
+						'googlesitekit-components',
+					),
+				)
+			),
+			new Script(
+				'googlesitekit-notifications',
+				array(
+					'src'          => $base_url . 'js/googlesitekit-notifications.js',
+					'dependencies' => array(
+						'googlesitekit-data',
+						'googlesitekit-i18n',
+						'googlesitekit-components',
 					),
 				)
 			),
@@ -543,49 +605,67 @@ final class Assets {
 				'googlesitekit-user-input',
 				array(
 					'src'          => $base_url . 'js/googlesitekit-user-input.js',
-					'dependencies' => $dependencies,
+					'dependencies' => $this->get_asset_dependencies( 'dashboard' ),
+				)
+			),
+			new Script(
+				'googlesitekit-key-metrics-setup',
+				array(
+					'src'          => $base_url . 'js/googlesitekit-key-metrics-setup.js',
+					'dependencies' => $this->get_asset_dependencies( 'dashboard' ),
 				)
 			),
 			// End JSR Assets.
 			new Script(
-				'googlesitekit-dashboard-splash',
+				'googlesitekit-splash',
 				array(
-					'src'          => $base_url . 'js/googlesitekit-dashboard-splash.js',
-					'dependencies' => $dependencies,
+					'src'          => $base_url . 'js/googlesitekit-splash.js',
+					'dependencies' => $this->get_asset_dependencies( 'dashboard' ),
 				)
 			),
 			new Script(
-				'googlesitekit-dashboard-details',
+				'googlesitekit-entity-dashboard',
 				array(
-					'src'          => $base_url . 'js/googlesitekit-dashboard-details.js',
-					'dependencies' => $dependencies,
+					'src'          => $base_url . 'js/googlesitekit-entity-dashboard.js',
+					'dependencies' => $this->get_asset_dependencies( 'dashboard-sharing' ),
 				)
 			),
 			new Script(
-				'googlesitekit-dashboard',
+				'googlesitekit-main-dashboard',
 				array(
-					'src'          => $base_url . 'js/googlesitekit-dashboard.js',
-					'dependencies' => $dependencies,
-				)
-			),
-			new Script(
-				'googlesitekit-module',
-				array(
-					'src'          => $base_url . 'js/googlesitekit-module.js',
-					'dependencies' => $dependencies,
+					'src'          => $base_url . 'js/googlesitekit-main-dashboard.js',
+					'dependencies' => $this->get_asset_dependencies( 'dashboard-sharing' ),
 				)
 			),
 			new Script(
 				'googlesitekit-settings',
 				array(
 					'src'          => $base_url . 'js/googlesitekit-settings.js',
-					'dependencies' => $dependencies,
+					'dependencies' => $this->get_asset_dependencies( 'dashboard-sharing' ),
+				)
+			),
+			new Script(
+				'googlesitekit-ad-blocking-recovery',
+				array(
+					'src'          => $base_url . 'js/googlesitekit-ad-blocking-recovery.js',
+					'dependencies' => $this->get_asset_dependencies( 'dashboard' ),
+				)
+			),
+			new Script(
+				'googlesitekit-block-tracking',
+				array(
+					'src'           => $base_url . 'js/googlesitekit-block-tracking.js',
+					'dependencies'  => array(
+						'googlesitekit-tracking-data',
+						'googlesitekit-data',
+					),
+					'load_contexts' => array( Asset::CONTEXT_ADMIN_POST_EDITOR ),
 				)
 			),
 			new Stylesheet(
 				'googlesitekit-admin-css',
 				array(
-					'src'          => $base_url . 'css/admin.css',
+					'src'          => $base_url . 'css/googlesitekit-admin-css.css',
 					'dependencies' => array(
 						'googlesitekit-fonts',
 					),
@@ -603,7 +683,16 @@ final class Assets {
 			new Stylesheet(
 				'googlesitekit-wp-dashboard-css',
 				array(
-					'src'          => $base_url . 'css/wpdashboard.css',
+					'src'          => $base_url . 'css/googlesitekit-wp-dashboard-css.css',
+					'dependencies' => array(
+						'googlesitekit-fonts',
+					),
+				)
+			),
+			new Stylesheet(
+				'googlesitekit-authorize-application-css',
+				array(
+					'src'          => $base_url . 'css/googlesitekit-authorize-application-css.css',
 					'dependencies' => array(
 						'googlesitekit-fonts',
 					),
@@ -618,10 +707,17 @@ final class Assets {
 					'execution'    => 'defer',
 				)
 			),
+			new Script(
+				'googlesitekit-metric-selection',
+				array(
+					'src'          => $base_url . 'js/googlesitekit-metric-selection.js',
+					'dependencies' => $this->get_asset_dependencies( 'dashboard' ),
+				)
+			),
 			new Stylesheet(
 				'googlesitekit-adminbar-css',
 				array(
-					'src'          => $base_url . 'css/adminbar.css',
+					'src'          => $base_url . 'css/googlesitekit-adminbar-css.css',
 					'dependencies' => array(
 						'googlesitekit-fonts',
 					),
@@ -666,22 +762,29 @@ final class Assets {
 	 */
 	private function get_inline_base_data() {
 		global $wpdb;
-		$site_url     = $this->context->get_reference_site_url();
-		$current_user = wp_get_current_user();
+		$site_url = $this->context->get_reference_site_url();
 
 		$inline_data = array(
-			'homeURL'          => trailingslashit( $this->context->get_canonical_home_url() ),
-			'referenceSiteURL' => esc_url_raw( trailingslashit( $site_url ) ),
-			'userIDHash'       => md5( $site_url . $current_user->ID ),
-			'adminURL'         => esc_url_raw( trailingslashit( admin_url() ) ),
-			'assetsURL'        => esc_url_raw( $this->context->url( 'dist/assets/' ) ),
-			'blogPrefix'       => $wpdb->get_blog_prefix(),
-			'ampMode'          => $this->context->get_amp_mode(),
-			'isNetworkMode'    => $this->context->is_network_mode(),
-			'timezone'         => get_option( 'timezone_string' ),
-			'siteName'         => get_bloginfo( 'name' ),
-			'enabledFeatures'  => Feature_Flags::get_enabled_features(),
-			'webStoriesActive' => defined( 'WEBSTORIES_VERSION' ),
+			'homeURL'           => trailingslashit( $this->context->get_canonical_home_url() ),
+			'referenceSiteURL'  => esc_url_raw( trailingslashit( $site_url ) ),
+			'adminURL'          => esc_url_raw( trailingslashit( admin_url() ) ),
+			'assetsURL'         => esc_url_raw( $this->context->url( 'dist/assets/' ) ),
+			'widgetsAdminURL'   => esc_url_raw( $this->get_widgets_admin_url() ),
+			'blogPrefix'        => $wpdb->get_blog_prefix(),
+			'ampMode'           => $this->context->get_amp_mode(),
+			'isNetworkMode'     => $this->context->is_network_mode(),
+			'timezone'          => get_option( 'timezone_string' ),
+			'startOfWeek'       => (int) get_option( 'start_of_week' ),
+			'siteName'          => wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES ),
+			'siteLocale'        => $this->context->get_locale(),
+			'enabledFeatures'   => Feature_Flags::get_enabled_features(),
+			'webStoriesActive'  => defined( 'WEBSTORIES_VERSION' ),
+			'postTypes'         => $this->get_post_types(),
+			'storagePrefix'     => $this->get_storage_prefix(),
+			'referenceDate'     => apply_filters( 'googlesitekit_reference_date', null ),
+			'productPostType'   => $this->get_product_post_type(),
+			'anyoneCanRegister' => (bool) get_option( 'users_can_register' ),
+			'isMultisite'       => is_multisite(),
 		);
 
 		/**
@@ -694,6 +797,50 @@ final class Assets {
 		 * @param array $data Base data.
 		 */
 		return apply_filters( 'googlesitekit_inline_base_data', $inline_data );
+	}
+
+	/**
+	 * Gets the available public post type slugs and their labels.
+	 *
+	 * @since 1.81.0
+	 *
+	 * @return array Available post types array with their respective slugs and labels.
+	 */
+	private function get_post_types() {
+		$post_types     = array();
+		$all_post_types = get_post_types( array( 'public' => true ), 'objects' );
+		foreach ( $all_post_types as $post_type_slug => $post_type_obj ) {
+			$post_types[] = array(
+				'slug'  => $post_type_slug,
+				'label' => $post_type_obj->label,
+			);
+		}
+		return $post_types;
+	}
+
+	/**
+	 * Gets the widgets admin edit page or block editor URL depending
+	 * on the current theme.
+	 *
+	 * Themes which have FSE support do not have the old widgets admin screen. Such
+	 * themes only have the option to edit widgets directly in the block editor.
+	 *
+	 * @since 1.81.0
+	 *
+	 * @return string The admin widgets page or block editor URL.
+	 */
+	private function get_widgets_admin_url() {
+		$current_theme = wp_get_theme();
+
+		if ( method_exists( $current_theme, 'is_block_theme' ) && $current_theme->is_block_theme() ) {
+			return admin_url( 'site-editor.php' );
+		}
+
+		if ( count( $GLOBALS['wp_registered_sidebars'] ) > 0 ) {
+			return admin_url( 'widgets.php' );
+		}
+
+		return '';
 	}
 
 	/**
@@ -728,6 +875,7 @@ final class Assets {
 			'user' => array(
 				'id'      => $current_user->ID,
 				'email'   => $current_user->user_email,
+				'wpEmail' => $current_user->user_email, // Preserved for features that need the original WP email (email gets overridden during proxy auth).
 				'name'    => $current_user->display_name,
 				'picture' => get_avatar_url( $current_user->user_email ),
 			),
@@ -746,6 +894,68 @@ final class Assets {
 	}
 
 	/**
+	 * Gets the inline dashboard sharing data
+	 *
+	 * @since 1.49.0
+	 *
+	 * @return array The dashboard sharing inline data to be output.
+	 */
+	private function get_inline_dashboard_sharing_data() {
+		$all_roles   = wp_roles()->roles;
+		$inline_data = array( 'roles' => array() );
+
+		foreach ( $all_roles as $role_slug => $role_details ) {
+			$role = get_role( $role_slug );
+
+			// Filter the role that has `edit_posts` capability.
+			if ( $role->has_cap( 'edit_posts' ) ) {
+				$inline_data['roles'][] = array(
+					'id'          => $role_slug,
+					'displayName' => translate_user_role( $role_details['name'] ),
+				);
+			}
+		}
+
+		$settings                = new Module_Sharing_Settings( new Options( $this->context ) );
+		$inline_data['settings'] = $settings->get();
+
+		/**
+		 * Filters the dashboard sharing inline data to pass to JS.
+		 *
+		 * @since 1.49.0
+		 *
+		 * @param array $data dashboard sharing data.
+		 */
+		return apply_filters( 'googlesitekit_dashboard_sharing_data', $inline_data );
+	}
+
+	/**
+	 * Gets data relevant for `trackEvent` calls.
+	 *
+	 * @since 1.78.0
+	 *
+	 * @return array The tracking inline data to be output.
+	 */
+	private function get_inline_tracking_data() {
+		$site_url     = $this->context->get_reference_site_url();
+		$current_user = wp_get_current_user();
+
+		$inline_data = array(
+			'referenceSiteURL' => esc_url_raw( trailingslashit( $site_url ) ),
+			'userIDHash'       => md5( $site_url . $current_user->ID ),
+		);
+
+		/**
+		 * Filters the data relevant to trackEvent calls to pass to JS.
+		 *
+		 * @since 1.78.0
+		 *
+		 * @param array $inline_data Tracking data.
+		 */
+		return apply_filters( 'googlesitekit_inline_tracking_data', $inline_data );
+	}
+
+	/**
 	 * Gets the inline data needed for core plugin scripts.
 	 *
 	 * @since 1.0.0
@@ -753,17 +963,13 @@ final class Assets {
 	 * @return array The inline data to be output.
 	 */
 	private function get_inline_data() {
-		$current_user = wp_get_current_user();
-		$site_url     = $this->context->get_reference_site_url();
-		$input        = $this->context->input();
-		$page         = $input->filter( INPUT_GET, 'page', FILTER_SANITIZE_STRING );
+		$site_url = $this->context->get_reference_site_url();
+		$input    = $this->context->input();
 
 		$admin_data = array(
 			'siteURL'      => esc_url_raw( $site_url ),
 			'resetSession' => $input->filter( INPUT_GET, 'googlesitekit_reset_session', FILTER_VALIDATE_BOOLEAN ),
 		);
-
-		$current_entity = $this->context->get_reference_entity();
 
 		return array(
 
@@ -792,6 +998,25 @@ final class Assets {
 	}
 
 	/**
+	 * Gets inline modules data.
+	 *
+	 * @since 1.96.0
+	 *
+	 * @return array The inline modules data to be output.
+	 */
+	private function get_inline_modules_data() {
+
+		/**
+		 * Filters the inline modules data to pass to JS.
+		 *
+		 * @since 1.96.0
+		 *
+		 * @param array $data Modules data.
+		 */
+		return apply_filters( 'googlesitekit_inline_modules_data', array() );
+	}
+
+	/**
 	 * Adds support for async and defer attributes to enqueued scripts.
 	 *
 	 * @since 1.0.0
@@ -810,9 +1035,9 @@ final class Assets {
 			return $tag;
 		}
 
-		// Abort adding async/defer for scripts that have this script as a dependency.
+		// Abort adding async/defer for scripts that have this script as a dependency, unless it is an alias.
 		foreach ( wp_scripts()->registered as $script ) {
-			if ( in_array( $handle, $script->deps, true ) ) {
+			if ( $script->src && in_array( $handle, $script->deps, true ) ) {
 				return $tag;
 			}
 		}
@@ -879,5 +1104,49 @@ final class Assets {
 		if ( ! empty( $data ) && is_string( $data ) ) {
 			wp_scripts()->add_data( $handle, 'data', '/*googlesitekit*/ ' . $data );
 		}
+	}
+
+	/**
+	 * Gets the prefix for the client side cache key.
+	 *
+	 * Cache key is scoped to user session and blog_id to isolate the
+	 * cache between users and sites (in multisite).
+	 *
+	 * @since 1.92.0
+	 *
+	 * @return string
+	 */
+	private function get_storage_prefix() {
+		$current_user  = wp_get_current_user();
+		$auth_cookie   = wp_parse_auth_cookie();
+		$blog_id       = get_current_blog_id();
+		$session_token = isset( $auth_cookie['token'] ) ? $auth_cookie['token'] : '';
+
+		return wp_hash( $current_user->user_login . '|' . $session_token . '|' . $blog_id );
+	}
+
+	/**
+	 * Gets the product post type.
+	 *
+	 * @since 1.116.0
+	 *
+	 * @return string|null The product post type name or null if not present on the website.
+	 */
+	protected function get_product_post_type() {
+		/**
+		 * Filters the product post type.
+		 *
+		 * @since 1.116.0
+		 *
+		 * @param string $product_post_type The product post type name.
+		 */
+		$product_post_type = apply_filters( 'googlesitekit_product_post_type', 'product' );
+		$product_type      = get_post_type_object( $product_post_type );
+
+		if ( $product_type instanceof WP_Post_Type && $product_type->public ) {
+			return $product_post_type;
+		}
+
+		return null;
 	}
 }

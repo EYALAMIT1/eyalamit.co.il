@@ -62,6 +62,9 @@ wptexturize_disable_verification_*.txt
 eyalamit.co.il-production-*/
 eyalamit.co.il_bm*/
 
+# Orphaned files archive (temporary - should not be committed)
+archive-orphaned-files-*/
+
 # Temporary files
 *.tmp
 *.bak

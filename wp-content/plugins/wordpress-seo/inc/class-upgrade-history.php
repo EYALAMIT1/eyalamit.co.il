@@ -22,7 +22,7 @@ class WPSEO_Upgrade_History {
 	/**
 	 * WPSEO_Upgrade_History constructor.
 	 *
-	 * @param null|string $option_name Optional. Custom option to use to store/retrieve history from.
+	 * @param string|null $option_name Optional. Custom option to use to store/retrieve history from.
 	 */
 	public function __construct( $option_name = null ) {
 		if ( $option_name !== null ) {
@@ -33,12 +33,12 @@ class WPSEO_Upgrade_History {
 	/**
 	 * Retrieves the content of the history items currently stored.
 	 *
-	 * @return array The contents of the history option.
+	 * @return array<array<string>> The contents of the history option.
 	 */
 	public function get() {
-		$data = get_option( $this->get_option_name(), array() );
+		$data = get_option( $this->get_option_name(), [] );
 		if ( ! is_array( $data ) ) {
-			return array();
+			return [];
 		}
 
 		return $data;
@@ -47,13 +47,15 @@ class WPSEO_Upgrade_History {
 	/**
 	 * Adds a new history entry in the storage.
 	 *
-	 * @param string $old_version  The version we are upgrading from.
-	 * @param string $new_version  The version we are upgrading to.
-	 * @param array  $option_names The options that need to be stored.
+	 * @param string        $old_version  The version we are upgrading from.
+	 * @param string        $new_version  The version we are upgrading to.
+	 * @param array<string> $option_names The options that need to be stored.
+	 *
+	 * @return void
 	 */
 	public function add( $old_version, $new_version, array $option_names ) {
-		$option_data = array();
-		if ( array() !== $option_names ) {
+		$option_data = [];
+		if ( $option_names !== [] ) {
 			$option_data = $this->get_options_data( $option_names );
 		}
 
@@ -61,11 +63,11 @@ class WPSEO_Upgrade_History {
 		$data = $this->get();
 
 		// Add new entry.
-		$data[ time() ] = array(
+		$data[ time() ] = [
 			'options'     => $option_data,
 			'old_version' => $old_version,
 			'new_version' => $new_version,
-		);
+		];
 
 		// Store the data.
 		$this->set( $data );
@@ -74,25 +76,25 @@ class WPSEO_Upgrade_History {
 	/**
 	 * Retrieves the data for the specified option names from the database.
 	 *
-	 * @param array $option_names The option names to retrieve.
+	 * @param array<string> $option_names The option names to retrieve.
 	 *
-	 * @return array
+	 * @return array<int|string, array<string|int|bool|float>> The retrieved data.
 	 */
 	protected function get_options_data( array $option_names ) {
-		/** @var WPDB $wpdb */
 		$wpdb = $this->get_wpdb();
 
-		$sql = $wpdb->prepare(
-			'
-			SELECT option_value, option_name FROM ' . $wpdb->options . ' WHERE
-			option_name IN ( ' . implode( ',', array_fill( 0, count( $option_names ), '%s' ) ) . ' )
-			',
-			$option_names
+		$results = $wpdb->get_results(
+			$wpdb->prepare(
+				'
+				SELECT %i, %i FROM ' . $wpdb->options . ' WHERE
+				%i IN ( ' . implode( ',', array_fill( 0, count( $option_names ), '%s' ) ) . ' )
+				',
+				array_merge( [ 'option_value', 'option_name', 'option_name' ], $option_names )
+			),
+			ARRAY_A
 		);
 
-		$results = $wpdb->get_results( $sql, ARRAY_A );
-
-		$data = array();
+		$data = [];
 		foreach ( $results as $result ) {
 			$data[ $result['option_name'] ] = maybe_unserialize( $result['option_value'] );
 		}
@@ -103,7 +105,7 @@ class WPSEO_Upgrade_History {
 	/**
 	 * Stores the new history state.
 	 *
-	 * @param array $data The data to store.
+	 * @param array<array<string>> $data The data to store.
 	 *
 	 * @return void
 	 */

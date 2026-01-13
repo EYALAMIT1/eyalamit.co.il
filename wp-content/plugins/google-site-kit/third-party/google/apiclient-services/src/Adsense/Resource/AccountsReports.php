@@ -19,12 +19,13 @@ namespace Google\Site_Kit_Dependencies\Google\Service\Adsense\Resource;
 
 use Google\Site_Kit_Dependencies\Google\Service\Adsense\HttpBody;
 use Google\Site_Kit_Dependencies\Google\Service\Adsense\ReportResult;
+use Google\Site_Kit_Dependencies\Google\Service\Adsense\SavedReport;
 /**
  * The "reports" collection of methods.
  * Typical usage is:
  *  <code>
  *   $adsenseService = new Google\Service\Adsense(...);
- *   $reports = $adsenseService->reports;
+ *   $reports = $adsenseService->accounts_reports;
  *  </code>
  */
 class AccountsReports extends \Google\Site_Kit_Dependencies\Google\Service\Resource
@@ -49,7 +50,10 @@ class AccountsReports extends \Google\Site_Kit_Dependencies\Google\Service\Resou
      * specify a year without a month and day.
      * @opt_param int endDate.year Year of the date. Must be from 1 to 9999, or 0 to
      * specify a date without a year.
-     * @opt_param string filters Filters to be run on the report.
+     * @opt_param string filters A list of
+     * [filters](/adsense/management/reporting/filtering) to apply to the report.
+     * All provided filters must match in order for the data to be included in the
+     * report.
      * @opt_param string languageCode The language to use for translating report
      * output. If unspecified, this defaults to English ("en"). If the given
      * language is not supported, report output will be returned in English. The
@@ -78,6 +82,7 @@ class AccountsReports extends \Google\Site_Kit_Dependencies\Google\Service\Resou
      * @opt_param int startDate.year Year of the date. Must be from 1 to 9999, or 0
      * to specify a date without a year.
      * @return ReportResult
+     * @throws \Google\Service\Exception
      */
     public function generate($account, $optParams = [])
     {
@@ -105,7 +110,10 @@ class AccountsReports extends \Google\Site_Kit_Dependencies\Google\Service\Resou
      * specify a year without a month and day.
      * @opt_param int endDate.year Year of the date. Must be from 1 to 9999, or 0 to
      * specify a date without a year.
-     * @opt_param string filters Filters to be run on the report.
+     * @opt_param string filters A list of
+     * [filters](/adsense/management/reporting/filtering) to apply to the report.
+     * All provided filters must match in order for the data to be included in the
+     * report.
      * @opt_param string languageCode The language to use for translating report
      * output. If unspecified, this defaults to English ("en"). If the given
      * language is not supported, report output will be returned in English. The
@@ -134,12 +142,28 @@ class AccountsReports extends \Google\Site_Kit_Dependencies\Google\Service\Resou
      * @opt_param int startDate.year Year of the date. Must be from 1 to 9999, or 0
      * to specify a date without a year.
      * @return HttpBody
+     * @throws \Google\Service\Exception
      */
     public function generateCsv($account, $optParams = [])
     {
         $params = ['account' => $account];
         $params = \array_merge($params, $optParams);
         return $this->call('generateCsv', [$params], \Google\Site_Kit_Dependencies\Google\Service\Adsense\HttpBody::class);
+    }
+    /**
+     * Gets the saved report from the given resource name. (reports.getSaved)
+     *
+     * @param string $name Required. The name of the saved report to retrieve.
+     * Format: accounts/{account}/reports/{report}
+     * @param array $optParams Optional parameters.
+     * @return SavedReport
+     * @throws \Google\Service\Exception
+     */
+    public function getSaved($name, $optParams = [])
+    {
+        $params = ['name' => $name];
+        $params = \array_merge($params, $optParams);
+        return $this->call('getSaved', [$params], \Google\Site_Kit_Dependencies\Google\Service\Adsense\SavedReport::class);
     }
 }
 // Adding a class alias for backwards compatibility with the previous class name.

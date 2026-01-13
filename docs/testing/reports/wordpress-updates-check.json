@@ -1,0 +1,49 @@
+{
+    "wordpress": {
+        "current_version": "6.9",
+        "latest_version": "6.9",
+        "needs_update": false
+    },
+    "plugins": {
+        "total": 3,
+        "active": 36,
+        "needs_update": 1,
+        "up_to_date": 2,
+        "plugins_needing_update": [
+            {
+                "name": "Site Kit by Google",
+                "file": "google-site-kit/google-site-kit.php",
+                "current_version": "1.43.0",
+                "latest_version": "1.168.0",
+                "has_update": true,
+                "is_active": true
+            }
+        ],
+        "all_plugins": [
+            {
+                "name": "Elementor",
+                "file": "elementor/elementor.php",
+                "current_version": "3.25.10",
+                "latest_version": "3.25.10",
+                "has_update": false,
+                "is_active": true
+            },
+            {
+                "name": "Site Kit by Google",
+                "file": "google-site-kit/google-site-kit.php",
+                "current_version": "1.43.0",
+                "latest_version": "1.168.0",
+                "has_update": true,
+                "is_active": true
+            },
+            {
+                "name": "Yoast SEO",
+                "file": "wordpress-seo/wp-seo.php",
+                "current_version": "11.4",
+                "latest_version": "11.4",
+                "has_update": false,
+                "is_active": true
+            }
+        ]
+    }
+}

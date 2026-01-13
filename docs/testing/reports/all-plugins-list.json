@@ -1,0 +1,298 @@
+{
+    "timestamp": "2026-01-13 20:33:51",
+    "total_active_plugins": 36,
+    "total_plugins_in_filesystem": 3,
+    "exists_count": 3,
+    "missing_count": 33,
+    "needs_update_count": 3,
+    "plugins": [
+        {
+            "file": "elementor\/elementor.php",
+            "exists": true,
+            "name": "Elementor",
+            "version": "3.25.10",
+            "update_available": true,
+            "new_version": "3.34.1"
+        },
+        {
+            "file": "LayerSlider\/layerslider.php",
+            "exists": false,
+            "name": "LayerSlider",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "google-site-kit\/google-site-kit.php",
+            "exists": true,
+            "name": "Site Kit by Google",
+            "version": "1.43.0",
+            "update_available": true,
+            "new_version": "1.170.0"
+        },
+        {
+            "file": "wordpress-seo\/wp-seo.php",
+            "exists": true,
+            "name": "Yoast SEO",
+            "version": "11.4",
+            "update_available": true,
+            "new_version": "26.7"
+        },
+        {
+            "file": "admin-menu-editor\/menu-editor.php",
+            "exists": false,
+            "name": "admin-menu-editor",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "akismet\/akismet.php",
+            "exists": false,
+            "name": "akismet",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "contact-form-7\/wp-contact-form-7.php",
+            "exists": false,
+            "name": "contact-form-7",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "disable-gutenberg\/disable-gutenberg.php",
+            "exists": false,
+            "name": "disable-gutenberg",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "disable-wordpress-updates\/disable-updates.php",
+            "exists": false,
+            "name": "disable-wordpress-updates",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "duplicate-post\/duplicate-post.php",
+            "exists": false,
+            "name": "duplicate-post",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "envato-market\/envato-market.php",
+            "exists": false,
+            "name": "envato-market",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "envato-wordpress-toolkit\/index.php",
+            "exists": false,
+            "name": "envato-wordpress-toolkit",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "envira-albums\/envira-albums.php",
+            "exists": false,
+            "name": "envira-albums",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "envira-fullscreen\/envira-fullscreen.php",
+            "exists": false,
+            "name": "envira-fullscreen",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "envira-gallery\/envira-gallery.php",
+            "exists": false,
+            "name": "envira-gallery",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "envira-gallery-themes\/envira-gallery-themes.php",
+            "exists": false,
+            "name": "envira-gallery-themes",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "envira-social\/envira-social.php",
+            "exists": false,
+            "name": "envira-social",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "envira-woocommerce\/envira-woocommerce.php",
+            "exists": false,
+            "name": "envira-woocommerce",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "hello-dolly\/hello.php",
+            "exists": false,
+            "name": "hello-dolly",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "js_composer\/js_composer.php",
+            "exists": false,
+            "name": "js_composer",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "layouts\/dd-layouts.php",
+            "exists": false,
+            "name": "layouts",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "ltrrtl-admin-content\/ltr-admin.php",
+            "exists": false,
+            "name": "ltrrtl-admin-content",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "post-types-order\/post-types-order.php",
+            "exists": false,
+            "name": "post-types-order",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "regenerate-thumbnails\/regenerate-thumbnails.php",
+            "exists": false,
+            "name": "regenerate-thumbnails",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "simple-google-recaptcha\/simple-google-recaptcha.php",
+            "exists": false,
+            "name": "simple-google-recaptcha",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "timetable\/timetable.php",
+            "exists": false,
+            "name": "timetable",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "tiny-compress-images\/tiny-compress-images.php",
+            "exists": false,
+            "name": "tiny-compress-images",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "toolset-maps\/toolset-maps-loader.php",
+            "exists": false,
+            "name": "toolset-maps",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "types\/wpcf.php",
+            "exists": false,
+            "name": "types",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "woocommerce\/woocommerce.php",
+            "exists": false,
+            "name": "woocommerce",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "woocommerce-gateway-paypal-express-checkout\/woocommerce-gateway-paypal-express-checkout.php",
+            "exists": false,
+            "name": "woocommerce-gateway-paypal-express-checkout",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "woocommerce-views\/views-woocommerce.php",
+            "exists": false,
+            "name": "woocommerce-views",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "wp-accessibility-helper\/wp-accessibility-helper.php",
+            "exists": false,
+            "name": "wp-accessibility-helper",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "wp-rocket\/wp-rocket.php",
+            "exists": false,
+            "name": "wp-rocket",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "wp-user-avatar\/wp-user-avatar.php",
+            "exists": false,
+            "name": "wp-user-avatar",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        },
+        {
+            "file": "wp-views\/wp-views.php",
+            "exists": false,
+            "name": "wp-views",
+            "version": "Unknown",
+            "update_available": false,
+            "new_version": null
+        }
+    ]
+}

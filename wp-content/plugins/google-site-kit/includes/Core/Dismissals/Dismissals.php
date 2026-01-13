@@ -46,9 +46,20 @@ class Dismissals {
 	 * @param Context      $context Plugin context.
 	 * @param User_Options $user_options Optional. User option API. Default is a new instance.
 	 */
-	public function __construct( Context $context, User_Options $user_options = null ) {
+	public function __construct( Context $context, ?User_Options $user_options = null ) {
 		$this->dismissed_items = new Dismissed_Items( $user_options ?: new User_Options( $context ) );
 		$this->rest_controller = new REST_Dismissals_Controller( $this->dismissed_items );
+	}
+
+	/**
+	 * Gets the reference to the Dismissed_Items instance.
+	 *
+	 * @since 1.69.0
+	 *
+	 * @return Dismissed_Items An instance of the Dismissed_Items class.
+	 */
+	public function get_dismissed_items() {
+		return $this->dismissed_items;
 	}
 
 	/**
@@ -60,5 +71,4 @@ class Dismissals {
 		$this->dismissed_items->register();
 		$this->rest_controller->register();
 	}
-
 }

@@ -1,0 +1,136 @@
+רשימת תוספים חסרים מבסיס הנתונים
+תאריך: 2026-01-13 20:33:51
+================================================================================
+
+❌ LayerSlider
+   קובץ: LayerSlider/layerslider.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ admin-menu-editor
+   קובץ: admin-menu-editor/menu-editor.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ akismet
+   קובץ: akismet/akismet.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ contact-form-7
+   קובץ: contact-form-7/wp-contact-form-7.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ disable-gutenberg
+   קובץ: disable-gutenberg/disable-gutenberg.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ disable-wordpress-updates
+   קובץ: disable-wordpress-updates/disable-updates.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ duplicate-post
+   קובץ: duplicate-post/duplicate-post.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ envato-market
+   קובץ: envato-market/envato-market.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ envato-wordpress-toolkit
+   קובץ: envato-wordpress-toolkit/index.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ envira-albums
+   קובץ: envira-albums/envira-albums.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ envira-fullscreen
+   קובץ: envira-fullscreen/envira-fullscreen.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ envira-gallery
+   קובץ: envira-gallery/envira-gallery.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ envira-gallery-themes
+   קובץ: envira-gallery-themes/envira-gallery-themes.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ envira-social
+   קובץ: envira-social/envira-social.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ envira-woocommerce
+   קובץ: envira-woocommerce/envira-woocommerce.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ hello-dolly
+   קובץ: hello-dolly/hello.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ js_composer
+   קובץ: js_composer/js_composer.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ layouts
+   קובץ: layouts/dd-layouts.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ ltrrtl-admin-content
+   קובץ: ltrrtl-admin-content/ltr-admin.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ post-types-order
+   קובץ: post-types-order/post-types-order.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ regenerate-thumbnails
+   קובץ: regenerate-thumbnails/regenerate-thumbnails.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ simple-google-recaptcha
+   קובץ: simple-google-recaptcha/simple-google-recaptcha.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ timetable
+   קובץ: timetable/timetable.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ tiny-compress-images
+   קובץ: tiny-compress-images/tiny-compress-images.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ toolset-maps
+   קובץ: toolset-maps/toolset-maps-loader.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ types
+   קובץ: types/wpcf.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ woocommerce
+   קובץ: woocommerce/woocommerce.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ woocommerce-gateway-paypal-express-checkout
+   קובץ: woocommerce-gateway-paypal-express-checkout/woocommerce-gateway-paypal-express-checkout.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ woocommerce-views
+   קובץ: woocommerce-views/views-woocommerce.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ wp-accessibility-helper
+   קובץ: wp-accessibility-helper/wp-accessibility-helper.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ wp-rocket
+   קובץ: wp-rocket/wp-rocket.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ wp-user-avatar
+   קובץ: wp-user-avatar/wp-user-avatar.php
+   גרסה בבסיס נתונים: Unknown
+
+❌ wp-views
+   קובץ: wp-views/wp-views.php
+   גרסה בבסיס נתונים: Unknown
+

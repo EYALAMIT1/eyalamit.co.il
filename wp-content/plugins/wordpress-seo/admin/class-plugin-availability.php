@@ -5,18 +5,25 @@
  * @package WPSEO\Plugin_Availability
  */
 
+use Yoast\WP\SEO\Conditionals\Conditional;
+use Yoast\WP\SEO\Conditionals\WooCommerce_Conditional;
+
 /**
  * Class WPSEO_Plugin_Availability
  */
 class WPSEO_Plugin_Availability {
 
 	/**
+	 * Holds the plugins.
+	 *
 	 * @var array
 	 */
-	protected $plugins = array();
+	protected $plugins = [];
 
 	/**
 	 * Registers the plugins so we can access them.
+	 *
+	 * @return void
 	 */
 	public function register() {
 		$this->register_yoast_plugins();
@@ -25,10 +32,12 @@ class WPSEO_Plugin_Availability {
 
 	/**
 	 * Registers all the available Yoast SEO plugins.
+	 *
+	 * @return void
 	 */
 	protected function register_yoast_plugins() {
-		$this->plugins = array(
-			'yoast-seo-premium' => array(
+		$this->plugins = [
+			'yoast-seo-premium' => [
 				'url'          => WPSEO_Shortlinker::get( 'https://yoa.st/1y7' ),
 				'title'        => 'Yoast SEO Premium',
 				'description'  => sprintf(
@@ -40,9 +49,9 @@ class WPSEO_Plugin_Availability {
 				'slug'         => 'wordpress-seo-premium/wp-seo-premium.php',
 				'version_sync' => true,
 				'premium'      => true,
-			),
+			],
 
-			'video-seo-for-wordpress-seo-by-yoast' => array(
+			'video-seo-for-wordpress-seo-by-yoast' => [
 				'url'          => WPSEO_Shortlinker::get( 'https://yoa.st/1y8' ),
 				'title'        => 'Video SEO',
 				'description'  => __( 'Optimize your videos to show them off in search results and get more clicks!', 'wordpress-seo' ),
@@ -50,9 +59,9 @@ class WPSEO_Plugin_Availability {
 				'slug'         => 'wpseo-video/video-seo.php',
 				'version_sync' => true,
 				'premium'      => true,
-			),
+			],
 
-			'yoast-news-seo' => array(
+			'yoast-news-seo' => [
 				'url'          => WPSEO_Shortlinker::get( 'https://yoa.st/1y9' ),
 				'title'        => 'News SEO',
 				'description'  => __( 'Are you in Google News? Increase your traffic from Google News by optimizing for it!', 'wordpress-seo' ),
@@ -60,9 +69,9 @@ class WPSEO_Plugin_Availability {
 				'slug'         => 'wpseo-news/wpseo-news.php',
 				'version_sync' => true,
 				'premium'      => true,
-			),
+			],
 
-			'local-seo-for-yoast-seo' => array(
+			'local-seo-for-yoast-seo' => [
 				'url'          => WPSEO_Shortlinker::get( 'https://yoa.st/1ya' ),
 				'title'        => 'Local SEO',
 				'description'  => __( 'Rank better locally and in Google Maps, without breaking a sweat!', 'wordpress-seo' ),
@@ -70,9 +79,9 @@ class WPSEO_Plugin_Availability {
 				'slug'         => 'wordpress-seo-local/local-seo.php',
 				'version_sync' => true,
 				'premium'      => true,
-			),
+			],
 
-			'yoast-woocommerce-seo' => array(
+			'yoast-woocommerce-seo' => [
 				'url'           => WPSEO_Shortlinker::get( 'https://yoa.st/1o0' ),
 				'title'         => 'Yoast WooCommerce SEO',
 				'description'   => sprintf(
@@ -80,58 +89,24 @@ class WPSEO_Plugin_Availability {
 					__( 'Seamlessly integrate WooCommerce with %1$s and get extra features!', 'wordpress-seo' ),
 					'Yoast SEO'
 				),
-				'_dependencies' => array(
-					'WooCommerce' => array(
-						'slug' => 'woocommerce/woocommerce.php',
-					),
-				),
+				'_dependencies' => [
+					'WooCommerce' => [
+						'slug'        => 'woocommerce/woocommerce.php', // Kept for backwards compatibility, in case external code uses get_dependencies(). Deprecated in 22.4.
+						'conditional' => new WooCommerce_Conditional(),
+					],
+				],
 				'installed'     => false,
 				'slug'          => 'wpseo-woocommerce/wpseo-woocommerce.php',
 				'version_sync'  => true,
 				'premium'       => true,
-			),
-
-			'yoast-acf-analysis' => array(
-				'url'           => 'https://wordpress.org/plugins/acf-content-analysis-for-yoast-seo/',
-				'title'         => 'ACF Content Analysis for Yoast SEO',
-				'description'   => sprintf(
-					/* translators: %1$s expands to Yoast SEO, %2$s expands to Advanced Custom Fields */
-					__( 'Seamlessly integrate %2$s with %1$s for the content analysis!', 'wordpress-seo' ),
-					'Yoast SEO',
-					'Advanced Custom Fields'
-				),
-				'installed'     => false,
-				'slug'          => 'acf-content-analysis-for-yoast-seo/yoast-acf-analysis.php',
-				'_dependencies' => array(
-					'Advanced Custom Fields' => array(
-						'slug' => 'advanced-custom-fields/acf.php',
-					),
-				),
-				'version_sync'  => false,
-			),
-
-			'yoastseo-amp' => array(
-				'url'           => 'https://wordpress.org/plugins/glue-for-yoast-seo-amp/',
-				'title'         => 'Yoast SEO AMP Glue',
-				'description'   => sprintf(
-					/* translators: %1$s expands to Yoast SEO */
-					__( 'Seamlessly integrate %1$s into your AMP pages!', 'wordpress-seo' ),
-					'Yoast SEO'
-				),
-				'installed'     => false,
-				'slug'          => 'glue-for-yoast-seo-amp/yoastseo-amp.php',
-				'_dependencies' => array(
-					'AMP' => array(
-						'slug' => 'amp/amp.php',
-					),
-				),
-				'version_sync'  => false,
-			),
-		);
+			],
+		];
 	}
 
 	/**
 	 * Sets certain plugin properties based on WordPress' status.
+	 *
+	 * @return void
 	 */
 	protected function register_yoast_plugins_status() {
 
@@ -150,61 +125,11 @@ class WPSEO_Plugin_Availability {
 	}
 
 	/**
-	 * Checks whether or not a plugin is known within the Yoast SEO collection.
-	 *
-	 * @param string $plugin The plugin to search for.
-	 *
-	 * @return bool Whether or not the plugin is exists.
-	 */
-	protected function plugin_exists( $plugin ) {
-		return isset( $this->plugins[ $plugin ] );
-	}
-
-	/**
-	 * Gets all the possibly available plugins.
-	 *
-	 * @return array Array containing the information about the plugins.
-	 */
-	public function get_plugins() {
-		return $this->plugins;
-	}
-
-	/**
-	 * Gets a specific plugin. Returns an empty array if it cannot be found.
-	 *
-	 * @param string $plugin The plugin to search for.
-	 *
-	 * @return array The plugin properties.
-	 */
-	public function get_plugin( $plugin ) {
-		if ( ! $this->plugin_exists( $plugin ) ) {
-			return array();
-		}
-
-		return $this->plugins[ $plugin ];
-	}
-
-	/**
-	 * Gets the version of the plugin.
-	 *
-	 * @param array $plugin The information available about the plugin.
-	 *
-	 * @return string The version associated with the plugin.
-	 */
-	public function get_version( $plugin ) {
-		if ( ! isset( $plugin['version'] ) ) {
-			return '';
-		}
-
-		return $plugin['version'];
-	}
-
-	/**
 	 * Checks if there are dependencies available for the plugin.
 	 *
 	 * @param array $plugin The information available about the plugin.
 	 *
-	 * @return bool Whether or not there is a dependency present.
+	 * @return bool Whether there is a dependency present.
 	 */
 	public function has_dependencies( $plugin ) {
 		return ( isset( $plugin['_dependencies'] ) && ! empty( $plugin['_dependencies'] ) );
@@ -219,7 +144,7 @@ class WPSEO_Plugin_Availability {
 	 */
 	public function get_dependencies( $plugin ) {
 		if ( ! $this->has_dependencies( $plugin ) ) {
-			return array();
+			return [];
 		}
 
 		return $plugin['_dependencies'];
@@ -237,10 +162,10 @@ class WPSEO_Plugin_Availability {
 			return true;
 		}
 
-		$dependencies           = $this->get_dependencies( $plugin );
-		$installed_dependencies = array_filter( $dependencies, array( $this, 'is_dependency_available' ) );
+		$dependencies        = $this->get_dependencies( $plugin );
+		$active_dependencies = array_filter( $dependencies, [ $this, 'is_dependency_active' ] );
 
-		return count( $installed_dependencies ) === count( $dependencies );
+		return count( $active_dependencies ) === count( $dependencies );
 	}
 
 	/**
@@ -259,23 +184,6 @@ class WPSEO_Plugin_Availability {
 	}
 
 	/**
-	 * Gets all installed plugins.
-	 *
-	 * @return array The installed plugins.
-	 */
-	public function get_installed_plugins() {
-		$installed = array();
-
-		foreach ( $this->plugins as $plugin_key => $plugin ) {
-			if ( $this->is_installed( $plugin ) ) {
-				$installed[ $plugin_key ] = $plugin;
-			}
-		}
-
-		return $installed;
-	}
-
-	/**
 	 * Checks for the availability of the plugin.
 	 *
 	 * @param array $plugin The information available about the plugin.
@@ -287,29 +195,14 @@ class WPSEO_Plugin_Availability {
 	}
 
 	/**
-	 * Checks whether a dependency is available.
+	 * Checks whether a dependency is active.
 	 *
-	 * @param array $dependency The information about the dependency to look for.
+	 * @param array<string, Conditional> $dependency The information about the dependency to look for.
 	 *
-	 * @return bool Whether or not the dependency is available.
+	 * @return bool Whether or not the dependency is active.
 	 */
-	public function is_dependency_available( $dependency ) {
-		return in_array( $dependency['slug'], array_keys( get_plugins() ), true );
-	}
-
-	/**
-	 * Gets the names of the dependencies.
-	 *
-	 * @param array $plugin The plugin to get the dependency names from.
-	 *
-	 * @return array Array containing the names of the associated dependencies.
-	 */
-	public function get_dependency_names( $plugin ) {
-		if ( ! $this->has_dependencies( $plugin ) ) {
-			return array();
-		}
-
-		return array_keys( $plugin['_dependencies'] );
+	public function is_dependency_active( $dependency ) {
+		return $dependency['conditional']->is_met();
 	}
 
 	/**
@@ -318,28 +211,147 @@ class WPSEO_Plugin_Availability {
 	 * @return array Array of the plugins that have dependencies.
 	 */
 	public function get_plugins_with_dependencies() {
-		return array_filter( $this->plugins, array( $this, 'has_dependencies' ) );
+		return array_filter( $this->plugins, [ $this, 'has_dependencies' ] );
 	}
 
 	/**
 	 * Determines whether or not a plugin is active.
+	 *
+	 * @deprecated 23.4
+	 * @codeCoverageIgnore
 	 *
 	 * @param string $plugin The plugin slug to check.
 	 *
 	 * @return bool Whether or not the plugin is active.
 	 */
 	public function is_active( $plugin ) {
+		_deprecated_function( __METHOD__, 'Yoast SEO 23.4', 'is_plugin_active' );
+
 		return is_plugin_active( $plugin );
 	}
 
 	/**
+	 * Gets all the possibly available plugins.
+	 *
+	 * @deprecated 23.4
+	 * @codeCoverageIgnore
+	 *
+	 * @return array Array containing the information about the plugins.
+	 */
+	public function get_plugins() {
+		_deprecated_function( __METHOD__, 'Yoast SEO 23.4', 'WPSEO_Addon_Manager::get_addon_filenames' );
+
+		return $this->plugins;
+	}
+
+	/**
+	 * Gets a specific plugin. Returns an empty array if it cannot be found.
+	 *
+	 * @deprecated 23.4
+	 * @codeCoverageIgnore
+	 *
+	 * @param string $plugin The plugin to search for.
+	 *
+	 * @return array The plugin properties.
+	 */
+	public function get_plugin( $plugin ) { // @phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found, VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable -- needed for BC reasons
+		_deprecated_function( __METHOD__, 'Yoast SEO 23.4', 'WPSEO_Addon_Manager::get_plugin_file' );
+		if ( ! isset( $this->plugins[ $plugin ] ) ) {
+			return [];
+		}
+
+		return $this->plugins[ $plugin ];
+	}
+
+	/**
+	 * Gets the version of the plugin.
+	 *
+	 * @deprecated 23.4
+	 * @codeCoverageIgnore
+	 *
+	 * @param array $plugin The information available about the plugin.
+	 *
+	 * @return string The version associated with the plugin.
+	 */
+	public function get_version( $plugin ) { // @phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found, VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable -- needed for BC reasons
+		_deprecated_function( __METHOD__, 'Yoast SEO 23.4', 'WPSEO_Addon_Manager::get_installed_addons_versions' );
+		if ( ! isset( $plugin['version'] ) ) {
+			return '';
+		}
+
+		return $plugin['version'];
+	}
+
+	/**
+	 * Checks whether a dependency is available.
+	 *
+	 * @deprecated 22.4
+	 * @codeCoverageIgnore
+	 *
+	 * @param array $dependency The information about the dependency to look for.
+	 *
+	 * @return bool Whether or not the dependency is available.
+	 */
+	public function is_dependency_available( $dependency ) {
+		_deprecated_function( __METHOD__, 'Yoast SEO 22.4' );
+
+		return isset( get_plugins()[ $dependency['slug'] ] );
+	}
+
+	/**
+	 * Gets the names of the dependencies.
+	 *
+	 * @deprecated 23.4
+	 * @codeCoverageIgnore
+	 *
+	 * @param array $plugin The plugin to get the dependency names from.
+	 *
+	 * @return array Array containing the names of the associated dependencies.
+	 */
+	public function get_dependency_names( $plugin ) { // @phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found, VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable -- needed for BC reasons
+		_deprecated_function( __METHOD__, 'Yoast SEO 23.4' );
+		if ( ! $this->has_dependencies( $plugin ) ) {
+			return [];
+		}
+
+		return array_keys( $plugin['_dependencies'] );
+	}
+
+	/**
 	 * Determines whether or not a plugin is a Premium product.
+	 *
+	 * @deprecated 23.4
+	 * @codeCoverageIgnore
 	 *
 	 * @param array $plugin The plugin to check.
 	 *
 	 * @return bool Whether or not the plugin is a Premium product.
 	 */
 	public function is_premium( $plugin ) {
+		_deprecated_function( __METHOD__, 'Yoast SEO 23.4' );
+
 		return isset( $plugin['premium'] ) && $plugin['premium'] === true;
+	}
+
+	/**
+	 * Gets all installed plugins.
+	 *
+	 * @deprecated 23.4
+	 * @codeCoverageIgnore
+	 *
+	 * @return array The installed plugins.
+	 */
+	public function get_installed_plugins() {
+
+		_deprecated_function( __METHOD__, 'Yoast SEO 23.4', 'WPSEO_Addon_Manager::get_installed_addons_versions' );
+		$installed = [];
+
+		foreach ( $this->plugins as $plugin_key => $plugin ) {
+			if ( $this->is_installed( $plugin ) ) {
+				$installed[ $plugin_key ] = $plugin;
+			}
+		}
+
+		return $installed;
 	}
 }

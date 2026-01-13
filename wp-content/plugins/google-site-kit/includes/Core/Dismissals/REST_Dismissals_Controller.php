@@ -11,6 +11,7 @@
 namespace Google\Site_Kit\Core\Dismissals;
 
 use Google\Site_Kit\Core\Permissions\Permissions;
+use Google\Site_Kit\Core\REST_API\Exception\Invalid_Param_Exception;
 use Google\Site_Kit\Core\REST_API\REST_Route;
 use Google\Site_Kit\Core\REST_API\REST_Routes;
 use WP_Error;
@@ -76,12 +77,13 @@ class REST_Dismissals_Controller {
 	 * Gets REST route instances.
 	 *
 	 * @since 1.37.0
+	 * @since 1.133.0 Added the `DELETE dismissed-items` route.
 	 *
 	 * @return REST_Route[] List of REST_Route objects.
 	 */
 	protected function get_rest_routes() {
-		$can_authenticate = function () {
-			return current_user_can( Permissions::AUTHENTICATE );
+		$can_dismiss_item = function () {
+			return current_user_can( Permissions::VIEW_SPLASH ) || current_user_can( Permissions::VIEW_DASHBOARD );
 		};
 
 		return array(
@@ -92,8 +94,45 @@ class REST_Dismissals_Controller {
 					'callback'            => function () {
 						return new WP_REST_Response( $this->dismissed_items->get_dismissed_items() );
 					},
-					'permission_callback' => $can_authenticate,
+					'permission_callback' => $can_dismiss_item,
 				)
+			),
+			new REST_Route(
+				'core/user/data/dismissed-items',
+				array(
+					'methods'             => WP_REST_Server::DELETABLE,
+					'callback'            => function ( WP_REST_Request $request ) {
+						if ( empty( $request['data']['slugs'] ) ) {
+							// Schema validation does not catch empty object params
+							// in older versions of WP.
+							return ( new Invalid_Param_Exception( 'data' ) )->to_wp_error();
+						}
+
+						foreach ( $request['data']['slugs'] as $slug ) {
+							$this->dismissed_items->remove( $slug );
+						}
+
+						return new WP_REST_Response( $this->dismissed_items->get_dismissed_items() );
+					},
+					'permission_callback' => $can_dismiss_item,
+					'args'                => array(
+						'data' => array(
+							'type'                 => 'object',
+							'required'             => true,
+							'minProperties'        => 1,
+							'additionalProperties' => false,
+							'properties'           => array(
+								'slugs' => array(
+									'type'     => 'array',
+									'required' => true,
+									'items'    => array(
+										'type' => 'string',
+									),
+								),
+							),
+						),
+					),
+				),
 			),
 			new REST_Route(
 				'core/user/data/dismiss-item',
@@ -120,7 +159,7 @@ class REST_Dismissals_Controller {
 
 						return new WP_REST_Response( $this->dismissed_items->get_dismissed_items() );
 					},
-					'permission_callback' => $can_authenticate,
+					'permission_callback' => $can_dismiss_item,
 					'args'                => array(
 						'data' => array(
 							'type'     => 'object',
@@ -131,5 +170,4 @@ class REST_Dismissals_Controller {
 			),
 		);
 	}
-
 }

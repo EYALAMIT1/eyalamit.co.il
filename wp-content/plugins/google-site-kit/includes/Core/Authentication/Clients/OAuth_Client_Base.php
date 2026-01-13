@@ -118,12 +118,12 @@ abstract class OAuth_Client_Base {
 	 */
 	public function __construct(
 		Context $context,
-		Options $options = null,
-		User_Options $user_options = null,
-		Credentials $credentials = null,
-		Google_Proxy $google_proxy = null,
-		Profile $profile = null,
-		Token $token = null
+		?Options $options = null,
+		?User_Options $user_options = null,
+		?Credentials $credentials = null,
+		?Google_Proxy $google_proxy = null,
+		?Profile $profile = null,
+		?Token $token = null
 	) {
 		$this->context      = $context;
 		$this->options      = $options ?: new Options( $this->context );
@@ -153,7 +153,7 @@ abstract class OAuth_Client_Base {
 					'redirect_uri'             => $this->get_redirect_uri(),
 					'token'                    => $this->get_token(),
 					'token_callback'           => array( $this, 'set_token' ),
-					'token_exception_callback' => function( Exception $e ) {
+					'token_exception_callback' => function ( Exception $e ) {
 						$this->handle_fetch_token_exception( $e );
 					},
 					'required_scopes'          => $this->get_required_scopes(),
@@ -255,6 +255,10 @@ abstract class OAuth_Client_Base {
 	 * @return bool True on success, false on failure.
 	 */
 	public function set_token( array $token ) {
+		// Remove the error code from the user options so it doesn't
+		// appear again.
+		$this->user_options->delete( OAuth_Client::OPTION_ERROR_CODE );
+
 		return $this->token->set( $token );
 	}
 
@@ -280,7 +284,7 @@ abstract class OAuth_Client_Base {
 	public function get_error_message( $error_code ) {
 		switch ( $error_code ) {
 			case 'access_denied':
-				return __( 'The Site Kit setup was interrupted because you did not grant the necessary permissions.', 'google-site-kit' );
+				return __( 'Setup was interrupted because you did not grant the necessary permissions.', 'google-site-kit' );
 			case 'access_token_not_received':
 				return __( 'Unable to receive access token because of an unknown error.', 'google-site-kit' );
 			case 'cannot_log_in':

@@ -16,35 +16,35 @@ class Yoast_Notification {
 	 *
 	 * @var string
 	 */
-	const MATCH_ALL = 'all';
+	public const MATCH_ALL = 'all';
 
 	/**
 	 * Type of capability check.
 	 *
 	 * @var string
 	 */
-	const MATCH_ANY = 'any';
+	public const MATCH_ANY = 'any';
 
 	/**
 	 * Notification type.
 	 *
 	 * @var string
 	 */
-	const ERROR = 'error';
+	public const ERROR = 'error';
 
 	/**
 	 * Notification type.
 	 *
 	 * @var string
 	 */
-	const WARNING = 'warning';
+	public const WARNING = 'warning';
 
 	/**
 	 * Notification type.
 	 *
 	 * @var string
 	 */
-	const UPDATED = 'updated';
+	public const UPDATED = 'updated';
 
 	/**
 	 * Options of this Notification.
@@ -59,27 +59,31 @@ class Yoast_Notification {
 	 * -     capabilities: Capabilities that a user must have for this Notification to show.
 	 * - capability_check: How to check capability pass: all or any.
 	 * -  wpseo_page_only: Only display on wpseo page or on every page.
+	 * -   yoast_branding: Whether to show the Yoast SEO branding in the notification.
+	 * -    resolve_nonce: Security nonce to use in case of resolving the notification.
 	 *
 	 * @var array
 	 */
-	private $options = array();
+	private $options = [];
 
 	/**
 	 * Contains default values for the optional arguments.
 	 *
 	 * @var array
 	 */
-	private $defaults = array(
+	private $defaults = [
 		'type'             => self::UPDATED,
 		'id'               => '',
+		'user_id'          => null,
 		'nonce'            => null,
 		'priority'         => 0.5,
-		'data_json'        => array(),
+		'data_json'        => [],
 		'dismissal_key'    => null,
-		'capabilities'     => array(),
+		'capabilities'     => [],
 		'capability_check' => self::MATCH_ALL,
 		'yoast_branding'   => false,
-	);
+		'resolve_nonce'    => '',
+	];
 
 	/**
 	 * The message for the notification.
@@ -94,7 +98,7 @@ class Yoast_Notification {
 	 * @param string $message Message string.
 	 * @param array  $options Set of options.
 	 */
-	public function __construct( $message, $options = array() ) {
+	public function __construct( $message, $options = [] ) {
 		$this->message = $message;
 		$this->options = $this->normalize_options( $options );
 	}
@@ -109,9 +113,33 @@ class Yoast_Notification {
 	}
 
 	/**
+	 * Retrieve the user to show the notification for.
+	 *
+	 * @deprecated 21.6
+	 * @codeCoverageIgnore
+	 *
+	 * @return WP_User|null The user to show this notification for.
+	 */
+	public function get_user() {
+		_deprecated_function( __METHOD__, 'Yoast SEO 21.6' );
+		return null;
+	}
+
+	/**
+	 * Retrieve the id of the user to show the notification for.
+	 *
+	 * Returns the id of the current user if not user has been sent.
+	 *
+	 * @return int The user id
+	 */
+	public function get_user_id() {
+		return ( $this->options['user_id'] ?? get_current_user_id() );
+	}
+
+	/**
 	 * Retrieve nonce identifier.
 	 *
-	 * @return null|string Nonce for this Notification.
+	 * @return string|null Nonce for this Notification.
 	 */
 	public function get_nonce() {
 		if ( $this->options['id'] && empty( $this->options['nonce'] ) ) {
@@ -123,6 +151,8 @@ class Yoast_Notification {
 
 	/**
 	 * Make sure the nonce is up to date.
+	 *
+	 * @return void
 	 */
 	public function refresh_nonce() {
 		if ( $this->options['id'] ) {
@@ -148,6 +178,15 @@ class Yoast_Notification {
 	 */
 	public function get_priority() {
 		return $this->options['priority'];
+	}
+
+	/**
+	 * Get the nonce to resolve the alert.
+	 *
+	 * @return string
+	 */
+	public function get_resolve_nonce() {
+		return $this->options['resolve_nonce'];
 	}
 
 	/**
@@ -196,19 +235,19 @@ class Yoast_Notification {
 	 */
 	public function match_capabilities() {
 		// Super Admin can do anything.
-		if ( is_multisite() && is_super_admin() ) {
+		if ( is_multisite() && is_super_admin( $this->options['user_id'] ) ) {
 			return true;
 		}
 
 		/**
 		 * Filter capabilities that enable the displaying of this notification.
 		 *
-		 * @since 3.2
-		 *
 		 * @param array              $capabilities The capabilities that must be present for this notification.
 		 * @param Yoast_Notification $notification The notification object.
 		 *
-		 * @return Array of capabilities or empty for no restrictions.
+		 * @return array Array of capabilities or empty for no restrictions.
+		 *
+		 * @since 3.2
 		 */
 		$capabilities = apply_filters( 'wpseo_notification_capabilities', $this->options['capabilities'], $this );
 
@@ -220,22 +259,22 @@ class Yoast_Notification {
 		/**
 		 * Filter capability check to enable all or any capabilities.
 		 *
-		 * @since 3.2
-		 *
 		 * @param string             $capability_check The type of check that will be used to determine if an capability is present.
 		 * @param Yoast_Notification $notification     The notification object.
 		 *
 		 * @return string self::MATCH_ALL or self::MATCH_ANY.
+		 *
+		 * @since 3.2
 		 */
 		$capability_check = apply_filters( 'wpseo_notification_capability_check', $this->options['capability_check'], $this );
 
-		if ( ! in_array( $capability_check, array( self::MATCH_ALL, self::MATCH_ANY ), true ) ) {
+		if ( ! in_array( $capability_check, [ self::MATCH_ALL, self::MATCH_ANY ], true ) ) {
 			$capability_check = self::MATCH_ALL;
 		}
 
 		if ( ! empty( $capabilities ) ) {
 
-			$has_capabilities = array_filter( $capabilities, array( $this, 'has_capability' ) );
+			$has_capabilities = array_filter( $capabilities, [ $this, 'has_capability' ] );
 
 			switch ( $capability_check ) {
 				case self::MATCH_ALL:
@@ -256,7 +295,16 @@ class Yoast_Notification {
 	 * @return bool
 	 */
 	private function has_capability( $capability ) {
-		return current_user_can( $capability );
+		$user_id = $this->options['user_id'];
+		if ( ! is_numeric( $user_id ) ) {
+			return false;
+		}
+		$user = get_user_by( 'id', $user_id );
+		if ( ! $user ) {
+			return false;
+		}
+
+		return $user->has_cap( $capability );
 	}
 
 	/**
@@ -265,10 +313,10 @@ class Yoast_Notification {
 	 * @return array
 	 */
 	public function to_array() {
-		return array(
+		return [
 			'message' => $this->message,
 			'options' => $this->options,
-		);
+		];
 	}
 
 	/**
@@ -286,14 +334,14 @@ class Yoast_Notification {
 	 * @return string The rendered notification.
 	 */
 	public function render() {
-		$attributes = array();
+		$attributes = [];
 
 		// Default notification classes.
-		$classes = array(
-			'yoast-alert',
-		);
+		$classes = [
+			'yoast-notification',
+		];
 
-		// Maintain WordPress visualisation of alerts when they are not persistent.
+		// Maintain WordPress visualisation of notifications when they are not persistent.
 		if ( ! $this->is_persistent() ) {
 			$classes[] = 'notice';
 			$classes[] = $this->get_type();
@@ -304,7 +352,7 @@ class Yoast_Notification {
 		}
 
 		// Combined attribute key and value into a string.
-		array_walk( $attributes, array( $this, 'parse_attributes' ) );
+		array_walk( $attributes, [ $this, 'parse_attributes' ] );
 
 		$message = null;
 		if ( $this->options['yoast_branding'] ) {
@@ -320,6 +368,15 @@ class Yoast_Notification {
 	}
 
 	/**
+	 * Get the message for the notification.
+	 *
+	 * @return string The message.
+	 */
+	public function get_message() {
+		return wpautop( $this->message );
+	}
+
+	/**
 	 * Wraps the message with a Yoast SEO icon.
 	 *
 	 * @param string $message The message to wrap.
@@ -329,7 +386,7 @@ class Yoast_Notification {
 	private function wrap_yoast_seo_icon( $message ) {
 		$out  = sprintf(
 			'<img src="%1$s" height="%2$d" width="%3$d" class="yoast-seo-icon" />',
-			esc_url( plugin_dir_url( WPSEO_FILE ) . 'images/Yoast_SEO_Icon.svg' ),
+			esc_url( plugin_dir_url( WPSEO_FILE ) . 'packages/js/images/Yoast_SEO_Icon.svg' ),
 			60,
 			60
 		);
@@ -343,7 +400,7 @@ class Yoast_Notification {
 	/**
 	 * Get the JSON if provided.
 	 *
-	 * @return false|string
+	 * @return string|false
 	 */
 	public function get_json() {
 		if ( empty( $this->options['data_json'] ) ) {
@@ -367,8 +424,13 @@ class Yoast_Notification {
 		$options['priority'] = min( 1, max( 0, $options['priority'] ) );
 
 		// Set default capabilities when not supplied.
-		if ( empty( $options['capabilities'] ) || array() === $options['capabilities'] ) {
-			$options['capabilities'] = array( 'wpseo_manage_options' );
+		if ( empty( $options['capabilities'] ) || $options['capabilities'] === [] ) {
+			$options['capabilities'] = [ 'wpseo_manage_options' ];
+		}
+
+		// Set to the id of the current user if not supplied.
+		if ( $options['user_id'] === null ) {
+			$options['user_id'] = get_current_user_id();
 		}
 
 		return $options;
@@ -379,8 +441,10 @@ class Yoast_Notification {
 	 *
 	 * @param string $value Attribute value.
 	 * @param string $key   Attribute name.
+	 *
+	 * @return void
 	 */
-	private function parse_attributes( & $value, $key ) {
-		$value = sprintf( '%s="%s"', $key, esc_attr( $value ) );
+	private function parse_attributes( &$value, $key ) {
+		$value = sprintf( '%s="%s"', sanitize_key( $key ), esc_attr( $value ) );
 	}
 }

@@ -17,6 +17,7 @@
  */
 namespace Google\Site_Kit_Dependencies\Google\Service\Adsense\Resource;
 
+use Google\Site_Kit_Dependencies\Google\Service\Adsense\AdClient;
 use Google\Site_Kit_Dependencies\Google\Service\Adsense\AdClientAdCode;
 use Google\Site_Kit_Dependencies\Google\Service\Adsense\ListAdClientsResponse;
 /**
@@ -24,11 +25,26 @@ use Google\Site_Kit_Dependencies\Google\Service\Adsense\ListAdClientsResponse;
  * Typical usage is:
  *  <code>
  *   $adsenseService = new Google\Service\Adsense(...);
- *   $adclients = $adsenseService->adclients;
+ *   $adclients = $adsenseService->accounts_adclients;
  *  </code>
  */
 class AccountsAdclients extends \Google\Site_Kit_Dependencies\Google\Service\Resource
 {
+    /**
+     * Gets the ad client from the given resource name. (adclients.get)
+     *
+     * @param string $name Required. The name of the ad client to retrieve. Format:
+     * accounts/{account}/adclients/{adclient}
+     * @param array $optParams Optional parameters.
+     * @return AdClient
+     * @throws \Google\Service\Exception
+     */
+    public function get($name, $optParams = [])
+    {
+        $params = ['name' => $name];
+        $params = \array_merge($params, $optParams);
+        return $this->call('get', [$params], \Google\Site_Kit_Dependencies\Google\Service\Adsense\AdClient::class);
+    }
     /**
      * Gets the AdSense code for a given ad client. This returns what was previously
      * known as the 'auto ad code'. This is only supported for ad clients with a
@@ -40,6 +56,7 @@ class AccountsAdclients extends \Google\Site_Kit_Dependencies\Google\Service\Res
      * adcode. Format: accounts/{account}/adclients/{adclient}
      * @param array $optParams Optional parameters.
      * @return AdClientAdCode
+     * @throws \Google\Service\Exception
      */
     public function getAdcode($name, $optParams = [])
     {
@@ -64,6 +81,7 @@ class AccountsAdclients extends \Google\Site_Kit_Dependencies\Google\Service\Res
      * paginating, all other parameters provided to `ListAdClients` must match the
      * call that provided the page token.
      * @return ListAdClientsResponse
+     * @throws \Google\Service\Exception
      */
     public function listAccountsAdclients($parent, $optParams = [])
     {

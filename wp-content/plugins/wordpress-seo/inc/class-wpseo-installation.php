@@ -19,7 +19,7 @@ class WPSEO_Installation {
 		$is_first_install = $this->is_first_install();
 
 		if ( $is_first_install && WPSEO_Utils::is_api_available() ) {
-			add_action( 'wpseo_activate', array( $this, 'set_first_install_options' ) );
+			add_action( 'wpseo_activate', [ $this, 'set_first_install_options' ] );
 		}
 	}
 
@@ -34,12 +34,15 @@ class WPSEO_Installation {
 
 	/**
 	 * Sets the options on first install for showing the installation notice and disabling of the settings pages.
+	 *
+	 * @return void
 	 */
 	public function set_first_install_options() {
 		$options = get_option( 'wpseo' );
 
 		$options['show_onboarding_notice'] = true;
 		$options['first_activated_on']     = time();
+		$options['first_activated_by']     = get_current_user_id();
 
 		update_option( 'wpseo', $options );
 	}

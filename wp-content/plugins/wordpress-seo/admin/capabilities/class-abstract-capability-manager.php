@@ -15,7 +15,7 @@ abstract class WPSEO_Abstract_Capability_Manager implements WPSEO_Capability_Man
 	 *
 	 * @var array
 	 */
-	protected $capabilities = array();
+	protected $capabilities = [];
 
 	/**
 	 * Registers a capability.
@@ -23,6 +23,8 @@ abstract class WPSEO_Abstract_Capability_Manager implements WPSEO_Capability_Man
 	 * @param string $capability Capability to register.
 	 * @param array  $roles      Roles to add the capability to.
 	 * @param bool   $overwrite  Optional. Use add or overwrite as registration method.
+	 *
+	 * @return void
 	 */
 	public function register( $capability, array $roles, $overwrite = false ) {
 		if ( $overwrite || ! isset( $this->capabilities[ $capability ] ) ) {
@@ -75,13 +77,13 @@ abstract class WPSEO_Abstract_Capability_Manager implements WPSEO_Capability_Man
 		/**
 		 * Filter: Allow changing roles that a capability is added to.
 		 *
-		 * @api array $roles The default roles to be filtered.
+		 * @param array $roles The default roles to be filtered.
 		 */
 		$filtered = apply_filters( $capability . '_roles', $roles );
 
 		// Make sure we have the expected type.
 		if ( ! is_array( $filtered ) ) {
-			return array();
+			return [];
 		}
 
 		return $filtered;

@@ -1,0 +1,102 @@
+{
+    "check_date": "2026-01-13 20:28:35",
+    "wordpress": {
+        "current_version": "6.9",
+        "latest_version": "6.9",
+        "needs_update": false
+    },
+    "plugins": {
+        "total_installed": 3,
+        "total_active": 36,
+        "active_needing_update": 3,
+        "active_up_to_date": 0,
+        "inactive": 0,
+        "active_plugins_needing_update": [
+            {
+                "name": "Elementor",
+                "file": "elementor/elementor.php",
+                "current_version": "3.25.10",
+                "latest_version": "3.34.1",
+                "has_update": true,
+                "is_active": true,
+                "update_url": "https://downloads.wordpress.org/plugin/elementor.3.34.1.zip"
+            },
+            {
+                "name": "Site Kit by Google",
+                "file": "google-site-kit/google-site-kit.php",
+                "current_version": "1.43.0",
+                "latest_version": "1.170.0",
+                "has_update": true,
+                "is_active": true,
+                "update_url": "https://downloads.wordpress.org/plugin/google-site-kit.1.170.0.zip"
+            },
+            {
+                "name": "Yoast SEO",
+                "file": "wordpress-seo/wp-seo.php",
+                "current_version": "11.4",
+                "latest_version": "26.7",
+                "has_update": true,
+                "is_active": true,
+                "update_url": "https://downloads.wordpress.org/plugin/wordpress-seo.26.7.zip"
+            }
+        ],
+        "all_active_plugins": [
+            {
+                "name": "Elementor",
+                "file": "elementor/elementor.php",
+                "current_version": "3.25.10",
+                "latest_version": "3.34.1",
+                "has_update": true,
+                "is_active": true,
+                "update_url": "https://downloads.wordpress.org/plugin/elementor.3.34.1.zip"
+            },
+            {
+                "name": "Site Kit by Google",
+                "file": "google-site-kit/google-site-kit.php",
+                "current_version": "1.43.0",
+                "latest_version": "1.170.0",
+                "has_update": true,
+                "is_active": true,
+                "update_url": "https://downloads.wordpress.org/plugin/google-site-kit.1.170.0.zip"
+            },
+            {
+                "name": "Yoast SEO",
+                "file": "wordpress-seo/wp-seo.php",
+                "current_version": "11.4",
+                "latest_version": "26.7",
+                "has_update": true,
+                "is_active": true,
+                "update_url": "https://downloads.wordpress.org/plugin/wordpress-seo.26.7.zip"
+            }
+        ],
+        "all_plugins": [
+            {
+                "name": "Elementor",
+                "file": "elementor/elementor.php",
+                "current_version": "3.25.10",
+                "latest_version": "3.34.1",
+                "has_update": true,
+                "is_active": true,
+                "update_url": "https://downloads.wordpress.org/plugin/elementor.3.34.1.zip"
+            },
+            {
+                "name": "Site Kit by Google",
+                "file": "google-site-kit/google-site-kit.php",
+                "current_version": "1.43.0",
+                "latest_version": "1.170.0",
+                "has_update": true,
+                "is_active": true,
+                "update_url": "https://downloads.wordpress.org/plugin/google-site-kit.1.170.0.zip"
+            },
+            {
+                "name": "Yoast SEO",
+                "file": "wordpress-seo/wp-seo.php",
+                "current_version": "11.4",
+                "latest_version": "26.7",
+                "has_update": true,
+                "is_active": true,
+                "update_url": "https://downloads.wordpress.org/plugin/wordpress-seo.26.7.zip"
+            }
+        ]
+    }
+}

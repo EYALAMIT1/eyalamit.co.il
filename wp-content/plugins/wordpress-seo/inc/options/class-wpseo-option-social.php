@@ -24,7 +24,7 @@ class WPSEO_Option_Social extends WPSEO_Option {
 	 *
 	 * @var array
 	 */
-	protected $defaults = array(
+	protected $defaults = [
 		// Form fields.
 		'facebook_site'         => '', // Text field.
 		'instagram_url'         => '',
@@ -44,20 +44,19 @@ class WPSEO_Option_Social extends WPSEO_Option {
 		'twitter_card_type'     => 'summary_large_image',
 		'youtube_url'           => '',
 		'wikipedia_url'         => '',
-		// Form field, but not always available.
-		'fbadminapp'            => '', // Facebook app ID.
-	);
+		'other_social_urls'     => [],
+		'mastodon_url'          => '',
+	];
 
 	/**
 	 * Array of sub-options which should not be overloaded with multi-site defaults.
 	 *
 	 * @var array
 	 */
-	public $ms_exclude = array(
+	public $ms_exclude = [
 		/* Privacy. */
 		'pinterestverify',
-		'fbadminapp',
-	);
+	];
 
 	/**
 	 * Array of allowed twitter card types.
@@ -70,15 +69,24 @@ class WPSEO_Option_Social extends WPSEO_Option {
 	 *
 	 * @var array
 	 */
-	public static $twitter_card_types = array(
-		'summary'             => '',
+	public static $twitter_card_types = [
 		'summary_large_image' => '',
+		// 'summary'             => '',
 		// 'photo'               => '',
 		// 'gallery'             => '',
 		// 'app'                 => '',
 		// 'player'              => '',
 		// 'product'             => '',
-	);
+	];
+
+	/**
+	 * Add the actions and filters for the option.
+	 */
+	protected function __construct() {
+		parent::__construct();
+
+		add_filter( 'admin_title', [ 'Yoast_Input_Validation', 'add_yoast_admin_document_title_errors' ] );
+	}
 
 	/**
 	 * Get the singleton instance of this class.
@@ -99,8 +107,7 @@ class WPSEO_Option_Social extends WPSEO_Option {
 	 * @return void
 	 */
 	public function translate_defaults() {
-		self::$twitter_card_types['summary']             = __( 'Summary', 'wordpress-seo' );
-		self::$twitter_card_types['summary_large_image'] = __( 'Summary with large image', 'wordpress-seo' );
+		self::$twitter_card_types['summary_large_image'] = 'Summary with large image';
 	}
 
 	/**
@@ -145,6 +152,7 @@ class WPSEO_Option_Social extends WPSEO_Option {
 				case 'og_frontpage_image':
 				case 'youtube_url':
 				case 'wikipedia_url':
+				case 'mastodon_url':
 					$this->validate_url( $key, $dirty, $old, $clean );
 					break;
 
@@ -155,45 +163,20 @@ class WPSEO_Option_Social extends WPSEO_Option {
 				/* Twitter user name. */
 				case 'twitter_site':
 					if ( isset( $dirty[ $key ] ) && $dirty[ $key ] !== '' ) {
-						$twitter_id = sanitize_text_field( ltrim( $dirty[ $key ], '@' ) );
+						$twitter_id = $this->validate_twitter_id( $dirty[ $key ] );
 
-						/*
-						 * From the Twitter documentation about twitter screen names:
-						 * Typically a maximum of 15 characters long, but some historical accounts
-						 * may exist with longer names.
-						 * A username can only contain alphanumeric characters (letters A-Z, numbers 0-9)
-						 * with the exception of underscores.
-						 *
-						 * @link https://support.twitter.com/articles/101299-why-can-t-i-register-certain-usernames
-						 * @link https://dev.twitter.com/docs/platform-objects/users
-						 */
-						if ( preg_match( '`^[A-Za-z0-9_]{1,25}$`', $twitter_id ) ) {
+						if ( $twitter_id ) {
 							$clean[ $key ] = $twitter_id;
 						}
-						elseif ( preg_match( '`^http(?:s)?://(?:www\.)?twitter\.com/(?P<handle>[A-Za-z0-9_]{1,25})/?$`', $twitter_id, $matches ) ) {
-							$clean[ $key ] = $matches['handle'];
-						}
-						else {
-							if ( isset( $old[ $key ] ) && $old[ $key ] !== '' ) {
+						elseif ( isset( $old[ $key ] ) && $old[ $key ] !== '' ) {
 								$twitter_id = sanitize_text_field( ltrim( $old[ $key ], '@' ) );
-								if ( preg_match( '`^[A-Za-z0-9_]{1,25}$`', $twitter_id ) ) {
-									$clean[ $key ] = $twitter_id;
-								}
-							}
-							if ( function_exists( 'add_settings_error' ) ) {
-								add_settings_error(
-									$this->group_name, // Slug title of the setting.
-									'_' . $key, // Suffix-ID for the error message box.
-									sprintf(
-										/* translators: %s expands to a twitter user name. */
-										__( '%s does not seem to be a valid Twitter user-id. Please correct.', 'wordpress-seo' ),
-										'<strong>' . esc_html( sanitize_text_field( $dirty[ $key ] ) ) . '</strong>'
-									), // The error message.
-									'error' // Error type, either 'error' or 'updated'.
-								);
+							if ( preg_match( '`^[A-Za-z0-9_]{1,25}$`', $twitter_id ) ) {
+								$clean[ $key ] = $twitter_id;
 							}
 						}
 						unset( $twitter_id );
+
+						Yoast_Input_Validation::add_dirty_value_to_settings_errors( $key, $dirty[ $key ] );
 					}
 					break;
 
@@ -209,10 +192,41 @@ class WPSEO_Option_Social extends WPSEO_Option {
 					$clean[ $key ] = ( isset( $dirty[ $key ] ) ? WPSEO_Utils::validate_bool( $dirty[ $key ] ) : false );
 					break;
 
-				case 'fbadminapp':
-					if ( isset( $dirty[ $key ] ) && ! empty( $dirty[ $key ] ) ) {
-						$clean[ $key ] = $dirty[ $key ];
+				/* Array fields. */
+				case 'other_social_urls':
+					if ( isset( $dirty[ $key ] ) ) {
+						$items = $dirty[ $key ];
+						if ( ! is_array( $items ) ) {
+							$items = json_decode( $dirty[ $key ], true );
+						}
+
+						if ( is_array( $items ) ) {
+							foreach ( $items as $item_key => $item ) {
+								$validated_url = $this->validate_social_url( $item );
+
+								if ( $validated_url === false ) {
+									// Restore the previous URL values, if any.
+									$old_urls = ( isset( $old[ $key ] ) ) ? $old[ $key ] : [];
+									foreach ( $old_urls as $old_item_key => $old_url ) {
+										if ( $old_url !== '' ) {
+											$url = WPSEO_Utils::sanitize_url( $old_url );
+											if ( $url !== '' ) {
+												$clean[ $key ][ $old_item_key ] = $url;
+											}
+										}
+									}
+									break;
+								}
+
+								// The URL format is valid, let's sanitize it.
+								$url = WPSEO_Utils::sanitize_url( $validated_url );
+								if ( $url !== '' ) {
+									$clean[ $key ][ $item_key ] = $url;
+								}
+							}
+						}
 					}
+
 					break;
 			}
 		}
@@ -221,14 +235,58 @@ class WPSEO_Option_Social extends WPSEO_Option {
 	}
 
 	/**
+	 * Validates a social URL.
+	 *
+	 * @param string $url The url to be validated.
+	 *
+	 * @return string|false The validated URL or false if the URL is not valid.
+	 */
+	public function validate_social_url( $url ) {
+		$validated_url = filter_var( WPSEO_Utils::sanitize_url( trim( $url ) ), FILTER_VALIDATE_URL );
+
+		return $validated_url;
+	}
+
+	/**
+	 * Validates a twitter id.
+	 *
+	 * @param string $twitter_id    The twitter id to be validated.
+	 * @param bool   $strip_at_sign Whether or not to strip the `@` sign.
+	 *
+	 * @return string|false The validated twitter id or false if it is not valid.
+	 */
+	public function validate_twitter_id( $twitter_id, $strip_at_sign = true ) {
+		$twitter_id = ( $strip_at_sign ) ? sanitize_text_field( ltrim( $twitter_id, '@' ) ) : sanitize_text_field( $twitter_id );
+
+		/*
+		 * From the Twitter documentation about twitter screen names:
+		 * Typically a maximum of 15 characters long, but some historical accounts
+		 * may exist with longer names.
+		 * A username can only contain alphanumeric characters (letters A-Z, numbers 0-9)
+		 * with the exception of underscores.
+		 *
+		 * @link https://support.twitter.com/articles/101299-why-can-t-i-register-certain-usernames
+		 */
+		if ( preg_match( '`^[A-Za-z0-9_]{1,25}$`', $twitter_id ) ) {
+			return $twitter_id;
+		}
+
+		if ( preg_match( '`^http(?:s)?://(?:www\.)?(?:twitter|x)\.com/(?P<handle>[A-Za-z0-9_]{1,25})/?$`', $twitter_id, $matches ) ) {
+			return $matches['handle'];
+		}
+
+		return false;
+	}
+
+	/**
 	 * Clean a given option value.
 	 *
-	 * @param array  $option_value          Old (not merged with defaults or filtered) option value to
-	 *                                      clean according to the rules for this option.
-	 * @param string $current_version       Optional. Version from which to upgrade, if not set,
-	 *                                      version specific upgrades will be disregarded.
-	 * @param array  $all_old_option_values Optional. Only used when importing old options to have
-	 *                                      access to the real old values, in contrast to the saved ones.
+	 * @param array       $option_value          Old (not merged with defaults or filtered) option value to
+	 *                                           clean according to the rules for this option.
+	 * @param string|null $current_version       Optional. Version from which to upgrade, if not set,
+	 *                                           version specific upgrades will be disregarded.
+	 * @param array|null  $all_old_option_values Optional. Only used when importing old options to have
+	 *                                           access to the real old values, in contrast to the saved ones.
 	 *
 	 * @return array Cleaned option.
 	 */
@@ -238,7 +296,7 @@ class WPSEO_Option_Social extends WPSEO_Option {
 		$old_option = null;
 		if ( isset( $all_old_option_values ) ) {
 			// Ok, we have an import.
-			if ( isset( $all_old_option_values['wpseo_indexation'] ) && is_array( $all_old_option_values['wpseo_indexation'] ) && $all_old_option_values['wpseo_indexation'] !== array() ) {
+			if ( isset( $all_old_option_values['wpseo_indexation'] ) && is_array( $all_old_option_values['wpseo_indexation'] ) && $all_old_option_values['wpseo_indexation'] !== [] ) {
 				$old_option = $all_old_option_values['wpseo_indexation'];
 			}
 		}
@@ -246,10 +304,10 @@ class WPSEO_Option_Social extends WPSEO_Option {
 			$old_option = get_option( 'wpseo_indexation' );
 		}
 
-		if ( is_array( $old_option ) && $old_option !== array() ) {
-			$move = array(
+		if ( is_array( $old_option ) && $old_option !== [] ) {
+			$move = [
 				'opengraph',
-			);
+			];
 			foreach ( $move as $key ) {
 				if ( isset( $old_option[ $key ] ) && ! isset( $option_value[ $key ] ) ) {
 					$option_value[ $key ] = $old_option[ $key ];
@@ -258,7 +316,6 @@ class WPSEO_Option_Social extends WPSEO_Option {
 			unset( $move, $key );
 		}
 		unset( $old_option );
-
 
 		return $option_value;
 	}

@@ -17,7 +17,7 @@ class WPSEO_Sitemaps {
 	 *
 	 * @var string
 	 */
-	const SITEMAP_INDEX_TYPE = '1';
+	public const SITEMAP_INDEX_TYPE = '1';
 
 	/**
 	 * Content of the sitemap to output.
@@ -57,11 +57,8 @@ class WPSEO_Sitemaps {
 	private $current_page = 1;
 
 	/**
-	 * @var WPSEO_Sitemap_Timezone
-	 */
-	private $timezone;
-
-	/**
+	 * The sitemaps router.
+	 *
 	 * @since 3.2
 	 *
 	 * @var WPSEO_Sitemaps_Router
@@ -69,6 +66,8 @@ class WPSEO_Sitemaps {
 	public $router;
 
 	/**
+	 * The sitemap renderer.
+	 *
 	 * @since 3.2
 	 *
 	 * @var WPSEO_Sitemaps_Renderer
@@ -76,6 +75,8 @@ class WPSEO_Sitemaps {
 	public $renderer;
 
 	/**
+	 * The sitemap cache.
+	 *
 	 * @since 3.2
 	 *
 	 * @var WPSEO_Sitemaps_Cache
@@ -83,6 +84,8 @@ class WPSEO_Sitemaps {
 	public $cache;
 
 	/**
+	 * The sitemap providers.
+	 *
 	 * @since 3.2
 	 *
 	 * @var WPSEO_Sitemap_Provider[]
@@ -94,13 +97,11 @@ class WPSEO_Sitemaps {
 	 */
 	public function __construct() {
 
-		add_action( 'after_setup_theme', array( $this, 'init_sitemaps_providers' ) );
-		add_action( 'after_setup_theme', array( $this, 'reduce_query_load' ), 99 );
-		add_action( 'pre_get_posts', array( $this, 'redirect' ), 1 );
-		add_action( 'wpseo_hit_sitemap_index', array( $this, 'hit_sitemap_index' ) );
-		add_action( 'wpseo_ping_search_engines', array( __CLASS__, 'ping_search_engines' ) );
+		add_action( 'after_setup_theme', [ $this, 'init_sitemaps_providers' ] );
+		add_action( 'after_setup_theme', [ $this, 'reduce_query_load' ], 99 );
+		add_action( 'pre_get_posts', [ $this, 'redirect' ], 1 );
+		add_action( 'wpseo_hit_sitemap_index', [ $this, 'hit_sitemap_index' ] );
 
-		$this->timezone = new WPSEO_Sitemap_Timezone();
 		$this->router   = new WPSEO_Sitemaps_Router();
 		$this->renderer = new WPSEO_Sitemaps_Renderer();
 		$this->cache    = new WPSEO_Sitemaps_Cache();
@@ -114,16 +115,18 @@ class WPSEO_Sitemaps {
 	 * Initialize sitemap providers classes.
 	 *
 	 * @since 5.3
+	 *
+	 * @return void
 	 */
 	public function init_sitemaps_providers() {
 
-		$this->providers = array(
+		$this->providers = [
 			new WPSEO_Post_Type_Sitemap_Provider(),
 			new WPSEO_Taxonomy_Sitemap_Provider(),
 			new WPSEO_Author_Sitemap_Provider(),
-		);
+		];
 
-		$external_providers = apply_filters( 'wpseo_sitemaps_providers', array() );
+		$external_providers = apply_filters( 'wpseo_sitemaps_providers', [] );
 
 		foreach ( $external_providers as $provider ) {
 			if ( is_object( $provider ) && $provider instanceof WPSEO_Sitemap_Provider ) {
@@ -134,17 +137,16 @@ class WPSEO_Sitemaps {
 
 	/**
 	 * Check the current request URI, if we can determine it's probably an XML sitemap, kill loading the widgets.
+	 *
+	 * @return void
 	 */
 	public function reduce_query_load() {
-
 		if ( ! isset( $_SERVER['REQUEST_URI'] ) ) {
 			return;
 		}
-
 		$request_uri = sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) );
 		$extension   = substr( $request_uri, -4 );
-
-		if ( false !== stripos( $request_uri, 'sitemap' ) && in_array( $extension, array( '.xml', '.xsl' ), true ) ) {
+		if ( stripos( $request_uri, 'sitemap' ) !== false && in_array( $extension, [ '.xml', '.xsl' ], true ) ) {
 			remove_all_actions( 'widgets_init' );
 		}
 	}
@@ -152,14 +154,16 @@ class WPSEO_Sitemaps {
 	/**
 	 * Register your own sitemap. Call this during 'init'.
 	 *
-	 * @param string   $name     The name of the sitemap.
-	 * @param callback $function Function to build your sitemap.
-	 * @param string   $rewrite  Optional. Regular expression to match your sitemap with.
+	 * @param string   $name              The name of the sitemap.
+	 * @param callback $building_function Function to build your sitemap.
+	 * @param string   $rewrite           Optional. Regular expression to match your sitemap with.
+	 *
+	 * @return void
 	 */
-	public function register_sitemap( $name, $function, $rewrite = '' ) {
-		add_action( 'wpseo_do_sitemap_' . $name, $function );
-		if ( ! empty( $rewrite ) ) {
-			add_rewrite_rule( $rewrite, 'index.php?sitemap=' . $name, 'top' );
+	public function register_sitemap( $name, $building_function, $rewrite = '' ) {
+		add_action( 'wpseo_do_sitemap_' . $name, $building_function );
+		if ( $rewrite ) {
+			Yoast_Dynamic_Rewrites::instance()->add_rule( $rewrite, 'index.php?sitemap=' . $name, 'top' );
 		}
 	}
 
@@ -168,14 +172,16 @@ class WPSEO_Sitemaps {
 	 *
 	 * @since 1.4.23
 	 *
-	 * @param string   $name     The name of the XSL file.
-	 * @param callback $function Function to build your XSL file.
-	 * @param string   $rewrite  Optional. Regular expression to match your sitemap with.
+	 * @param string   $name              The name of the XSL file.
+	 * @param callback $building_function Function to build your XSL file.
+	 * @param string   $rewrite           Optional. Regular expression to match your sitemap with.
+	 *
+	 * @return void
 	 */
-	public function register_xsl( $name, $function, $rewrite = '' ) {
-		add_action( 'wpseo_xsl_' . $name, $function );
-		if ( ! empty( $rewrite ) ) {
-			add_rewrite_rule( $rewrite, 'index.php?yoast-sitemap-xsl=' . $name, 'top' );
+	public function register_xsl( $name, $building_function, $rewrite = '' ) {
+		add_action( 'wpseo_xsl_' . $name, $building_function );
+		if ( $rewrite ) {
+			Yoast_Dynamic_Rewrites::instance()->add_rule( $rewrite, 'index.php?yoast-sitemap-xsl=' . $name, 'top' );
 		}
 	}
 
@@ -183,7 +189,9 @@ class WPSEO_Sitemaps {
 	 * Set the sitemap current page to allow creating partial sitemaps with WP-CLI
 	 * in a one-off process.
 	 *
-	 * @param integer $current_page The part that should be generated.
+	 * @param int $current_page The part that should be generated.
+	 *
+	 * @return void
 	 */
 	public function set_n( $current_page ) {
 		if ( is_scalar( $current_page ) && intval( $current_page ) > 0 ) {
@@ -195,6 +203,8 @@ class WPSEO_Sitemaps {
 	 * Set the sitemap content to display after you have generated it.
 	 *
 	 * @param string $sitemap The generated sitemap to output.
+	 *
+	 * @return void
 	 */
 	public function set_sitemap( $sitemap ) {
 		$this->sitemap = $sitemap;
@@ -203,26 +213,32 @@ class WPSEO_Sitemaps {
 	/**
 	 * Set as true to make the request 404. Used stop the display of empty sitemaps or invalid requests.
 	 *
-	 * @param bool $bool Is this a bad request. True or false.
+	 * @param bool $is_bad Is this a bad request. True or false.
+	 *
+	 * @return void
 	 */
-	public function set_bad_sitemap( $bool ) {
-		$this->bad_sitemap = (bool) $bool;
+	public function set_bad_sitemap( $is_bad ) {
+		$this->bad_sitemap = (bool) $is_bad;
 	}
 
 	/**
 	 * Prevent stupid plugins from running shutdown scripts when we're obviously not outputting HTML.
 	 *
 	 * @since 1.4.16
+	 *
+	 * @return void
 	 */
 	public function sitemap_close() {
 		remove_all_actions( 'wp_footer' );
-		die();
+		exit();
 	}
 
 	/**
 	 * Hijack requests for potential sitemaps and XSL files.
 	 *
-	 * @param \WP_Query $query Main query instance.
+	 * @param WP_Query $query Main query instance.
+	 *
+	 * @return void
 	 */
 	public function redirect( $query ) {
 
@@ -250,6 +266,11 @@ class WPSEO_Sitemaps {
 
 		if ( empty( $type ) ) {
 			return;
+		}
+
+		if ( get_query_var( 'sitemap_n' ) === '1' || get_query_var( 'sitemap_n' ) === '0' ) {
+			wp_safe_redirect( home_url( "/$type-sitemap.xml" ), 301, 'Yoast SEO' );
+			exit;
 		}
 
 		$this->set_n( get_query_var( 'sitemap_n' ) );
@@ -281,7 +302,7 @@ class WPSEO_Sitemaps {
 
 		$this->transient = false;
 
-		if ( true !== $this->cache->is_enabled() ) {
+		if ( $this->cache->is_enabled() !== true ) {
 			return false;
 		}
 
@@ -329,6 +350,8 @@ class WPSEO_Sitemaps {
 	 * Sets $bad_sitemap if this isn't for the root sitemap, a post type or taxonomy.
 	 *
 	 * @param string $type The requested sitemap's identifier.
+	 *
+	 * @return void
 	 */
 	public function build_sitemap( $type ) {
 
@@ -356,10 +379,12 @@ class WPSEO_Sitemaps {
 				$links = $provider->get_sitemap_links( $type, $entries_per_page, $this->current_page );
 			} catch ( OutOfBoundsException $exception ) {
 				$this->bad_sitemap = true;
+
 				return;
 			}
 
 			$this->sitemap = $this->renderer->get_sitemap( $links, $type, $this->current_page );
+
 			return;
 		}
 
@@ -377,15 +402,24 @@ class WPSEO_Sitemaps {
 
 	/**
 	 * Build the root sitemap (example.com/sitemap_index.xml) which lists sub-sitemaps for other content types.
+	 *
+	 * @return void
 	 */
 	public function build_root_map() {
 
-		$links            = array();
+		$links            = [];
 		$entries_per_page = $this->get_entries_per_page();
 
 		foreach ( $this->providers as $provider ) {
 			$links = array_merge( $links, $provider->get_index_links( $entries_per_page ) );
 		}
+
+		/**
+		 * Filter the sitemap links array before the index sitemap is built.
+		 *
+		 * @param array  $links Array of sitemap links
+		 */
+		$links = apply_filters( 'wpseo_sitemap_index_links', $links );
 
 		if ( empty( $links ) ) {
 			$this->bad_sitemap = true;
@@ -400,9 +434,11 @@ class WPSEO_Sitemaps {
 	/**
 	 * Spits out the XSL for the XML sitemap.
 	 *
+	 * @since 1.4.13
+	 *
 	 * @param string $type Type to output.
 	 *
-	 * @since 1.4.13
+	 * @return void
 	 */
 	public function xsl_output( $type ) {
 
@@ -424,25 +460,22 @@ class WPSEO_Sitemaps {
 		// Make the browser cache this file properly.
 		$expires = YEAR_IN_SECONDS;
 		header( 'Pragma: public' );
-		header( 'Cache-Control: maxage=' . $expires );
-		header( 'Expires: ' . gmdate( 'D, d M Y H:i:s', ( time() + $expires ) ) . ' GMT' );
+		header( 'Cache-Control: max-age=' . $expires );
+		header( 'Expires: ' . YoastSEO()->helpers->date->format_timestamp( ( time() + $expires ), 'D, d M Y H:i:s' ) . ' GMT' );
 
+		// Don't use WP_Filesystem() here because that's not initialized yet. See https://yoast.atlassian.net/browse/QAK-2043.
 		readfile( WPSEO_PATH . 'css/main-sitemap.xsl' );
 	}
 
 	/**
-	 * Spit out the generated sitemap and relevant headers and encoding information.
+	 * Spit out the generated sitemap.
+	 *
+	 * @return void
 	 */
 	public function output() {
-
-		if ( ! headers_sent() ) {
-			header( $this->http_protocol . ' 200 OK', true, 200 );
-			// Prevent the search engines from indexing the XML Sitemap.
-			header( 'X-Robots-Tag: noindex, follow', true );
-			header( 'Content-Type: text/xml; charset=' . esc_attr( $this->renderer->get_output_charset() ) );
-		}
-
-		echo $this->renderer->get_output( $this->sitemap, $this->transient );
+		$this->send_headers();
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaping sitemap as either xml or html results in empty document.
+		echo $this->renderer->get_output( $this->sitemap );
 	}
 
 	/**
@@ -475,7 +508,7 @@ class WPSEO_Sitemaps {
 		static $post_type_dates = null;
 
 		if ( ! is_array( $post_types ) ) {
-			$post_types = array( $post_types );
+			$post_types = [ $post_types ];
 		}
 
 		foreach ( $post_types as $post_type ) {
@@ -485,26 +518,48 @@ class WPSEO_Sitemaps {
 			}
 		}
 
-		if ( is_null( $post_type_dates ) ) {
+		if ( $post_type_dates === null ) {
 
-			$post_type_dates = array();
-
-			// Consider using WPSEO_Post_Type::get_accessible_post_types() to filter out any `no-index` post-types.
-			$post_type_names = get_post_types( array( 'public' => true ) );
+			$post_type_dates = [];
+			$post_type_names = WPSEO_Post_Type::get_accessible_post_types();
 
 			if ( ! empty( $post_type_names ) ) {
 				$post_statuses = array_map( 'esc_sql', self::get_post_statuses() );
+				$replacements  = array_merge(
+					[
+						'post_type',
+						'post_modified_gmt',
+						'date',
+						$wpdb->posts,
+						'post_status',
+					],
+					$post_statuses,
+					[ 'post_type' ],
+					array_keys( $post_type_names ),
+					[
+						'post_type',
+						'date',
+					]
+				);
 
-				$sql = "
-					SELECT post_type, MAX(post_modified_gmt) AS date
-					FROM $wpdb->posts
-					WHERE post_status IN ('" . implode( "','", $post_statuses ) . "')
-						AND post_type IN ('" . implode( "','", $post_type_names ) . "')
-					GROUP BY post_type
-					ORDER BY post_modified_gmt DESC
-				";
+				//phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- We need to use a direct query here.
+				//phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching -- Reason: No relevant caches.
+				$dates = $wpdb->get_results(
+					//phpcs:disable WordPress.DB.PreparedSQLPlaceholders -- %i placeholder is still not recognized.
+					$wpdb->prepare(
+						'
+					SELECT %i, MAX(%i) AS %i
+					FROM %i
+					WHERE %i IN (' . implode( ', ', array_fill( 0, count( $post_statuses ), '%s' ) ) . ')
+						AND %i IN (' . implode( ', ', array_fill( 0, count( $post_type_names ), '%s' ) ) . ')
+					GROUP BY %i
+					ORDER BY %i DESC
+				',
+						$replacements
+					)
+				);
 
-				foreach ( $wpdb->get_results( $sql ) as $obj ) {
+				foreach ( $dates as $obj ) {
 					$post_type_dates[ $obj->post_type ] = $obj->date;
 				}
 			}
@@ -531,37 +586,7 @@ class WPSEO_Sitemaps {
 	 * @return string
 	 */
 	public function get_last_modified( $post_types ) {
-
-		return $this->timezone->format_date( self::get_last_modified_gmt( $post_types ) );
-	}
-
-	/**
-	 * Notify search engines of the updated sitemap.
-	 *
-	 * @param string|null $url Optional URL to make the ping for.
-	 */
-	public static function ping_search_engines( $url = null ) {
-
-		/**
-		 * Filter: 'wpseo_allow_xml_sitemap_ping' - Check if pinging is not allowed (allowed by default)
-		 *
-		 * @api boolean $allow_ping The boolean that is set to true by default.
-		 */
-		if ( apply_filters( 'wpseo_allow_xml_sitemap_ping', true ) === false ) {
-			return;
-		}
-
-		if ( '0' === get_option( 'blog_public' ) ) { // Don't ping if blog is not public.
-			return;
-		}
-
-		if ( empty( $url ) ) {
-			$url = urlencode( WPSEO_Sitemaps_Router::get_base_url( 'sitemap_index.xml' ) );
-		}
-
-		// Ping Google and Bing.
-		wp_remote_get( 'http://www.google.com/webmasters/tools/ping?sitemap=' . $url, array( 'blocking' => false ) );
-		wp_remote_get( 'http://www.bing.com/ping?sitemap=' . $url, array( 'blocking' => false ) );
+		return YoastSEO()->helpers->date->format( self::get_last_modified_gmt( $post_types ) );
 	}
 
 	/**
@@ -586,9 +611,9 @@ class WPSEO_Sitemaps {
 	/**
 	 * Get post statuses for post_type or the root sitemap.
 	 *
-	 * @param string $type Provide a type for a post_type sitemap, SITEMAP_INDEX_TYPE for the root sitemap.
-	 *
 	 * @since 10.2
+	 *
+	 * @param string $type Provide a type for a post_type sitemap, SITEMAP_INDEX_TYPE for the root sitemap.
 	 *
 	 * @return array List of post statuses.
 	 */
@@ -599,10 +624,10 @@ class WPSEO_Sitemaps {
 		 * @param array  $post_statuses Post status list, defaults to array( 'publish' ).
 		 * @param string $type          Post type or SITEMAP_INDEX_TYPE.
 		 */
-		$post_statuses = apply_filters( 'wpseo_sitemap_post_statuses', array( 'publish' ), $type );
+		$post_statuses = apply_filters( 'wpseo_sitemap_post_statuses', [ 'publish' ], $type );
 
 		if ( ! is_array( $post_statuses ) || empty( $post_statuses ) ) {
-			$post_statuses = array( 'publish' );
+			$post_statuses = [ 'publish' ];
 		}
 
 		if ( ( $type === self::SITEMAP_INDEX_TYPE || $type === 'attachment' )
@@ -612,5 +637,38 @@ class WPSEO_Sitemaps {
 		}
 
 		return $post_statuses;
+	}
+
+	/**
+	 * Sends all the required HTTP Headers.
+	 *
+	 * @return void
+	 */
+	private function send_headers() {
+		if ( headers_sent() ) {
+			return;
+		}
+
+		$headers = [
+			$this->http_protocol . ' 200 OK' => 200,
+			// Prevent the search engines from indexing the XML Sitemap.
+			'X-Robots-Tag: noindex, follow'  => '',
+			'Content-Type: text/xml; charset=' . esc_attr( $this->renderer->get_output_charset() ) => '',
+		];
+
+		/**
+		 * Filter the HTTP headers we send before an XML sitemap.
+		 *
+		 * @param array  $headers The HTTP headers we're going to send out.
+		 */
+		$headers = apply_filters( 'wpseo_sitemap_http_headers', $headers );
+
+		foreach ( $headers as $header => $status ) {
+			if ( is_numeric( $status ) ) {
+				header( $header, true, $status );
+				continue;
+			}
+			header( $header, true );
+		}
 	}
 }

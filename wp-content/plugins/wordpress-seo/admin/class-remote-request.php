@@ -11,35 +11,46 @@
 class WPSEO_Remote_Request {
 
 	/**
+	 * Holds the post method.
+	 *
 	 * @var string
 	 */
-	const METHOD_POST = 'post';
+	public const METHOD_POST = 'post';
 
 	/**
+	 * Holds the get method.
+	 *
 	 * @var string
 	 */
-	const METHOD_GET = 'get';
+	public const METHOD_GET = 'get';
 
 	/**
+	 * Holds the endpoint to send the request to.
+	 *
 	 * @var string
 	 */
 	protected $endpoint = '';
 
 	/**
+	 * Holds the arguments to use in this request.
+	 *
 	 * @var array
 	 */
-	protected $args = array(
+	protected $args = [
 		'blocking'  => false,
-		'sslverify' => false,
 		'timeout'   => 2,
-	);
+	];
 
 	/**
+	 * Holds the response error.
+	 *
 	 * @var WP_Error|null
 	 */
 	protected $response_error;
 
 	/**
+	 * Holds the response body.
+	 *
 	 * @var mixed
 	 */
 	protected $response_body;
@@ -50,7 +61,7 @@ class WPSEO_Remote_Request {
 	 * @param string $endpoint The endpoint to send the request to.
 	 * @param array  $args     The arguments to use in this request.
 	 */
-	public function __construct( $endpoint, array $args = array() ) {
+	public function __construct( $endpoint, array $args = [] ) {
 		$this->endpoint = $endpoint;
 		$this->args     = wp_parse_args( $this->args, $args );
 	}
@@ -59,6 +70,8 @@ class WPSEO_Remote_Request {
 	 * Sets the request body.
 	 *
 	 * @param mixed $body The body to set.
+	 *
+	 * @return void
 	 */
 	public function set_body( $body ) {
 		$this->args['body'] = $body;
@@ -91,7 +104,7 @@ class WPSEO_Remote_Request {
 	/**
 	 * Returns the value of the response error.
 	 *
-	 * @return null|WP_Error The response error.
+	 * @return WP_Error|null The response error.
 	 */
 	public function get_response_error() {
 		return $this->response_error;

@@ -41,7 +41,9 @@ class SearchConsole extends \Google\Site_Kit_Dependencies\Google\Service
     public $searchanalytics;
     public $sitemaps;
     public $sites;
+    public $urlInspection_index;
     public $urlTestingTools_mobileFriendlyTest;
+    public $rootUrlTemplate;
     /**
      * Constructs the internal representation of the SearchConsole service.
      *
@@ -53,6 +55,7 @@ class SearchConsole extends \Google\Site_Kit_Dependencies\Google\Service
     {
         parent::__construct($clientOrConfig);
         $this->rootUrl = $rootUrl ?: 'https://searchconsole.googleapis.com/';
+        $this->rootUrlTemplate = $rootUrl ?: 'https://searchconsole.UNIVERSE_DOMAIN/';
         $this->servicePath = '';
         $this->batchPath = 'batch';
         $this->version = 'v1';
@@ -60,6 +63,7 @@ class SearchConsole extends \Google\Site_Kit_Dependencies\Google\Service
         $this->searchanalytics = new \Google\Site_Kit_Dependencies\Google\Service\SearchConsole\Resource\Searchanalytics($this, $this->serviceName, 'searchanalytics', ['methods' => ['query' => ['path' => 'webmasters/v3/sites/{siteUrl}/searchAnalytics/query', 'httpMethod' => 'POST', 'parameters' => ['siteUrl' => ['location' => 'path', 'type' => 'string', 'required' => \true]]]]]);
         $this->sitemaps = new \Google\Site_Kit_Dependencies\Google\Service\SearchConsole\Resource\Sitemaps($this, $this->serviceName, 'sitemaps', ['methods' => ['delete' => ['path' => 'webmasters/v3/sites/{siteUrl}/sitemaps/{feedpath}', 'httpMethod' => 'DELETE', 'parameters' => ['siteUrl' => ['location' => 'path', 'type' => 'string', 'required' => \true], 'feedpath' => ['location' => 'path', 'type' => 'string', 'required' => \true]]], 'get' => ['path' => 'webmasters/v3/sites/{siteUrl}/sitemaps/{feedpath}', 'httpMethod' => 'GET', 'parameters' => ['siteUrl' => ['location' => 'path', 'type' => 'string', 'required' => \true], 'feedpath' => ['location' => 'path', 'type' => 'string', 'required' => \true]]], 'list' => ['path' => 'webmasters/v3/sites/{siteUrl}/sitemaps', 'httpMethod' => 'GET', 'parameters' => ['siteUrl' => ['location' => 'path', 'type' => 'string', 'required' => \true], 'sitemapIndex' => ['location' => 'query', 'type' => 'string']]], 'submit' => ['path' => 'webmasters/v3/sites/{siteUrl}/sitemaps/{feedpath}', 'httpMethod' => 'PUT', 'parameters' => ['siteUrl' => ['location' => 'path', 'type' => 'string', 'required' => \true], 'feedpath' => ['location' => 'path', 'type' => 'string', 'required' => \true]]]]]);
         $this->sites = new \Google\Site_Kit_Dependencies\Google\Service\SearchConsole\Resource\Sites($this, $this->serviceName, 'sites', ['methods' => ['add' => ['path' => 'webmasters/v3/sites/{siteUrl}', 'httpMethod' => 'PUT', 'parameters' => ['siteUrl' => ['location' => 'path', 'type' => 'string', 'required' => \true]]], 'delete' => ['path' => 'webmasters/v3/sites/{siteUrl}', 'httpMethod' => 'DELETE', 'parameters' => ['siteUrl' => ['location' => 'path', 'type' => 'string', 'required' => \true]]], 'get' => ['path' => 'webmasters/v3/sites/{siteUrl}', 'httpMethod' => 'GET', 'parameters' => ['siteUrl' => ['location' => 'path', 'type' => 'string', 'required' => \true]]], 'list' => ['path' => 'webmasters/v3/sites', 'httpMethod' => 'GET', 'parameters' => []]]]);
+        $this->urlInspection_index = new \Google\Site_Kit_Dependencies\Google\Service\SearchConsole\Resource\UrlInspectionIndex($this, $this->serviceName, 'index', ['methods' => ['inspect' => ['path' => 'v1/urlInspection/index:inspect', 'httpMethod' => 'POST', 'parameters' => []]]]);
         $this->urlTestingTools_mobileFriendlyTest = new \Google\Site_Kit_Dependencies\Google\Service\SearchConsole\Resource\UrlTestingToolsMobileFriendlyTest($this, $this->serviceName, 'mobileFriendlyTest', ['methods' => ['run' => ['path' => 'v1/urlTestingTools/mobileFriendlyTest:run', 'httpMethod' => 'POST', 'parameters' => []]]]);
     }
 }

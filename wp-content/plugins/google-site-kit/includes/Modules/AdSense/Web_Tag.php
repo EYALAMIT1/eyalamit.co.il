@@ -24,7 +24,8 @@ use Google\Site_Kit\Core\Util\BC_Functions;
  */
 class Web_Tag extends Module_Web_Tag {
 
-	use Method_Proxy_Trait, Tag_With_DNS_Prefetch_Trait;
+	use Method_Proxy_Trait;
+	use Tag_With_DNS_Prefetch_Trait;
 
 	/**
 	 * Registers tag hooks.
@@ -54,11 +55,13 @@ class Web_Tag extends Module_Web_Tag {
 		// because it is required for account verification.
 
 		$adsense_script_src = sprintf(
-			'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=%s',
-			esc_attr( $this->tag_id )
+			'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=%s&host=%s',
+			esc_attr( $this->tag_id ), // Site owner's web property code.
+			'ca-host-pub-2644536267352236' // SiteKit's web property code.
 		);
 
 		$adsense_script_attributes = array(
+			'async'       => true,
 			'src'         => $adsense_script_src,
 			'crossorigin' => 'anonymous',
 		);
@@ -93,5 +96,4 @@ class Web_Tag extends Module_Web_Tag {
 		BC_Functions::wp_print_script_tag( array_merge( $adsense_script_attributes, $adsense_attributes ) );
 		printf( "\n<!-- %s -->\n", esc_html__( 'End Google AdSense snippet added by Site Kit', 'google-site-kit' ) );
 	}
-
 }

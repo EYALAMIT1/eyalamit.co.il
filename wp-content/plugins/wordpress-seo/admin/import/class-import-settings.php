@@ -17,14 +17,18 @@ class WPSEO_Import_Settings {
 	 *
 	 * @var string
 	 */
-	const NONCE_ACTION = 'wpseo-import-settings';
+	public const NONCE_ACTION = 'wpseo-import-settings';
 
 	/**
+	 * Holds the import status instance.
+	 *
 	 * @var WPSEO_Import_Status
 	 */
 	public $status;
 
 	/**
+	 * Holds the old WPSEO version.
+	 *
 	 * @var string
 	 */
 	private $old_wpseo_version;
@@ -48,7 +52,13 @@ class WPSEO_Import_Settings {
 			return;
 		}
 
-		$content = filter_input( INPUT_POST, 'settings_import' );
+		if ( ! isset( $_POST['settings_import'] ) || ! is_string( $_POST['settings_import'] ) ) {
+			return;
+		}
+
+		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Reason: The raw content will be parsed afterwards.
+		$content = wp_unslash( $_POST['settings_import'] );
+
 		if ( empty( $content ) ) {
 			return;
 		}
@@ -64,15 +74,9 @@ class WPSEO_Import_Settings {
 	 * @return void
 	 */
 	protected function parse_options( $raw_options ) {
-		// If we're not on > PHP 5.3, return, as we'll otherwise error out.
-		if ( ! defined( 'WPSEO_NAMESPACES' ) || ! WPSEO_NAMESPACES ) {
-			return;
-		}
+		$options = parse_ini_string( $raw_options, true, INI_SCANNER_RAW );
 
-		// @codingStandardsIgnoreLine
-		$options = parse_ini_string( $raw_options, true, INI_SCANNER_RAW ); // phpcs:ignore PHPCompatibility.FunctionUse.NewFunctions.parse_ini_stringFound -- We won't get to this function if PHP < 5.3 due to the WPSEO_NAMESPACES check above.
-
-		if ( is_array( $options ) && $options !== array() ) {
+		if ( is_array( $options ) && $options !== [] ) {
 			$this->import_options( $options );
 
 			return;
@@ -87,6 +91,8 @@ class WPSEO_Import_Settings {
 	 * @param string $name         Name string.
 	 * @param array  $option_group Option group data.
 	 * @param array  $options      Options data.
+	 *
+	 * @return void
 	 */
 	protected function parse_option_group( $name, $option_group, $options ) {
 		// Make sure that the imported options are cleaned/converted on import.
@@ -100,6 +106,8 @@ class WPSEO_Import_Settings {
 	 * Imports the options if found.
 	 *
 	 * @param array $options The options parsed from the provided settings.
+	 *
+	 * @return void
 	 */
 	protected function import_options( $options ) {
 		if ( isset( $options['wpseo']['version'] ) && $options['wpseo']['version'] !== '' ) {
@@ -112,5 +120,8 @@ class WPSEO_Import_Settings {
 
 		$this->status->set_msg( __( 'Settings successfully imported.', 'wordpress-seo' ) );
 		$this->status->set_status( true );
+
+		// Reset the cached option values.
+		WPSEO_Options::clear_cache();
 	}
 }

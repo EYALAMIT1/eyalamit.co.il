@@ -32,10 +32,11 @@ class Accounts extends \Google\Site_Kit_Dependencies\Google\Service\Resource
     /**
      * Gets a GTM Account. (accounts.get)
      *
-     * @param string $path GTM Accounts's API relative path. Example:
+     * @param string $path GTM Account's API relative path. Example:
      * accounts/{account_id}
      * @param array $optParams Optional parameters.
      * @return Account
+     * @throws \Google\Service\Exception
      */
     public function get($path, $optParams = [])
     {
@@ -48,9 +49,12 @@ class Accounts extends \Google\Site_Kit_Dependencies\Google\Service\Resource
      *
      * @param array $optParams Optional parameters.
      *
+     * @opt_param bool includeGoogleTags Also retrieve accounts associated with
+     * Google Tag when true.
      * @opt_param string pageToken Continuation token for fetching the next page of
      * results.
      * @return ListAccountsResponse
+     * @throws \Google\Service\Exception
      */
     public function listAccounts($optParams = [])
     {
@@ -61,7 +65,7 @@ class Accounts extends \Google\Site_Kit_Dependencies\Google\Service\Resource
     /**
      * Updates a GTM Account. (accounts.update)
      *
-     * @param string $path GTM Accounts's API relative path. Example:
+     * @param string $path GTM Account's API relative path. Example:
      * accounts/{account_id}
      * @param Account $postBody
      * @param array $optParams Optional parameters.
@@ -69,6 +73,7 @@ class Accounts extends \Google\Site_Kit_Dependencies\Google\Service\Resource
      * @opt_param string fingerprint When provided, this fingerprint must match the
      * fingerprint of the account in storage.
      * @return Account
+     * @throws \Google\Service\Exception
      */
     public function update($path, \Google\Site_Kit_Dependencies\Google\Service\TagManager\Account $postBody, $optParams = [])
     {

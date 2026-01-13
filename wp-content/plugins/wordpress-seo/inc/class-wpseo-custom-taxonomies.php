@@ -13,7 +13,7 @@ class WPSEO_Custom_Taxonomies {
 	/**
 	 * Custom taxonomies cache.
 	 *
-	 * @var array
+	 * @var array|null
 	 */
 	protected static $custom_taxonomies = null;
 
@@ -24,15 +24,15 @@ class WPSEO_Custom_Taxonomies {
 	 */
 	public static function get_custom_taxonomies() {
 		// Use cached value if available.
-		if ( ! is_null( self::$custom_taxonomies ) ) {
+		if ( self::$custom_taxonomies !== null ) {
 			return self::$custom_taxonomies;
 		}
 
-		self::$custom_taxonomies = array();
-		$args                    = array(
+		self::$custom_taxonomies = [];
+		$args                    = [
 			'public'   => true,
 			'_builtin' => false,
-		);
+		];
 		$custom_taxonomies       = get_taxonomies( $args, 'names', 'and' );
 
 		if ( is_array( $custom_taxonomies ) ) {
