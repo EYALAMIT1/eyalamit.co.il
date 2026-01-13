@@ -1,0 +1,34 @@
+========================================
+מפת אתר - גרסה 1.0
+תאריך יצירה: 2026-01-14
+========================================
+
+סה"כ URLs במפת אתר: 1,233
+
+חלוקה לפי סוגי תוכן:
+- Attachments (קבצים מצורפים): 1,004 URLs (81.4%)
+- Blog URLs (פוסטים): 148 URLs (12.0%) - Redirects
+- Pages (עמודי תוכן): 81 URLs (6.6%)
+- QR Codes: 50 URLs (4.1%) - Redirects
+- Tags (תגיות): 47 URLs (3.8%)
+- Portfolio Pages: 25 URLs (2.0%)
+- Shop (WooCommerce): ~10 URLs (0.8%)
+- Categories (קטגוריות): 6 URLs (0.5%)
+- Authors (מחברים): 2 URLs (0.2%)
+
+סטטוס:
+- עמודים תקינים: 1,005 (81.51%)
+- עמודים עם בעיות: 228 (18.49%)
+- Redirects: 228 (כל הבעיות) - מטופלים בכללים כלליים
+
+Sitemap URLs:
+- Index: http://localhost:9090/sitemap_index.xml
+- WordPress Core: http://localhost:9090/sitemap.xml
+
+קבצים:
+- SITEMAP-v1.0-2026-01-14.md - דוח מפורט
+- SITEMAP-v1.0-2026-01-14-urls.json - רשימת כל ה-URLs
+- SITEMAP-v1.0-2026-01-14-index.xml - Sitemap Index המקורי
+
+נוצר על ידי: צוות 3 (Gatekeeper - Docs & Git)
+תאריך: 2026-01-14

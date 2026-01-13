@@ -1,0 +1,48 @@
+@media only screen and (max-width: 1000px){
+		.header_bottom {
+		background-color: #090902;
+	}
+				.header_bottom,
+		nav.mobile_menu{
+			background-color: #000000 !important;
+		}
+					.content .container .container_inner.default_template_holder,
+		.content .container .container_inner.page_container_inner {
+			padding-top:20pxpx !important; /*important because of the inline style on page*/
+		}
+	}
+@media only screen and (min-width: 480px) and (max-width: 768px){
+	
+		}
+@media only screen and (max-width: 768px){
+	
+	
+	
+	
+	
+	
+	
+			.footer_bottom_holder{
+			padding-right:10px;
+		}
+			.footer_bottom_holder{
+			padding-left:10px;
+		}
+	
+	}
+@media only screen and (max-width: 600px) {
+	
+	
+	
+	
+	
+	
+	}
+@media only screen and (max-width: 480px){
+
+	
+		
+			.footer_top.footer_top_full {
+			padding-left:10px;
+		}
+	}

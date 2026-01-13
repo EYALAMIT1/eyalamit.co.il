@@ -1,0 +1,23 @@
+{
+    "summary": {
+        "total_attachments": 1004,
+        "attachments_with_usage": 0,
+        "attachments_without_usage": 0,
+        "total_pages_scanned": 1,
+        "processing_time_seconds": 0.03,
+        "average_pages_per_second": 35.41,
+        "batch_size": 50,
+        "total_batches": 1
+    },
+    "performance_metrics": {
+        "batch_size": 50,
+        "total_batches": 1,
+        "cache_hits": 0,
+        "processing_time_seconds": 0.03
+    },
+    "usage_statistics": {
+        "attachments_with_usage": 0,
+        "attachments_without_usage": 0,
+        "most_used_attachments": []
+    }
+}

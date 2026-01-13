@@ -11,6 +11,9 @@ add_action( 'wp_enqueue_scripts', 'wp_schools_enqueue_scripts', 11 );
 // Load Schema JSON-LD implementation (Phase 2.3)
 require_once get_stylesheet_directory() . '/schema-person-specialist.php';
 
+// Load General Redirect Rules (Multi-Environment & Sitemap Cleanup)
+require_once get_stylesheet_directory() . '/functions-redirects.php';
+
 
 /*
 @Recreate the default filters on the_content
