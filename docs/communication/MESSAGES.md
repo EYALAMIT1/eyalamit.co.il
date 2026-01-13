@@ -1498,3 +1498,85 @@ Timestamp: 2026-01-14 01:35
 
 Extra details in professional report: YES
 ```
+
+---
+
+## 📋 [2026-01-14] Pre-Deployment Comprehensive Testing - הכנה
+
+**From:** צוות 3 (Gatekeeper - Docs & Git)  
+**To:** המנכ"ל (CEO)  
+**Subject:** Pre-Deployment Comprehensive Testing - בדיקות מקיפות לפני פריסה  
+**Status:** 🟡 READY_FOR_APPROVAL
+
+---
+
+### סיכום:
+
+לפי בקשת המנכ"ל לבצע "בדיקה מקיפה יותר לאתר לפני הפריסה", הכנתי:
+
+**1. רשימת בדיקות מקיפה:**
+- `docs/testing/PRE-DEPLOYMENT-COMPREHENSIVE-CHECKLIST.md`
+- כוללת: בדיקות טכניות, Sitemap, אבטחה, פונקציונליות, SEO, אוטומציה
+
+**2. מדריך ליצירת מפת אתר:**
+- `docs/development/SITEMAP-GENERATION-GUIDE.md`
+- הסבר מפורט על WordPress Core Sitemap ו-Yoast SEO Sitemap
+
+**3. הודעת הפעלה לצוות 2:**
+- `docs/communication/DISPATCH-PRE-DEPLOYMENT-TESTING.md`
+- הודעה מפורטת עם קונטקסט מלא, הוראות ביצוע, וקריטריוני הצלחה
+
+### מצב Sitemap נוכחי:
+
+**נמצאו 2 sitemaps פעילים:**
+- ✅ **WordPress Core Sitemap:** `http://localhost:9090/sitemap.xml` - פעיל
+- ✅ **Yoast SEO Sitemap:** `http://localhost:9090/sitemap_index.xml` - פעיל
+
+**נדרש:**
+- עדכון ואימות שתי ה-sitemaps
+- וידוא שכל התוכן החשוב נמצא ב-sitemaps
+- עדכון robots.txt להזכיר את ה-sitemap
+
+### המלצה:
+
+**WordPress Core Sitemap** (`sitemap.xml`) הוא הפתרון המומלץ כי:
+- ✅ כבר מובנה ב-WordPress (לא צריך פלאגין נוסף)
+- ✅ אוטומטי ומתעדכן אוטומטית
+- ✅ עובד מצוין עם Google Search Console
+- ✅ לא דורש תחזוקה
+
+**אם יש Yoast SEO מותקן:**
+- אפשר להשתמש ב-Yoast SEO Sitemap (יותר אפשרויות)
+- או להשאיר את WordPress Core Sitemap (פשוט יותר)
+
+### פעולות נדרשות:
+
+**למנכ"ל:**
+- [ ] אישור להפיץ את ההודעה לצוות 2 לביצוע הבדיקות המקיפות
+
+**לצוות 2 (לאחר אישור):**
+- ביצוע כל הבדיקות המקיפות לפי הרשימה
+- עדכון ואימות Sitemap
+- יצירת דוח מקיף
+
+### קבצים שנוצרו:
+
+1. `docs/testing/PRE-DEPLOYMENT-COMPREHENSIVE-CHECKLIST.md` - רשימת בדיקות מפורטת
+2. `docs/development/SITEMAP-GENERATION-GUIDE.md` - מדריך ליצירת sitemap
+3. `docs/communication/DISPATCH-PRE-DEPLOYMENT-TESTING.md` - הודעת הפעלה לצוות 2
+
+### עדכון ACTIVE-TASK.md:
+
+עודכן `docs/project/ACTIVE-TASK.md` עם:
+- משימה חדשה: Pre-Deployment Comprehensive Testing
+- מצב Sitemap נוכחי
+- Phase 5 מסומן כ-PENDING עד השלמת הבדיקות
+
+---
+
+**האם תרצה שאפיץ את ההודעה לצוות 2 לביצוע הבדיקות המקיפות?**
+
+Timestamp: 2026-01-14 02:15
+
+Extra details in professional report: YES
+```

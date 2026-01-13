@@ -1,9 +1,40 @@
-🚀 משימה פעילה: Phase 5 - פריסה ובדיקות קבלה
+🚀 משימה פעילה: Pre-Deployment Comprehensive Testing - בדיקות מקיפות לפני פריסה
 ענף פעיל: wp-6.9-elementor-migration
 סטטוס: 🟡 READY_TO_START
 מנכ"ל מאשר: אייל עמית
-Task ID: EA-V11-PHASE-5
+Task ID: EA-V11-PRE-DEPLOYMENT-TEST
 **תאריך התחלה:** 2026-01-14
+
+**מטרת המשימה:**
+לבצע בדיקה מקיפה של האתר לפני Phase 5 - פריסה לייצור, כולל:
+- בדיקות טכניות בסיסיות
+- יצירת/עדכון מפת אתר (Sitemap)
+- בדיקות פונקציונליות
+- בדיקות SEO
+- בדיקות אוטומטיות
+- דוח מקיף
+
+**צוותים מעורבים:**
+- 🧪 צוות 2 (QA): ביצוע כל הבדיקות המקיפות
+- 🚦 צוות 3 (Gatekeeper): תזמור והכנת הודעות הפעלה
+
+**קבצים רלוונטיים:**
+- `docs/testing/PRE-DEPLOYMENT-COMPREHENSIVE-CHECKLIST.md` - רשימת בדיקות מפורטת
+- `docs/development/SITEMAP-GENERATION-GUIDE.md` - מדריך ליצירת sitemap
+- `docs/communication/DISPATCH-PRE-DEPLOYMENT-TESTING.md` - הודעת הפעלה לצוות 2
+
+**מצב Sitemap:**
+- ✅ WordPress Core Sitemap: `http://localhost:9090/sitemap.xml` - פעיל
+- ✅ Yoast SEO Sitemap: `http://localhost:9090/sitemap_index.xml` - פעיל
+- 🟡 נדרש: עדכון ואימות שתי ה-sitemaps
+
+---
+
+🚀 משימה הבאה: Phase 5 - פריסה ובדיקות קבלה
+ענף פעיל: wp-6.9-elementor-migration
+סטטוס: ⚪ PENDING (ממתין להשלמת Pre-Deployment Testing)
+מנכ"ל מאשר: אייל עמית
+Task ID: EA-V11-PHASE-5
 
 ---
 
