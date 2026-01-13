@@ -1,0 +1,220 @@
+================================================================================
+CONSOLE VERIFICATION TEST REPORT
+================================================================================
+Date: 2026-01-13 03:35:43
+URL: http://wordpress:80
+Page Status: complete
+
+--------------------------------------------------------------------------------
+CONSOLE LOGS
+--------------------------------------------------------------------------------
+No console logs captured
+
+--------------------------------------------------------------------------------
+JAVASCRIPT ERRORS
+--------------------------------------------------------------------------------
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/css/blocks/style.css?ver=3.6.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/LayerSlider/static/css/layerslider.css?ver=5.6.9
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.9
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/contact-form-7/includes/css/styles-rtl.css?ver=5.1.9
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/timetable/style/superfish.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/timetable/style/style.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/timetable/style/event_template.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/timetable/style/responsive.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/css/prettyPhoto-rtl.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce-views/res/css/wcviews-onsalebadge.css?ver=2.7.9
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/wp-user-avatar/assets/css/frontend.min.css?ver=3.2.16
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/wp-accessibility-helper/assets/css/wp-accessibility-helper.min.css?ver=0.5.9.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.css?ver=3.2.16
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce-gateway-paypal-express-checkout/assets/css/wc-gateway-ppec-frontend-cart.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/style.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/font-awesome/css/font-awesome.min.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/elegant-icons/style.min.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/linea-icons/style.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/dripicons/dripicons.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/woocommerce.min.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/stylesheet.min.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/print.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/woocommerce_responsive.min.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/webkit_stylesheet.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/timetable-schedule.min.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/timetable-schedule-responsive.min.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/style_dynamic.css?ver=1755495209
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/responsive.min.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/style_dynamic_responsive.css?ver=1755495209
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=5.4.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/rtl.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/custom_css.css?ver=1755495209
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/types/vendor/toolset/toolset-common/res/lib/bootstrap/css/bootstrap.css?ver=3.4.0.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/layouts/resources/css/cell-menu-css.css?ver=2.5.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/types/vendor/toolset/toolset-common/res/css/toolset-notifications.css?ver=3.4.0.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/toolset-maps/resources/css/toolset_maps_fixes.css?ver=1.7.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/layouts/resources/css/ddl-front-end.css?ver=2.5.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/types/vendor/toolset/toolset-common/res/css/toolset-common.css?ver=3.4.0.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.6-78496d1
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/wp-views/embedded/res/css/wpv-pagination.css?ver=2.8.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge-child/style.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/css/photoswipe/photoswipe.css?ver=3.6.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/css/photoswipe/default-skin/default-skin.css?ver=3.6.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/simple-google-recaptcha/sgr.js?ver=1588845585
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/LayerSlider/static/js/greensock.js?ver=1.11.8
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/LayerSlider/static/js/layerslider.kreaturamedia.jquery.js?ver=5.6.9
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/LayerSlider/static/js/layerslider.transitions.js?ver=5.6.9
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce-views/res/js/wcviews-frontend.js?ver=2.7.9
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=3.6.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/js_composer/assets/js/vendors/woocommerce-add-to-cart.js?ver=5.4.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/layouts/resources/js/ddl-layouts-frontend.js?ver=2.5.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.6-78496d1
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2024/09/master-logo-cbdidg-40mm.png
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2024/09/%D7%9C%D7%95%D7%92%D7%95-%D7%97%D7%9C%D7%A7-%D7%A0%D7%92%D7%98%D7%99%D7%91.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2024/09/%D7%9C%D7%95%D7%92%D7%95-%D7%A0%D7%92%D7%98%D7%99%D7%91.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2016/08/fav.png
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2017/04/Icon-instegram.png
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2017/04/Icon-Youtube.png
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2017/04/Icon-FaceBook.png
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2025/08/%D7%AA%D7%9E%D7%95%D7%A0%D7%94-%D7%A9%D7%9C-WhatsApp%E2%80%8F-2025-08-12-%D7%91%D7%A9%D7%A2%D7%94-20.37.09_b0435178-330x550.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2024/08/374831104_784285903703828_8547740129840876483_n-330x550.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2020/07/WhatsApp-Image-2020-07-22-at-21.21.29-6-330x550.jpeg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2021/10/WhatsApp-Image-2021-10-14-at-12.10.05-330x550.jpeg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2024/08/377997335_789649919834093_2093968922390110774_n-700x500.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2023/09/1.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2023/10/20230628_120718-330x550.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2024/08/449633618_10171106140875206_1091675749536197018_n-330x550.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2024/08/380891460_795420395923712_2526690628382478650_n-340x550.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2020/07/%D7%A1%D7%98%D7%95%D7%93%D7%99%D7%95-%D7%A0%D7%A9%D7%99%D7%9E%D7%94-%D7%9E%D7%A2%D7%92%D7%9C%D7%99%D7%AA-%D7%A4%D7%A8%D7%93%D7%A1-%D7%97%D7%A0%D7%94-%D7%90%D7%99%D7%99%D7%9C-%D7%A2%D7%9E%D7%99%D7%AA-%D7%94%D7%9E%D7%A8%D7%9B%D7%96-%D7%9C%D7%98%D7%99%D7%A4%D7%95%D7%9C-%D7%91-%D7%93%D7%99%D7%93%D7%92%D7%A8%D7%99%D7%93%D7%95-12-330x550.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2023/01/%D7%90%D7%99%D7%99%D7%9C-%D7%A2%D7%9E%D7%99%D7%AA-%D7%93%D7%99%D7%92%D7%A8%D7%99%D7%93%D7%95-%D7%A1%D7%98%D7%95%D7%93%D7%99%D7%95-%D7%A0%D7%A9%D7%99%D7%9E%D7%94-%D7%9E%D7%A2%D7%92%D7%9C%D7%99%D7%AA-%D7%A6%D7%9C%D7%9D-%D7%90%D7%99%D7%99%D7%9C-%D7%A2%D7%9E%D7%99%D7%AA-%D7%AA%D7%9E%D7%95%D7%A0%D7%AA-%D7%9E%D7%95%D7%A6%D7%A8-%D7%A8%D7%90%D7%A9%D7%99%D7%AA-330x550.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2021/10/nukesh-dhiman-jungel-vibes-rishikesh-india-didgeridoo-%D7%9E%D7%95%D7%A7%D7%A9-%D7%A8%D7%99%D7%A9%D7%99%D7%A7%D7%A9-%D7%93%D7%99%D7%92%D7%A8%D7%99%D7%93%D7%95-54-400x325.jpeg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2021/10/nukesh-dhiman-jungel-vibes-rishikesh-india-didgeridoo-%D7%9E%D7%95%D7%A7%D7%A9-%D7%A8%D7%99%D7%A9%D7%99%D7%A7%D7%A9-%D7%93%D7%99%D7%92%D7%A8%D7%99%D7%93%D7%95-37-400x325.jpeg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2021/10/nukesh-dhiman-jungel-vibes-rishikesh-india-didgeridoo-%D7%9E%D7%95%D7%A7%D7%A9-%D7%A8%D7%99%D7%A9%D7%99%D7%A7%D7%A9-%D7%93%D7%99%D7%92%D7%A8%D7%99%D7%93%D7%95-31-400x325.jpeg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2020/07/WhatsApp-Image-2020-07-22-at-21.18.22-8-400x470.jpeg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2023/01/%D7%90%D7%99%D7%99%D7%9C-%D7%A2%D7%9E%D7%99%D7%AA-%D7%93%D7%99%D7%92%D7%A8%D7%99%D7%93%D7%95-%D7%A1%D7%98%D7%95%D7%93%D7%99%D7%95-%D7%A0%D7%A9%D7%99%D7%9E%D7%94-%D7%9E%D7%A2%D7%92%D7%9C%D7%99%D7%AA-%D7%A6%D7%9C%D7%9D-%D7%90%D7%99%D7%99%D7%9C-%D7%A2%D7%9E%D7%99%D7%AA-%D7%9E%D7%95%D7%A6%D7%A82.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/envira-gallery/assets/css/responsivelyLazy.css?ver=1.5.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/envira-gallery/assets/css/justifiedGallery.css?ver=1.7.1
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/envira-gallery/assets/css/envira.css?ver=1.7.1
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/wp-accessibility-helper/assets/images/accessibility-48.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.9
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/tabs.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/timetable/js/jquery.ba-bbq.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/timetable/js/jquery.carouFredSel-6.2.1-packed.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/timetable/js/timetable.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.min.js?ver=3.1.5
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/envira-gallery/assets/css/envira-supersize.css?ver=1.7.0
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/envira-gallery/themes/base_dark/css/style.css?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.init.min.js?ver=3.6.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=3.6.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=3.6.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/wp-accessibility-helper/assets/js/wp-accessibility-helper.min.js?ver=1.0.0
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js?ver=3.2.16
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/plugins/qode-like.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/accordion.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/wp-a11y.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/button.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/resizable.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/dialog.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/droppable.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/progressbar.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/selectable.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/sortable.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/slider.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/spinner.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/tooltip.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-blind.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-bounce.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-clip.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-drop.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-explode.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-fade.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-fold.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-highlight.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-pulsate.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-size.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-scale.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-shake.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-slide.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/jquery/ui/effect-transfer.min.js?ver=1.11.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/plugins/jquery.carouFredSel-6.2.1.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/plugins/lemmon-slider.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/plugins.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/plugins/jquery.fullPage.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/plugins/jquery.mousewheel.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/plugins/jquery.touchSwipe.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min.js?ver=5.4.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/plugins/packery-mode.pkgd.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/plugins/jquery.stretch.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/plugins/imagesloaded.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/plugins/TweenLite.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/plugins/ScrollToPlugin.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/plugins/smoothPageScroll.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/default_dynamic.js?ver=1755495209
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/default.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/custom_js.js?ver=1755495209
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/comment-reply.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=5.4.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/js/woocommerce.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/js/select2/select2.full.min.js?ver=4.0.3
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/types/vendor/toolset/toolset-common/res/lib/bootstrap/js/bootstrap.min.js?ver=3.3.7
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/layouts/resources/js/ddl-tabs-cell-frontend.js?ver=2.5.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/underscore.min.js?ver=1.8.3
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/wp-util.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/backbone.min.js?ver=1.2.3
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/mediaelement/wp-playlist.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/wp-views/embedded/res/js/wpv-pagination-embedded.js?ver=2.8.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/js/zoom/jquery.zoom.min.js?ver=1.7.21
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/js_composer/assets/lib/bower/flexslider/jquery.flexslider-min.js?ver=5.4.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe.min.js?ver=4.1.1
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe-ui-default.min.js?ver=4.1.1
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/woocommerce/assets/js/frontend/single-product.min.js?ver=3.6.4
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-includes/js/wp-embed.min.js?ver=5.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/envira-gallery/assets/js/min/envira-min.js?ver=1.7.1
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/ddl-layouts-tmp/b33dadb29e6b2364d044c07d48eb17c0.js?ver=2.5.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/types/vendor/toolset/toolset-common/utility/js/utils.js?ver=1.2.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/plugins/layouts/resources/js/ddl-comment-cell-front-end.js?ver=2.5.2
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2016/08/fav.png
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2016/08/fav.png
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/style.css
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge-child/fonts/fbgofansans-lightwebfont.woff
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/elegant-icons/fonts/ElegantIcons.woff
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge/css/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/themes/bridge-child/fonts/fbgofansans-boldwebfont.woff
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2024/10/66.jpg
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2023/01/cropped-logo2-1-192x192.png
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/wp-content/uploads/2023/01/cropped-logo2-1-32x32.png
+[CORS] CORS error: Resource from production domain detected: https://www.eyalamit.co.il/?wc-ajax=get_refreshed_fragments
+[CORS] CORS error: Resource from production domain detected: https://ssl.google-analytics.com/r/__utm.gif?utmwv=5.7.2&utms=1&utmn=1313314267&utmhn=www.eyalamit.co.il&utmcs=UTF-8&utmsr=1366x768&utmvp=1354x683&utmsc=24-bit&utmul=en-us&utmje=0&utmfl=-&utmdt=%D7%93%D7%99%D7%92%27%D7%A8%D7%99%D7%93%D7%95%20-%20%D7%94%D7%9E%D7%A8%D7%9B%D7%96%20%D7%9C%D7%98%D7%99%D7%A4%D7%95%D7%9C%20%D7%91%D7%93%D7%99%D7%92%27%D7%A8%D7%99%D7%93%D7%95%20-%20%D7%A1%D7%98%D7%95%D7%93%D7%99%D7%95%20%D7%A0%D7%A9%D7%99%D7%9E%D7%94%20%D7%9E%D7%A2%D7%92%D7%9C%D7%99%D7%AA%20-%20%D7%90%D7%99%D7%99%D7%9C%20%D7%A2%D7%9E%D7%99%D7%AA&utmhid=147005467&utmr=-&utmp=%2F&utmht=1768268135667&utmac=UA-101641251-1&utmcc=__utma%3D196477752.34717256.1768268136.1768268136.1768268136.1%3B%2B__utmz%3D196477752.1768268136.1.1.utmcsr%3D(direct)%7Cutmccn%3D(direct)%7Cutmcmd%3D(none)%3B&utmjid=1549414553&utmredir=1&utmu=qAAAAAAAAAAAAAAAAAAAAAAE~
+[CORS] CORS error: Resource from production domain detected: https://connect.facebook.net/signals/config/805709859476828?v=2.9.248&r=stable&domain=www.eyalamit.co.il&hme=17590b9a2e1b26755cdc9ecb401f9f46bca979d3ccce95d786db0936167af731&ex_m=94%2C156%2C134%2C20%2C67%2C68%2C127%2C63%2C43%2C128%2C72%2C62%2C10%2C141%2C80%2C15%2C93%2C28%2C122%2C115%2C70%2C73%2C121%2C138%2C102%2C143%2C7%2C3%2C4%2C6%2C5%2C2%2C81%2C91%2C144%2C224%2C167%2C57%2C226%2C227%2C50%2C183%2C27%2C69%2C232%2C231%2C170%2C30%2C56%2C9%2C59%2C87%2C88%2C89%2C95%2C118%2C29%2C26%2C120%2C117%2C116%2C135%2C71%2C137%2C136%2C45%2C55%2C111%2C14%2C140%2C40%2C213%2C215%2C177%2C23%2C24%2C25%2C17%2C18%2C39%2C35%2C37%2C36%2C76%2C82%2C86%2C100%2C126%2C129%2C41%2C101%2C21%2C19%2C107%2C64%2C33%2C131%2C130%2C132%2C123%2C22%2C32%2C54%2C99%2C139%2C65%2C16%2C133%2C104%2C31%2C193%2C163%2C284%2C211%2C154%2C196%2C189%2C164%2C97%2C119%2C75%2C109%2C49%2C44%2C103%2C42%2C108%2C114%2C53%2C60%2C113%2C48%2C51%2C47%2C90%2C142%2C0%2C112%2C13%2C110%2C11%2C1%2C52%2C83%2C58%2C61%2C106%2C79%2C78%2C145%2C146%2C84%2C85%2C8%2C92%2C46%2C124%2C77%2C74%2C66%2C105%2C96%2C38%2C125%2C34%2C98%2C12%2C147
+[CORS] CORS error: Resource from production domain detected: https://www.facebook.com/tr/?id=805709859476828&ev=PageView&dl=https%3A%2F%2Fwww.eyalamit.co.il&rl=&if=false&ts=1768268136158&sw=1366&sh=768&v=2.9.248&r=stable&ec=0&o=4124&fbp=fb.2.1768268136155.903825626580949009&pm=1&hrl=c0882e&ler=empty&plt=3114&it=1768268135967&coo=false&cs_cc=1&cas=8929464607084229&dlc=1&expv2[0]=pl1&expv2[1]=el3&expv2[2]=bc1&expv2[3]=mr0&expv2[4]=im1&rqm=GET
+[CORS] CORS error: Resource from production domain detected: https://www.facebook.com/v2.7/plugins/page.php?adapt_container_width=true&app_id=478481802502289&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dfdfd10429d900b468%26domain%3Dwww.eyalamit.co.il%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.eyalamit.co.il%252Ff5fd3d827b53e154a%26relation%3Dparent.parent&container_width=520&hide_cover=false&href=https%3A%2F%2Fwww.facebook.com%2Fdidgeridoo.studio.eyal.amit&locale=en_US&sdk=joey&show_facepile=true&small_header=false&tabs=timeline&width=500
+[CORS] CORS error: Resource from production domain detected: https://www.facebook.com/v2.7/plugins/page.php?adapt_container_width=true&app_id=478481802502289&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3da9230dfc3d7f3d%26domain%3Dwww.eyalamit.co.il%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.eyalamit.co.il%252Ff5fd3d827b53e154a%26relation%3Dparent.parent&container_width=520&hide_cover=false&href=https%3A%2F%2Fwww.facebook.com%2Fdidgeridoo.studio.eyal.amit&locale=en_US&sdk=joey&show_facepile=true&small_header=false&tabs=timeline&width=500
+
+--------------------------------------------------------------------------------
+NETWORK ERRORS
+--------------------------------------------------------------------------------
+No network errors detected
+
+================================================================================
+SUMMARY
+================================================================================
+⚠️  191 ERROR(S) DETECTED
+   - Console logs: 0
+   - JavaScript errors: 191
+   - Network errors: 0
+================================================================================

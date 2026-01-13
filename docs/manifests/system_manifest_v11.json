@@ -1,0 +1,343 @@
+{
+  "task_metadata": {
+    "task_id": "EA-V11-MANIFEST-01",
+    "generated_at": "2026-01-13T05:09:07.429963",
+    "generator_version": "1.0",
+    "authority": "CEO Eyal Amit Verified",
+    "branch": "wp-6.9-elementor-migration"
+  },
+  "system_info": {
+    "php_version": "8.4.13",
+    "php_version_check": {
+      "required": "8.3",
+      "current": "8.4.13",
+      "status": "⚠️ Check required"
+    }
+  },
+  "plugins": {
+    "total_count": 50,
+    "active_count": 18,
+    "list": [
+      {
+        "name": "1. Google Site Kit",
+        "version": "1.165.0",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "2. Yoast SEO",
+        "version": "26.3",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "3. WooCommerce",
+        "version": "10.3.5",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "4. Admin Menu Editor",
+        "version": "1.14.1",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "5. Akismet",
+        "version": "5.6",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "6. Contact Form 7",
+        "version": "6.1.3",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "7. Disable Gutenberg",
+        "version": "3.2.4",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "8. Duplicate Post",
+        "version": "4.5",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "9. LTR/RTL Admin Content",
+        "version": "0.6.6",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "10. Post Types Order",
+        "version": "2.4",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "11. WP User Avatar (ProfilePress)",
+        "version": "4.16.7",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "12. Regenerate Thumbnails",
+        "version": "3.1.6",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "13. WP Accessibility Helper",
+        "version": "0.6.6",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "14. Disable WordPress Updates",
+        "version": "1.8.0",
+        "status": "✅ עודכן"
+      },
+      {
+        "name": "15. Tiny Compress Images",
+        "version": "1.7.2",
+        "status": "✅ כלי עזר"
+      },
+      {
+        "name": "wp-rocket.disabled",
+        "version": "Unknown",
+        "active": false,
+        "path": "wp-content/plugins/wp-rocket.disabled"
+      },
+      {
+        "name": "admin-menu-editor.disabled",
+        "version": "1.9",
+        "active": false,
+        "path": "wp-content/plugins/admin-menu-editor.disabled"
+      },
+      {
+        "name": "wp-user-avatar.disabled",
+        "version": "Unknown",
+        "active": false,
+        "path": "wp-content/plugins/wp-user-avatar.disabled"
+      },
+      {
+        "name": "envira-social.disabled",
+        "version": "1.4.1",
+        "active": false,
+        "path": "wp-content/plugins/envira-social.disabled"
+      },
+      {
+        "name": "tiny-compress-images.disabled",
+        "version": "3.2.0",
+        "active": false,
+        "path": "wp-content/plugins/tiny-compress-images.disabled"
+      },
+      {
+        "name": "layouts.disabled",
+        "version": "2.5.2",
+        "active": false,
+        "path": "wp-content/plugins/layouts.disabled"
+      },
+      {
+        "name": "duplicate-post.disabled",
+        "version": "Unknown",
+        "active": false,
+        "path": "wp-content/plugins/duplicate-post.disabled"
+      },
+      {
+        "name": "LayerSlider.disabled",
+        "version": "Unknown",
+        "active": false,
+        "path": "wp-content/plugins/LayerSlider.disabled"
+      },
+      {
+        "name": "wp-accessibility-helper.disabled",
+        "version": "Unknown",
+        "active": false,
+        "path": "wp-content/plugins/wp-accessibility-helper.disabled"
+      },
+      {
+        "name": "wp-views.disabled",
+        "version": "2.8.2",
+        "active": false,
+        "path": "wp-content/plugins/wp-views.disabled"
+      },
+      {
+        "name": "envato-wordpress-toolkit.disabled",
+        "version": "1.7.2",
+        "active": false,
+        "path": "wp-content/plugins/envato-wordpress-toolkit.disabled"
+      },
+      {
+        "name": "envira-woocommerce.disabled",
+        "version": "1.3.2",
+        "active": false,
+        "path": "wp-content/plugins/envira-woocommerce.disabled"
+      },
+      {
+        "name": "envira-albums.disabled",
+        "version": "1.5.2",
+        "active": false,
+        "path": "wp-content/plugins/envira-albums.disabled"
+      },
+      {
+        "name": "toolset-maps.disabled",
+        "version": "1.7.4",
+        "active": false,
+        "path": "wp-content/plugins/toolset-maps.disabled"
+      },
+      {
+        "name": "woocommerce.disabled",
+        "version": "3.6.4",
+        "active": false,
+        "path": "wp-content/plugins/woocommerce.disabled"
+      },
+      {
+        "name": "ltrrtl-admin-content.disabled",
+        "version": "0.5",
+        "active": false,
+        "path": "wp-content/plugins/ltrrtl-admin-content.disabled"
+      },
+      {
+        "name": "envira-gallery-themes.disabled",
+        "version": "1.3.1",
+        "active": false,
+        "path": "wp-content/plugins/envira-gallery-themes.disabled"
+      },
+      {
+        "name": "timetable.disabled",
+        "version": "Unknown",
+        "active": false,
+        "path": "wp-content/plugins/timetable.disabled"
+      },
+      {
+        "name": "elementor",
+        "version": "3.25.10",
+        "active": true,
+        "path": "wp-content/plugins/elementor"
+      },
+      {
+        "name": "envato-market.disabled",
+        "version": "2.0.1",
+        "active": false,
+        "path": "wp-content/plugins/envato-market.disabled"
+      },
+      {
+        "name": "post-types-order.disabled",
+        "version": "1.9.4.1",
+        "active": false,
+        "path": "wp-content/plugins/post-types-order.disabled"
+      },
+      {
+        "name": "types.disabled",
+        "version": "3.3.1",
+        "active": false,
+        "path": "wp-content/plugins/types.disabled"
+      },
+      {
+        "name": "simple-google-recaptcha.disabled",
+        "version": "Unknown",
+        "active": false,
+        "path": "wp-content/plugins/simple-google-recaptcha.disabled"
+      },
+      {
+        "name": "woocommerce-views.disabled",
+        "version": "2.7.9",
+        "active": false,
+        "path": "wp-content/plugins/woocommerce-views.disabled"
+      },
+      {
+        "name": "envira-fullscreen.disabled",
+        "version": "1.1.0",
+        "active": false,
+        "path": "wp-content/plugins/envira-fullscreen.disabled"
+      },
+      {
+        "name": "google-site-kit",
+        "version": "1.43.0",
+        "active": true,
+        "path": "wp-content/plugins/google-site-kit"
+      },
+      {
+        "name": "woocommerce-gateway-paypal-express-checkout.disabled",
+        "version": "1.6.14",
+        "active": false,
+        "path": "wp-content/plugins/woocommerce-gateway-paypal-express-checkout.disabled"
+      },
+      {
+        "name": "contact-form-7.disabled",
+        "version": "5.1.9",
+        "active": false,
+        "path": "wp-content/plugins/contact-form-7.disabled"
+      },
+      {
+        "name": "envira-gallery.disabled",
+        "version": "1.7.1",
+        "active": false,
+        "path": "wp-content/plugins/envira-gallery.disabled"
+      },
+      {
+        "name": "wordpress-seo",
+        "version": "Unknown",
+        "active": true,
+        "path": "wp-content/plugins/wordpress-seo"
+      },
+      {
+        "name": "regenerate-thumbnails.disabled",
+        "version": "3.1.1",
+        "active": false,
+        "path": "wp-content/plugins/regenerate-thumbnails.disabled"
+      },
+      {
+        "name": "hello-dolly.disabled",
+        "version": "1.7.2",
+        "active": false,
+        "path": "wp-content/plugins/hello-dolly.disabled"
+      },
+      {
+        "name": "akismet.disabled",
+        "version": "Unknown",
+        "active": false,
+        "path": "wp-content/plugins/akismet.disabled"
+      },
+      {
+        "name": "disable-wordpress-updates.disabled",
+        "version": "1.6.5",
+        "active": false,
+        "path": "wp-content/plugins/disable-wordpress-updates.disabled"
+      },
+      {
+        "name": "disable-gutenberg.disabled",
+        "version": "1.8.1",
+        "active": false,
+        "path": "wp-content/plugins/disable-gutenberg.disabled"
+      }
+    ]
+  },
+  "theme": {
+    "active_theme": "bridge-child",
+    "parent_theme": "bridge",
+    "functions_integrity": {
+      "child_theme_exists": true,
+      "parent_theme_exists": true,
+      "child_theme_size": 960,
+      "parent_theme_size": 104271,
+      "child_theme_lines": 28,
+      "integrity_check": "valid"
+    }
+  },
+  "database": {
+    "legacy_tables": [
+      "wp_posts",
+      "wp_postmeta",
+      "wp_options",
+      "wp_users",
+      "wp_usermeta"
+    ],
+    "elementor_tables": [
+      "wp_postmeta (with _elementor_data)",
+      "wp_options (with elementor_*)"
+    ],
+    "note": "Full table list requires database access via WP-CLI or direct DB connection"
+  },
+  "verification": {
+    "json_valid": true,
+    "data_points_collected": {
+      "plugin_list": true,
+      "theme_functions": true,
+      "php_version": true,
+      "database_info": true
+    }
+  }
+}

@@ -6,6 +6,73 @@ SYNC_MANIFEST.txt
 .DS_Store
 node_modules/
 
+# WordPress core files (should not be in repo)
+wp-admin/
+wp-includes/
+wp-*.php
+xmlrpc.php
+license.txt
+readme.html
 
+# WordPress uploads and cache
+wp-content/uploads/
+wp-content/cache/
+wp-content/wp-rocket-config/
 
+# Vendor directories
+vendor/
+wp-content/plugins/*/vendor/
+wp-content/themes/*/vendor/
 
+# Composer
+composer.phar
+composer.lock
+
+# Node modules
+node_modules/
+package-lock.json
+
+# Test results
+test-results/
+playwright-report/
+
+# Evidence files (temporary)
+*_evidence_*.txt
+*_backup_*.sql
+complete_sanitization_evidence_*.txt
+corrected_sanitization_evidence_*.txt
+html_entities_sanitization_evidence_*.txt
+safe_sanitization_evidence_*.txt
+sanitization_evidence_*.txt
+pre_upgrade_backup_evidence_*.txt
+emergency_restore_evidence_*.txt
+elementor_url_investigation_evidence_*.txt
+font_url_replacement_evidence_*.txt
+phase2_1_cleanup_evidence_*.txt
+phase3_db_optimization_evidence_*.txt
+server_optimization_evidence_*.txt
+shortcode_stripping_evidence_*.txt
+wptexturize_disable_verification_*.txt
+
+# Backup files (except in docs/database/backups/)
+*.sql
+!docs/database/backups/*.sql
+
+# Production backups (large files)
+eyalamit.co.il-production-*/
+eyalamit.co.il_bm*/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-*
+
+# OS files
+Thumbs.db
+.DS_Store

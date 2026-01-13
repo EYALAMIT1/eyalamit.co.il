@@ -1,0 +1,18 @@
+
+PHP CODE SNIFFER REPORT SUMMARY
+--------------------------------------------------------------------------------
+FILE                                                            ERRORS  WARNINGS
+--------------------------------------------------------------------------------
+... Amit/eyalamit.co.il/wp-content/themes/bridge-child/404.php  81      5
+...eyalamit.co.il/wp-content/themes/bridge-child/functions.php  257     21
+...it/eyalamit.co.il/wp-content/themes/bridge-child/header.php  3964    363
+...wp-content/themes/bridge-child/schema-person-specialist.php  305     72
+...mit/eyalamit.co.il/wp-content/themes/bridge-child/style.css  130     71
+--------------------------------------------------------------------------------
+A TOTAL OF 4737 ERRORS AND 532 WARNINGS WERE FOUND IN 5 FILES
+--------------------------------------------------------------------------------
+PHPCBF CAN FIX 4862 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------
+
+Time: 462ms; Memory: 30MB
+

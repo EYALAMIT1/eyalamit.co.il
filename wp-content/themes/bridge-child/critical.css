@@ -1,0 +1,72 @@
+/* Critical CSS for Above-the-Fold Content - Phase 4 Step 1 */
+/* Header and Navigation */
+.header_inner {
+    background-color: rgba(9, 9, 2, 1);
+}
+
+/* Logo and Navigation */
+.header_inner_left {
+    float: left;
+}
+
+.header_inner_right {
+    float: right;
+}
+
+/* Hero Section */
+.elementor-section-full_width {
+    width: 100%;
+}
+
+.elementor-section-height-min-height {
+    min-height: 400px;
+}
+
+.elementor-section-content-middle {
+    align-items: center;
+}
+
+.elementor-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.elementor-column {
+    padding: 0 15px;
+}
+
+/* Typography */
+.elementor-heading-title {
+    font-family: "Gofan", sans-serif;
+    color: #ffffff;
+}
+
+.elementor-heading-title.elementor-size-default {
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+/* Buttons */
+.elementor-button {
+    background-color: #8B4513;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .elementor-heading-title.elementor-size-default {
+        font-size: 32px;
+    }
+
+    .elementor-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}
