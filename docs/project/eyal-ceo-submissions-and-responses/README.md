@@ -29,15 +29,19 @@ YYYY-MM-DD--short-topic--vN.ext
 ## קשר לצוות 100
 
 - **מקור עריכה פנימי (Markdown):** נשאר ב־[`team-100-preplanning/`](../team-100-preplanning/) (למשל `EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md`).
-- **ייצור Word:** [`scripts/build_eyal_approval_docx.py`](../../../scripts/build_eyal_approval_docx.py) — פלט ברירת מחדל עשוי להישאר ליד המסמכים ב־`team-100-preplanning/`; **לפני שליחה לאייל** מעתיקים את הגרסה הסופית ל־`to-eyal/` בשם מתוארך.
+- **ייצור Word (חבילה מלאה):** [`scripts/build_eyal_ceo_deliverables.py`](../../../scripts/build_eyal_ceo_deliverables.py) — יוצר ב־`to-eyal/` את תקציר המנהלים, מפת האתר (מ־`SITEMAP-NEW-SITE-v2-DRAFT.md`) וקובץ ההחלטות; משכפל תקציר גם ל־`team-100-preplanning/EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx`.  
+  פקודה: `python3 scripts/build_eyal_ceo_deliverables.py` מתוך שורש `eyalamit.co.il`.  
+  **תקציר בלבד (תאימות לאחור):** [`scripts/build_eyal_approval_docx.py`](../../../scripts/build_eyal_approval_docx.py) או `python3 scripts/build_eyal_approval_docx.py --all`.
 - **PDF מ-Word:** [`team-100-preplanning/README-PDF-FROM-WORD.txt`](../team-100-preplanning/README-PDF-FROM-WORD.txt).
 
 ## אינדקס (מלאו ידנית אחרי כל הגשה / תשובה)
 
 | תאריך | כיוון | נושא | קובץ | הערות |
 |--------|--------|------|------|--------|
-| 2026-03-29 | to-eyal | תקציר מנהלים לאישור | *(הוסיפו שם קובץ בפועל ב־`to-eyal/`)* | גרסה ראשונה להגשה |
+| 2026-03-29 | to-eyal | תקציר מנהלים + טופס אישור | [`to-eyal/2026-03-29--executive-summary--v1.docx`](./to-eyal/2026-03-29--executive-summary--v1.docx) | מסקריפט `build_eyal_ceo_deliverables.py` |
+| 2026-03-29 | to-eyal | מפת אתר טיוטה v2 | [`to-eyal/2026-03-29--site-map-draft-v2--v1.docx`](./to-eyal/2026-03-29--site-map-draft-v2--v1.docx) | מבוסס `SITEMAP-NEW-SITE-v2-DRAFT.md` |
+| 2026-03-29 | to-eyal | קובץ החלטות (שער 0 + עקרונות תוכן) | [`to-eyal/2026-03-29--decisions-for-approval--v1.docx`](./to-eyal/2026-03-29--decisions-for-approval--v1.docx) | סיכום לאישור; פירוט במאגר |
 
 ---
 
-**סמכות:** תיקייה זו היא **ארכיון רשמי** של חומר שמול ה-CEO; אין להגיש לאייל קבצי `.md` — ראו `docs/sop/SSOT.md` גרסה 12.1+.
+**סמכות:** תיקייה זו היא **ארכיון רשמי** של חומר שמול ה-CEO; אין להגיש לאייל קבצי `.md` — ראו `docs/sop/SSOT.md` גרסה 12.2+.

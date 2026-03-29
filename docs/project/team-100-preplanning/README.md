@@ -31,7 +31,7 @@
 
 | קובץ | תיאור |
 |------|--------|
-| [EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx](./EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx) | **הקובץ היחיד להגשה לאייל** — Word (מיוצר מ-[`scripts/build_eyal_approval_docx.py`](../../../scripts/build_eyal_approval_docx.py)) |
+| [EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx](./EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx) | **תקציר להגשה** — מיוצר עם [`scripts/build_eyal_ceo_deliverables.py`](../../../scripts/build_eyal_ceo_deliverables.py) (גם מפת אתר + החלטות ב־`to-eyal/`) |
 | [README-PDF-FROM-WORD.txt](./README-PDF-FROM-WORD.txt) | איך לייצא **PDF** מ-Word (חלופה מותרת להגשה) |
 | [EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md](./EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md) | מקור **פנימי** בלבד — תוכן זהה ל-docx; **אל תשלחו `.md` לאייל** |
 | [LEGAL-ACCESSIBILITY-ISRAEL-SPEC.md](./LEGAL-ACCESSIBILITY-ISRAEL-SPEC.md) | נגישות מול חוק ישראל + צ'קליסט |
