@@ -1,12 +1,19 @@
 # צוות 100 — תכנון מקדים אתר אייל עמית
 
-**חבילת גרסה:** 2.0 (2026-03-29) — סנכרון מחקר ראשוני (עזר בלבד מול החלטות אייל), מפת אתר טיוטה, Keep/Merge/Drop, אפיון תהליך ועמודים לאייל.
+**חבילת גרסה:** **אפיון סופי 2026-03-30** — מקור מחייב: [`SITE-SPECIFICATION-FINAL-2026-03-30.md`](./SITE-SPECIFICATION-FINAL-2026-03-30.md). מסמכי 01–06 וטיוטות קודמות: [`LEGACY-DOCUMENTS-INDEX-2026-03-30.md`](./LEGACY-DOCUMENTS-INDEX-2026-03-30.md). **חבילת Word לאייל:** [`../eyal-ceo-submissions-and-responses/to-eyal/2026-03-30--final-spec-package-for-eyal/`](../eyal-ceo-submissions-and-responses/to-eyal/2026-03-30--final-spec-package-for-eyal/) (מיוצרת ב־`scripts/build_eyal_ceo_deliverables.py`).
 
 **נעילת שלב (קונטקסט Cursor / SSOT):** ראו גם [`AGENTS.md`](../../../AGENTS.md) בשורש ה-repo ו-[`docs/sop/SSOT.md`](../../sop/SSOT.md) (גרסה 12.2+) — טבלת שלב נוכחי וקישורים למסמכי v2. **ארכיון הגשות ותשובות לאייל:** [`eyal-ceo-submissions-and-responses/`](../eyal-ceo-submissions-and-responses/README.md).
 
 **הגשה לאייל (קבוע):** רק **Word (.docx) או PDF** — **לא** Markdown.
 
 תיקייה זו מממשת את תהליך התכנון המקדים: שער מנהל, מיפוי תוכן, מטריצת היקף, דרישות IA/SEO/חברתי, החלטת פלטפורמה, וחבילת מיגרציה.
+
+## אפיון סופי (CANONICAL)
+
+| קובץ | תיאור |
+|------|--------|
+| [SITE-SPECIFICATION-FINAL-2026-03-30.md](./SITE-SPECIFICATION-FINAL-2026-03-30.md) | **אפיון נקי ומלא** — מקור מחייב לבנייה; Word בחבילת to-eyal |
+| [LEGACY-DOCUMENTS-INDEX-2026-03-30.md](./LEGACY-DOCUMENTS-INDEX-2026-03-30.md) | סימון גרסאות ישנות — לא SSOT |
 
 ## אפיון v1.2 (נעילת צוות + בחירות לאייל)
 

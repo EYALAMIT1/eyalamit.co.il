@@ -29,7 +29,7 @@ YYYY-MM-DD--short-topic--vN.ext
 ## קשר לצוות 100
 
 - **מקור עריכה פנימי (Markdown):** נשאר ב־[`team-100-preplanning/`](../team-100-preplanning/) (למשל `EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md`).
-- **ייצור Word (חבילה מלאה):** [`scripts/build_eyal_ceo_deliverables.py`](../../../scripts/build_eyal_ceo_deliverables.py) — יוצר ב־`to-eyal/` את תקציר המנהלים, מפת האתר (מ־`SITEMAP-NEW-SITE-v2-DRAFT.md`) וקובץ ההחלטות; משכפל תקציר גם ל־`team-100-preplanning/EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx`.  
+- **ייצור Word (חבילה מלאה):** [`scripts/build_eyal_ceo_deliverables.py`](../../../scripts/build_eyal_ceo_deliverables.py) — יוצר ב־`to-eyal/` תקציר, מפת אתר, החלטות, **טופס בחירות v1.2**, **אפיון סופי**; ומקבץ הכול ל־`to-eyal/YYYY-MM-DD--final-spec-package-for-eyal/`. משכפל תקציר ל־`team-100-preplanning/EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx`.  
   פקודה: `python3 scripts/build_eyal_ceo_deliverables.py` מתוך שורש `eyalamit.co.il`.  
   **תקציר בלבד (תאימות לאחור):** [`scripts/build_eyal_approval_docx.py`](../../../scripts/build_eyal_approval_docx.py) או `python3 scripts/build_eyal_approval_docx.py --all`.
 - **PDF מ-Word:** [`team-100-preplanning/README-PDF-FROM-WORD.txt`](../team-100-preplanning/README-PDF-FROM-WORD.txt).
@@ -45,6 +45,7 @@ YYYY-MM-DD--short-topic--vN.ext
 | 2026-03-30 | פנימי | **טבלת סינתזה — משוב → השלכות → החלטת צוות (v1.2)** | [`EYAL-FEEDBACK-RESPONSE-TABLE-2026-03-30.md`](./EYAL-FEEDBACK-RESPONSE-TABLE-2026-03-30.md) | עמודת נימרוד + מיפוי סעיפים 10/22 |
 | 2026-03-30 | פנימי | **שאלות פתוחות לפני אפיון v1.2** | [`OPEN-QUESTIONS-PRE-SPEC-v1.2-2026-03-30.md`](./OPEN-QUESTIONS-PRE-SPEC-v1.2-2026-03-30.md) | ארכיון; עדכון אחרי נעילה |
 | 2026-03-30 | to-eyal (מקור MD) | **טופס בחירות לאייל v1.2** | [`FOR-EYAL-CHOICES-v1.2-2026-03-30.md`](./FOR-EYAL-CHOICES-v1.2-2026-03-30.md) | ייצוא Word/PDF להגשה |
+| 2026-03-30 | to-eyal | **חבילת אפיון סופית (Word)** | [`to-eyal/2026-03-30--final-spec-package-for-eyal/`](./to-eyal/2026-03-30--final-spec-package-for-eyal/) | `build_eyal_ceo_deliverables.py` — README בתיקייה |
 
 ---
 

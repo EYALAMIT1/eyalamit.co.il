@@ -4,8 +4,11 @@
 Outputs go to docs/project/eyal-ceo-submissions-and-responses/to-eyal/
 and executive is also mirrored to team-100-preplanning/ for scripts compatibility.
 
+Also writes dated folder: to-eyal/{DELIVERY_DATE}--final-spec-package-for-eyal/
+
 Requires: pip install python-docx
 """
+import shutil
 from pathlib import Path
 
 from docx import Document
@@ -14,8 +17,8 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx_rtl import add_md_file_as_docx, add_rtl_paragraph, set_run_font
 
 
-DELIVERY_DATE = "2026-03-29"
-VERSION_TAG = "v1"
+DELIVERY_DATE = "2026-03-30"
+VERSION_TAG = "v2-final"
 
 
 def _paths():
@@ -36,18 +39,18 @@ def build_executive_summary_docx():
     r = t.add_run("תקציר מנהלים + טופס אישור — אייל עמית")
     set_run_font(r, size=18, bold=True)
 
-    add_rtl_paragraph(doc, f"גרסה: 1.0  |  תאריך: {DELIVERY_DATE}")
+    add_rtl_paragraph(doc, f"גרסה: 2.0 (מסונכרן אפיון סופי)  |  תאריך: {DELIVERY_DATE}")
     add_rtl_paragraph(doc, "הוגש על ידי: נימרוד (ליווי מיגרציה)")
     add_rtl_paragraph(doc, "סטטוס: ממתין חתימת אייל עמית", bold=True)
     doc.add_paragraph()
 
     add_rtl_paragraph(doc, "תקציר מנהלים", heading_level=1)
 
-    body = """מטרה: לצאת מלופי התיקון של האתר הישן ולבנות אתר WordPress אחד, פשוט לתחזוקה, עם דגש על מבקרים, SEO, ונגישות מלאה לפי דרישות החוק בישראל. המכירות והסליקה יבוצעו מחוץ לאתר באמצעות חשבונית ירוקה; באתר יוצגו עמודי מוצר/שירות פשוטים עם כפתור להפניה לסליקה.
+    body = """מטרה: לצאת מלופי התיקון של האתר הישן ולבנות אתר WordPress אחד, פשוט לתחזוקה, עם דגש על מבקרים, SEO, ונגישות לפי דרישות החוק בישראל לאתר פרטי קטן. המכירות והסליקה יבוצעו מחוץ לאתר באמצעות חשבונית ירוקה; באתר יוצגו עמודי מוצר/שירות פשוטים עם כפתור להפניה לסליקה.
 
 החלטות שאושרו בתכנון (עם נימרוד) — לאישורך הסופי:
 
-1. פלטפורמה: WordPress; עבודה בענף פיתוח נקי; אפשרות להסתמך על האתר החי כמקור אמת לתוכן ולהעביר את סבב הפיתוח הקודם לארכיון.
+1. פלטפורמה (נעול): WordPress בלבד — כל התוכן בתוך WordPress; אין חלק מהאתר מחוץ ל-WordPress. "רזה" = התקנה נקייה, תבנית מודרנית רזה ותקינה, מינימום תוספים (מוקפים ונחוצים), ניקוי פלונטרים של הפניות וקישורים שבורים, ועדכון עץ האתר לפעילותך.
 
 2. מותגים: מגוון מותגים באותו דומיין — הפרדה בחוויית משתמש בלבד (לא מערכות נפרדות).
 
@@ -55,9 +58,9 @@ def build_executive_summary_docx():
 
 4. הוצאה ומופע: חלק מהעבר, נשארים וחשובים — מוצגים כארכיון מותגי משני שמעשיר את האתר.
 
-5. חנות: ללא עגלה ותשלום באתר; עמודים פשוטים + חשבונית ירוקה לסליקה.
+5. חנות: ללא עגלה ותשלום באתר; עמוד קטלוג ראשי עם שמירת נתיב קיים (לא 301 תחתון במקום עמוד); חשבונית ירוקה לסליקה.
 
-6. עמודי QR: חובה לשמור את כל הכתובות (מודפסים בספרים). אסור לשנות slug או לבצע 301 ששובר סריקה. יתווסף עמוד אינדקס (ציבורי או למנהלים — לבחירתך).
+6. עמודי QR: חובה לשמור את כל הכתובות (מודפסים בספרים). אסור לשנות slug או לבצע 301 ששובר סריקה. אינדקס QR — למנהל האתר בלבד (לא ציבורי).
 
 7. בלוג: להחזיר לחיים כנכס SEO מרכזי.
 
@@ -65,11 +68,11 @@ def build_executive_summary_docx():
 
 9. SEO מקומי: סכמות עסק מקומי (לפי מה שמאושר מקצועית).
 
-10. נגישות: עמידה מלאה בדרישות החוק — כולל מסמך LEGAL-ACCESSIBILITY-ISRAEL-SPEC במאגר (המלצה לייעוץ חיצוני).
+10. נגישות: עמידה בחוק ובתקן לאתר פרטי קטן — ללא ייעוץ חיצוני (אישור צוות טכני).
 
 11. תפעול: אייל — מנהל ומתחזק; נימרוד — ליווי עד יציבות.
 
-12. שפה: עמוד נחיתה באנגלית בנוסף לעברית.
+12. שפה: עמוד נחיתה באנגלית בנוסף לעברית (כיוון בינלאומי; פרטים בטופס הבחירות).
 
 מדדי הצלחה: לאזן יציבות, תחזוקה, SEO ו-UX — וגם תנועה אמיתית; בלי מבקרים היעד העסקי לא הושג."""
 
@@ -94,7 +97,7 @@ def build_executive_summary_docx():
         ("3", "סליקה בחשבונית ירוקה בלבד (ללא עגלה באתר)", ""),
         ("4", "שימור מלא URLי QR ללא שבירת ספרים מודפסים", ""),
         ("5", "בלוג כנכס SEO מחודש", ""),
-        ("6", "נגישות — עמידה מלאה + בחינת ייעוץ חיצוני לפי תקציב", ""),
+        ("6", "נגישות — עמידה בחוק ובתקן (ללא ייעוץ חיצוני — כפי שסוכם)", ""),
         ("7", "עמוד נחיתה באנגלית", ""),
     ]
     for r_idx, (num, topic, _) in enumerate(rows_data, start=1):
@@ -115,17 +118,17 @@ def build_executive_summary_docx():
     doc.add_paragraph()
     add_rtl_paragraph(doc, "פתוח למילוי על ידי אייל (לפני בנייה מלאה)", heading_level=1)
 
-    open_items = """1. חשבונית ירוקה: רשימת מוצרים/שירותים וקישורי סליקה לדוגמה לכל סוג — ראו במאגר: GREEN-INVOICE-LINK-MAP.md
+    open_items = """1. חשבונית ירוקה: אחרי מחקר יכולות — יוצגו אופציות ישימות; עד אז ראו GREEN-INVOICE-LINK-MAP במאגר.
 
-2. אינדקס QR: ציבורי או רק למנהל מחובר? רמת פירוט (רשימה / חיפוש).
+2. אינדקס QR: נסגר טכנית — למנהל האתר בלבד.
 
-3. שמות תפריט בעברית לשלושת המרחבים (סטודיו / הוצאה / מופע).
+3–5. מותג, תפריט (מחיצות), EN — טופס בחירות נפרד (קובץ for-eyal-choices) עם 3 אופציות לכל סעיף.
 
-4. עמוד EN: מטרה (תיירים / בינלאומי) וטקסט מקור או הנחיה לכותב.
+6. רשימת תוכן (Keep/Merge/Drop): הצוות מכין דוח; אם נדרש — ממשק HTML לסינון; אתה מאשר — לא מילוי שורה־שורה.
 
-5. ייעוץ נגישות חיצוני: מאושר תקציב כן/לא.
+7. גלריות: מוצע מיקום בעץ ובתפריט בהגשה — לאישורך.
 
-6. 301 לעמודי /shop/ — יעד מדויק (צור קשר / דף מידע) אחרי בדיקה שאין קישורים קריטיים.
+8. דיון 301 מפורט — בשלב מאוחר; קטלוג ראשי נשמר בנתיב קיים.
 
 לאחר מילוי: להחזיר לנימרוד בערוץ העבודה."""
 
@@ -135,7 +138,12 @@ def build_executive_summary_docx():
     doc.add_paragraph()
     add_rtl_paragraph(
         doc,
-        "קבצים במאגר: eyalamit.co.il/docs/project/eyal-ceo-submissions-and-responses/to-eyal/ (הגשה) + team-100-preplanning/ (מקורות Markdown).",
+        "אפיון סופי למימוש (צוות): SITE-SPECIFICATION-FINAL-2026-03-30.md. מסמכים ישנים: LEGACY-DOCUMENTS-INDEX-2026-03-30.md.",
+        size=9,
+    )
+    add_rtl_paragraph(
+        doc,
+        "חבילת קבצים להגשה: to-eyal/" + DELIVERY_DATE + "--final-spec-package-for-eyal/",
         size=9,
     )
 
@@ -196,8 +204,12 @@ def build_decisions_docx():
     t.alignment = WD_ALIGN_PARAGRAPH.RIGHT
     r = t.add_run("קובץ החלטות לאישור אייל — אתר חדש eyalamit.co.il")
     set_run_font(r, size=18, bold=True)
-    add_rtl_paragraph(doc, f"גרסה: 2.0 (סיכום)  |  תאריך: {DELIVERY_DATE}")
-    add_rtl_paragraph(doc, "מקור מפורט בצוות: שער 0, מדיניות QR, טבלת Keep/Merge/Drop מול מאגר התוכן.", size=10)
+    add_rtl_paragraph(doc, f"גרסה: 2.1 (מסונכרן אפיון סופי)  |  תאריך: {DELIVERY_DATE}")
+    add_rtl_paragraph(
+        doc,
+        "מקור מחייב לצוות: SITE-SPECIFICATION-FINAL-2026-03-30.md. מסמכי 01–06 וטיוטות קודמות — LEGACY בלבד.",
+        size=10,
+    )
     doc.add_paragraph()
 
     add_rtl_paragraph(doc, "1. מהות האתר (שער 0)", heading_level=1)
@@ -229,30 +241,26 @@ def build_decisions_docx():
     add_rtl_paragraph(doc, "תקרת תקציב שנתית (למילוי): __________________")
 
     doc.add_paragraph()
-    add_rtl_paragraph(doc, "3. כיוון טכני (סמן אפשרות אחת)", heading_level=1)
-    _add_table(
+    add_rtl_paragraph(doc, "3. פלטפורמה (נעול — אין בחירה חלופית)", heading_level=1)
+    add_rtl_paragraph(
         doc,
-        ("אפשרות", "תיאור", "סמן"),
-        (
-            ("A", "מופע WordPress חדש ורזה; המונולית כארכיון הפניה", "[ ]"),
-            ("B", "אתר סטטי / Jamstack + CMS קל", "[ ]"),
-            ("C", "המשך ייצוב המונולית — דורש נימוק בכתב", "[ ]"),
-        ),
+        "WordPress בלבד: כל התוכן בפנים. רזה = התקנה נקייה, תבנית מודרנית רזה, מינימום תוספים מוקפים, ניקוי הפניות/קישורים שבורים, עדכון עץ האתר. אין יציאה של תוכן מחוץ ל-WordPress.",
     )
-    add_rtl_paragraph(doc, "המלצת צוות 100: אפשרות A.")
-    add_rtl_paragraph(doc, "החלטה סופית (A / B / C): ________  חתימה: __________________")
+    add_rtl_paragraph(doc, "אישור התיישבות: ________  חתימה: __________________  תאריך: __________")
 
     doc.add_paragraph()
     add_rtl_paragraph(doc, "4. החלטות מתועדות (לסיכום — לאישורך)", heading_level=1)
     bullets = (
         "מותגים: אתר אחד, דומיין אחד; הפרדת UX בין סטודיו (מרכז), הוצאה/ספרים, מופעים (ארכיון).",
-        "מקור אמת לתוכן: אתר חי + ענף Git; מסלול מונולית קודם — ארכיון.",
-        "מסחר: ללא עגלה ב-WordPress; סליקה בחשבונית ירוקה; עמודי מוצר פשוטים.",
-        "QR: שימור URL קבוע — לפי מדיניות QR במאגר (ספרים מודפסים).",
+        "מקור אמת לתוכן: WordPress (אתר חי); Git — לא SSOT לאייל.",
+        "מסחר: ללא עגלה ב-WordPress; סליקה בחשבונית ירוקה; קטלוג ראשי — שמירת נתיב קיים.",
+        "QR: שימור כל URL מודפס; אינדקס QR — למנהל בלבד.",
         "בלוג: החייאה כנכס SEO.",
-        "נגישות: עמידה מלאה + בחינת ייעוץ חיצוני לפי תקציב.",
+        "נגישות: חוק ותקן לאתר פרטי קטן — ללא יועץ חיצוני (אישור צוות).",
         "תפעול: אייל — מנהל; נימרוד — מיגרציה עד יציבות.",
-        "אנגלית: עמוד נחיתה באנגלית.",
+        "אנגלית: עמוד נחיתה — פרטים בטופס בחירות.",
+        "תוכן (KMD): דוח צוות + אישור אייל; אופציונלי ממשק HTML לסינון.",
+        "גלריות: העתקת מחיצות קיימות + הצעת מיקום בתפריט לאישור.",
     )
     for b in bullets:
         add_rtl_paragraph(doc, "• " + b)
@@ -273,7 +281,7 @@ def build_decisions_docx():
     )
     add_rtl_paragraph(
         doc,
-        "רשימת כל העמודים והפוסטים (שורה-שורה) נמצאת בקובץ CONTENT-SSOT-INVENTORY במאגר — תמולא במסגרת הפיתוח לאחר אישור עקרונות זה.",
+        "רשימת תוכן מלאה: דוח שמכין הצוות; אייל מאשר — לא מילוי טכני שורה-שורה. (ממשק HTML אופציונלי לסינון.)",
         size=10,
     )
 
@@ -281,21 +289,104 @@ def build_decisions_docx():
     add_rtl_paragraph(doc, "הערות אייל:", bold=True)
     add_rtl_paragraph(doc, "_________________________________________________________________")
     doc.add_paragraph()
-    add_rtl_paragraph(doc, "מסמך מקור Markdown לצוות: team-100-preplanning/01-GATE-ZERO-STRATEGY.md וכו'.", size=9)
+    add_rtl_paragraph(doc, "מסמך מקור מחייב לצוות: SITE-SPECIFICATION-FINAL-2026-03-30.md", size=9)
 
     to_eyal.mkdir(parents=True, exist_ok=True)
     doc.save(out)
     return out
 
 
-def main():
+def build_for_eyal_choices_docx():
     _, to_eyal, _ = _paths()
+    eyal_dir = to_eyal.parent
+    md_path = eyal_dir / "FOR-EYAL-CHOICES-v1.2-2026-03-30.md"
+    out = to_eyal / f"{DELIVERY_DATE}--for-eyal-choices-v1.2--{VERSION_TAG}.docx"
+
+    doc = Document()
+    t = doc.add_paragraph()
+    t.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    r = t.add_run("טופס בחירות לאייל — אפיון אתר v1.2")
+    set_run_font(r, size=18, bold=True)
+    add_rtl_paragraph(doc, f"תאריך הגשה: {DELIVERY_DATE}  |  ייצוא אוטומטי מ-Markdown פנימי")
+    add_rtl_paragraph(doc, "לסמן א / ב / ג או שילוב — ראו מסמך המקור בצוות אם נדרש עדכון.", size=10)
+    doc.add_paragraph()
+    add_md_file_as_docx(doc, md_path, skip_first_h1=True)
+    doc.add_paragraph()
+    add_rtl_paragraph(doc, "חתימה: __________________  תאריך: __________", bold=True)
+    to_eyal.mkdir(parents=True, exist_ok=True)
+    doc.save(out)
+    return out
+
+
+def build_site_spec_final_docx():
+    _, to_eyal, team100 = _paths()
+    md_path = team100 / "SITE-SPECIFICATION-FINAL-2026-03-30.md"
+    out = to_eyal / f"{DELIVERY_DATE}--site-specification-final--{VERSION_TAG}.docx"
+
+    doc = Document()
+    t = doc.add_paragraph()
+    t.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    r = t.add_run("אפיון אתר — גרסה סופית (מקור מחייב לצוות)")
+    set_run_font(r, size=18, bold=True)
+    add_rtl_paragraph(doc, f"תאריך: {DELIVERY_DATE}  |  עותק להגשה / לצוות; מסמכים ישנים — LEGACY-INDEX")
+    doc.add_paragraph()
+    add_md_file_as_docx(doc, md_path, skip_first_h1=True)
+    doc.add_paragraph()
+    add_rtl_paragraph(doc, "אישור צוות / הערות אייל (אם רלוונטי): __________________", bold=True)
+    to_eyal.mkdir(parents=True, exist_ok=True)
+    doc.save(out)
+    return out
+
+
+def assemble_final_package(files: tuple[Path, ...]) -> Path:
+    _, to_eyal, _ = _paths()
+    pkg = to_eyal / f"{DELIVERY_DATE}--final-spec-package-for-eyal"
+    if pkg.exists():
+        shutil.rmtree(pkg)
+    pkg.mkdir(parents=True, exist_ok=True)
+    for p in files:
+        if p.is_file():
+            shutil.copy2(p, pkg / p.name)
+    for junk in ("Icon\r", "Icon"):
+        j = pkg / junk
+        if j.exists():
+            j.unlink()
+    readme = f"""חבילת אפיון סופית — {DELIVERY_DATE}
+================================
+
+לאייל עמית — Word (.docx) בלבד להגשה רשמית.
+אל תשלחו קבצי .md לאייל (ראו SSOT).
+
+קבצים בתיקייה זו:
+"""
+    for p in files:
+        if p.is_file():
+            readme += f"  - {p.name}\n"
+    readme += """
+מקורות Markdown פנימיים (צוות):
+  team-100-preplanning/SITE-SPECIFICATION-FINAL-2026-03-30.md
+  team-100-preplanning/LEGACY-DOCUMENTS-INDEX-2026-03-30.md
+
+לייצוא PDF: פתחו כל .docx ב-Word ושמרו כ-PDF.
+"""
+    (pkg / "README.txt").write_text(readme, encoding="utf-8")
+    return pkg
+
+
+def main():
     e1, e2 = build_executive_summary_docx()
     s = build_site_map_docx()
     d = build_decisions_docx()
+    c = build_for_eyal_choices_docx()
+    f = build_site_spec_final_docx()
+    primary_outputs = (e1, s, d, c, f)
+    pkg = assemble_final_package(primary_outputs)
     print("Written:")
-    for p in (e1, e2, s, d):
+    for p in primary_outputs:
         print(" ", p)
+    print(" ", e2, "(mirror)")
+    print("Package:")
+    print(" ", pkg)
 
 
 if __name__ == "__main__":
