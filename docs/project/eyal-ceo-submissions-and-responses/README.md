@@ -42,7 +42,7 @@ YYYY-MM-DD--short-topic--vN.ext
 | 2026-03-29 | to-eyal | מפת אתר טיוטה v2 | [`to-eyal/2026-03-29--site-map-draft-v2--v1.docx`](./to-eyal/2026-03-29--site-map-draft-v2--v1.docx) | מבוסס `SITEMAP-NEW-SITE-v2-DRAFT.md` |
 | 2026-03-29 | to-eyal | קובץ החלטות (שער 0 + עקרונות תוכן) | [`to-eyal/2026-03-29--decisions-for-approval--v1.docx`](./to-eyal/2026-03-29--decisions-for-approval--v1.docx) | סיכום לאישור; פירוט במאגר |
 | 2026-03-29 | from-eyal | משוב על שלושת המסמכים (גרסה עם הערות בגוף) | [`from-eyal/*.docx`](./from-eyal/) | קבצים שהוחזרו מאייל |
-| 2026-03-30 | פנימי | **טבלת סינתזה — משוב → השלכות** | [`EYAL-FEEDBACK-RESPONSE-TABLE-2026-03-30.md`](./EYAL-FEEDBACK-RESPONSE-TABLE-2026-03-30.md) | 23 שורות פעולה ממוספרות |
+| 2026-03-30 | פנימי | **טבלת סינתזה — משוב → השלכות → החלטת צוות (v1.2)** | [`EYAL-FEEDBACK-RESPONSE-TABLE-2026-03-30.md`](./EYAL-FEEDBACK-RESPONSE-TABLE-2026-03-30.md) | עמודת נימרוד + מיפוי סעיפים 10/22 |
 
 ---
 
