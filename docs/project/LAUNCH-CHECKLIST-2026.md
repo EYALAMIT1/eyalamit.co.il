@@ -8,7 +8,7 @@
 
 ## לפני cutover
 
-- [ ] אישור [`EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md`](./team-100-preplanning/EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md)
+- [ ] אישור תקציר מנהלים **חתום** — הקובץ שיצא **ב-docx או PDF** (לא `.md`; ראו `EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx` ו-[`README-PDF-FROM-WORD.txt`](./team-100-preplanning/README-PDF-FROM-WORD.txt))
 - [ ] [`GREEN-INVOICE-LINK-MAP.md`](./team-100-preplanning/GREEN-INVOICE-LINK-MAP.md) ממולא
 - [ ] בדיקת דגימה מ-[`QR-URL-INVENTORY.csv`](./team-100-preplanning/QR-URL-INVENTORY.csv) — אין שינוי slug
 - [ ] [`LEGAL-ACCESSIBILITY-ISRAEL-SPEC.md`](./team-100-preplanning/LEGAL-ACCESSIBILITY-ISRAEL-SPEC.md) — צ'קליסט הושלם

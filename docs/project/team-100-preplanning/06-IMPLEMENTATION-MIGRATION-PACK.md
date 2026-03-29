@@ -7,7 +7,7 @@
 
 ## 0. תנאים מקדימים
 
-- [`EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md`](./EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md) חתום על ידי אייל.
+- תקציר מנהלים חתום על ידי אייל — **ב-docx או PDF בלבד** (מקור פנימי לעריכה: [`EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md`](./EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md); הגשה: [`EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx`](./EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx)).
 - [`SITEMAP-NEW-SITE-v2-DRAFT.md`](./SITEMAP-NEW-SITE-v2-DRAFT.md) בסטטוס `APPROVED` (לאחר טיוטה).
 - [`07-PROCESS-PRINCIPLES-AND-SITE-SPECIFICATION.md`](./07-PROCESS-PRINCIPLES-AND-SITE-SPECIFICATION.md) — שער כיוון ויזואלי עבר לפני בנייה מלאה.
 - [`01-GATE-ZERO-STRATEGY.md`](./01-GATE-ZERO-STRATEGY.md) מאושר.

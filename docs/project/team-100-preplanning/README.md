@@ -2,7 +2,9 @@
 
 **חבילת גרסה:** 2.0 (2026-03-29) — סנכרון מחקר ראשוני (עזר בלבד מול החלטות אייל), מפת אתר טיוטה, Keep/Merge/Drop, אפיון תהליך ועמודים לאייל.
 
-**נעילת שלב (קונטקסט Cursor / SSOT):** ראו גם [`AGENTS.md`](../../../AGENTS.md) בשורש ה-repo ו-[`docs/sop/SSOT.md`](../../sop/SSOT.md) (גרסה 12.0+) — טבלת שלב נוכחי וקישורים למסמכי v2.
+**נעילת שלב (קונטקסט Cursor / SSOT):** ראו גם [`AGENTS.md`](../../../AGENTS.md) בשורש ה-repo ו-[`docs/sop/SSOT.md`](../../sop/SSOT.md) (גרסה 12.1+) — טבלת שלב נוכחי וקישורים למסמכי v2.
+
+**הגשה לאייל (קבוע):** רק **Word (.docx) או PDF** — **לא** Markdown.
 
 תיקייה זו מממשת את תהליך התכנון המקדים: שער מנהל, מיפוי תוכן, מטריצת היקף, דרישות IA/SEO/חברתי, החלטת פלטפורמה, וחבילת מיגרציה.
 
@@ -29,9 +31,9 @@
 
 | קובץ | תיאור |
 |------|--------|
-| [EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx](./EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx) | **Word להגשה לאייל** (מיוצר מ-[`scripts/build_eyal_approval_docx.py`](../../../scripts/build_eyal_approval_docx.py)) |
-| [README-PDF-FROM-WORD.txt](./README-PDF-FROM-WORD.txt) | איך לייצא PDF מ-Word |
-| [EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md](./EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md) | תקציר מנהלים + טופס אישור + פתוח לאייל (מקור Markdown) |
+| [EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx](./EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx) | **הקובץ היחיד להגשה לאייל** — Word (מיוצר מ-[`scripts/build_eyal_approval_docx.py`](../../../scripts/build_eyal_approval_docx.py)) |
+| [README-PDF-FROM-WORD.txt](./README-PDF-FROM-WORD.txt) | איך לייצא **PDF** מ-Word (חלופה מותרת להגשה) |
+| [EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md](./EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md) | מקור **פנימי** בלבד — תוכן זהה ל-docx; **אל תשלחו `.md` לאייל** |
 | [LEGAL-ACCESSIBILITY-ISRAEL-SPEC.md](./LEGAL-ACCESSIBILITY-ISRAEL-SPEC.md) | נגישות מול חוק ישראל + צ'קליסט |
 | [IA-WIREFRAMES-AND-EN-LANDING.md](./IA-WIREFRAMES-AND-EN-LANDING.md) | Wireframes לוגיים + עמוד EN |
 | [GREEN-INVOICE-LINK-MAP.md](./GREEN-INVOICE-LINK-MAP.md) | מיפוי סליקה חשבונית ירוקה |

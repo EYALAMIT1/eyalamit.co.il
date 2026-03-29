@@ -10,6 +10,11 @@
 
 **תכנון אתר — צוות 100, מסמכי v2.** אין מעבר מלא ל-Build/השקה עד אישור אייל (תקציר מנהלים, מפת אתר טיוטה, מדיניות QR וכו').
 
+## מסמכים ל-CEO אייל (קבוע)
+
+**אסור** להגיש לאייל קבצי **Markdown (`.md`)**. כל מה שיוצא **מול אייל** (חתימה, אישור, קריאה רשמית) — **Word (.docx) או PDF בלבד**.  
+Markdown ב-repo מיועד לצוות, Git וסוכני AI. תקציר לאישור: קובץ ללקוח = `EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx` (או PDF); מקור עריכה פנימי = `EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md`.
+
 ## יעדים עיקריים
 
 - אתר WordPress ממוקד המרה, SEO ונגישות; ללא חנות Woo פנימית (סליקה חיצונית).
@@ -18,7 +23,7 @@
 
 ## היררכיית מקורות אמת (בסתירה)
 
-1. החלטות אייל (כולל אחרי חתימה על `EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md`).
+1. החלטות אייל (כולל אחרי חתימה על תקציר שיצא **ב-docx/PDF**, לא על קובץ `.md`).
 2. מסמכי צוות 100 שסונכרנו עם אייל.
 3. דוחות מחקר בשורש workspace — **עזר בלבד**, לא מחייבים.
 
@@ -30,7 +35,8 @@
 |------|------|
 | אינדקס צוות 100 | `docs/project/team-100-preplanning/README.md` |
 | SSOT מנהלי + תפעול | `docs/sop/SSOT.md` |
-| תקציר לאישור אייל | `docs/project/team-100-preplanning/EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md` |
+| תקציר לאישור — **הגשה לאייל** | `docs/project/team-100-preplanning/EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx` או PDF |
+| תקציר לאישור — מקור פנימי | `docs/project/team-100-preplanning/EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md` |
 | מפת אתר חדש (טיוטה) | `docs/project/team-100-preplanning/SITEMAP-NEW-SITE-v2-DRAFT.md` |
 | Keep/Merge/Drop | `docs/project/team-100-preplanning/CONTENT-DECISIONS-KEEP-MERGE-DROP-v2.md` |
 | תהליך ואפיון | `docs/project/team-100-preplanning/07-PROCESS-PRINCIPLES-AND-SITE-SPECIFICATION.md` |

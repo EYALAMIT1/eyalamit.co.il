@@ -1,5 +1,7 @@
 # תקציר מנהלים + טופס אישור — אייל עמית
 
+> **חובה קבועה — הגשה לאייל:** אין להעביר ל-CEO קובץ `.md`. מסמך זה הוא **מקור פנימי** (צוות / Git / AI). **להגשה לאייל** משתמשים ב-**`EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx`** (מיוצר מ-[`scripts/build_eyal_approval_docx.py`](../../../scripts/build_eyal_approval_docx.py)) או ב-**PDF** לפי [`README-PDF-FROM-WORD.txt`](./README-PDF-FROM-WORD.txt).
+
 **גרסה:** 1.0  
 **תאריך:** 2026-03-29  
 **הוגש על ידי:** נימרוד (ליווי מיגרציה)  
