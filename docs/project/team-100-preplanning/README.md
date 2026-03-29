@@ -1,12 +1,35 @@
 # צוות 100 — תכנון מקדים אתר אייל עמית
 
+**חבילת גרסה:** 2.0 (2026-03-29) — סנכרון מחקר ראשוני (עזר בלבד מול החלטות אייל), מפת אתר טיוטה, Keep/Merge/Drop, אפיון תהליך ועמודים לאייל.
+
 תיקייה זו מממשת את תהליך התכנון המקדים: שער מנהל, מיפוי תוכן, מטריצת היקף, דרישות IA/SEO/חברתי, החלטת פלטפורמה, וחבילת מיגרציה.
+
+## מסמכי ליבה v2 (אפיון וסנכרון)
+
+| קובץ | תיאור |
+|------|--------|
+| [RESEARCH-SYNC-AND-SOURCE-OF-TRUTH-v2.md](./RESEARCH-SYNC-AND-SOURCE-OF-TRUTH-v2.md) | היררכיית מקורות אמת; דוח מחקר = עזר; דוגמת QR |
+| [07-PROCESS-PRINCIPLES-AND-SITE-SPECIFICATION.md](./07-PROCESS-PRINCIPLES-AND-SITE-SPECIFICATION.md) | עקרונות תהליך, שערים, UX, הפניה למפת אתר |
+| [SITEMAP-NEW-SITE-v2-DRAFT.md](./SITEMAP-NEW-SITE-v2-DRAFT.md) | מפת אתר מלאה — **טיוטה לאישור אייל** |
+| [CONTENT-DECISIONS-KEEP-MERGE-DROP-v2.md](./CONTENT-DECISIONS-KEEP-MERGE-DROP-v2.md) | טבלת החלטות תוכן מול SSOT |
+| [PAGE-SPECS-TEMPLATE.md](./PAGE-SPECS-TEMPLATE.md) | תבנית אפיון לכל עמוד אחרי אישור המפה |
+
+## דוחות מחקר (שורש workspace — מחוץ ל-repo)
+
+נתיבים טיפוסיים על מכונת העבודה של נימרוד:
+
+- `/Users/nimrod/Documents/Eyal Amit/CLIENT-DECISION-REPORT-EYALAMIT-2026-03-29.md`
+- `/Users/nimrod/Documents/Eyal Amit/PRELIMINARY-PLANNING-EYALAMIT-2026-03-29.md`
+
+אינם מחליפים החלטות אייל — ראו `RESEARCH-SYNC-AND-SOURCE-OF-TRUTH-v2.md`.
 
 ## מסמכים
 
 | קובץ | תיאור |
 |------|--------|
-| [EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md](./EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md) | תקציר מנהלים + טופס אישור + פתוח לאייל |
+| [EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx](./EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx) | **Word להגשה לאייל** (מיוצר מ-[`scripts/build_eyal_approval_docx.py`](../../../scripts/build_eyal_approval_docx.py)) |
+| [README-PDF-FROM-WORD.txt](./README-PDF-FROM-WORD.txt) | איך לייצא PDF מ-Word |
+| [EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md](./EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md) | תקציר מנהלים + טופס אישור + פתוח לאייל (מקור Markdown) |
 | [LEGAL-ACCESSIBILITY-ISRAEL-SPEC.md](./LEGAL-ACCESSIBILITY-ISRAEL-SPEC.md) | נגישות מול חוק ישראל + צ'קליסט |
 | [IA-WIREFRAMES-AND-EN-LANDING.md](./IA-WIREFRAMES-AND-EN-LANDING.md) | Wireframes לוגיים + עמוד EN |
 | [GREEN-INVOICE-LINK-MAP.md](./GREEN-INVOICE-LINK-MAP.md) | מיפוי סליקה חשבונית ירוקה |

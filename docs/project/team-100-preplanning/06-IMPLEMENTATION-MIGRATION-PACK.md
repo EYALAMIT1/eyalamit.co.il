@@ -8,6 +8,8 @@
 ## 0. תנאים מקדימים
 
 - [`EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md`](./EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md) חתום על ידי אייל.
+- [`SITEMAP-NEW-SITE-v2-DRAFT.md`](./SITEMAP-NEW-SITE-v2-DRAFT.md) בסטטוס `APPROVED` (לאחר טיוטה).
+- [`07-PROCESS-PRINCIPLES-AND-SITE-SPECIFICATION.md`](./07-PROCESS-PRINCIPLES-AND-SITE-SPECIFICATION.md) — שער כיוון ויזואלי עבר לפני בנייה מלאה.
 - [`01-GATE-ZERO-STRATEGY.md`](./01-GATE-ZERO-STRATEGY.md) מאושר.
 - [`CONTENT-SSOT-INVENTORY.csv`](./CONTENT-SSOT-INVENTORY.csv) ממולא.
 - [`03-SCOPE-MATRIX.md`](./03-SCOPE-MATRIX.md) מאושר כולל טבלת 301.
