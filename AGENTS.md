@@ -13,7 +13,7 @@
 ## מסמכים ל-CEO אייל (קבוע)
 
 **אסור** להגיש לאייל קבצי **Markdown (`.md`)**. כל מה שיוצא **מול אייל** (חתימה, אישור, קריאה רשמית) — **Word (.docx) או PDF בלבד**.  
-Markdown ב-repo מיועד לצוות, Git וסוכני AI. תקציר לאישור: קובץ ללקוח = `EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx` (או PDF); מקור עריכה פנימי = `EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md`.
+Markdown ב-repo מיועד לצוות, Git וסוכני AI. תקציר לאישור: קובץ ללקוח = `EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx` (או PDF); מקור עריכה פנימי = `EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md`. **ארכיון הגשות ותשובות מול אייל:** `docs/project/eyal-ceo-submissions-and-responses/`.
 
 ## יעדים עיקריים
 
@@ -34,8 +34,9 @@ Markdown ב-repo מיועד לצוות, Git וסוכני AI. תקציר לאיש
 | מסמך | נתיב |
 |------|------|
 | אינדקס צוות 100 | `docs/project/team-100-preplanning/README.md` |
+| ארכיון הגשות / תשובות מאייל | `docs/project/eyal-ceo-submissions-and-responses/README.md` |
 | SSOT מנהלי + תפעול | `docs/sop/SSOT.md` |
-| תקציר לאישור — **הגשה לאייל** | `docs/project/team-100-preplanning/EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx` או PDF |
+| תקציר לאישור — **הגשה לאייל** | ייצור: `team-100-preplanning/EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx` או PDF; **עותק להגשה בארכיון:** `eyal-ceo-submissions-and-responses/to-eyal/` |
 | תקציר לאישור — מקור פנימי | `docs/project/team-100-preplanning/EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md` |
 | מפת אתר חדש (טיוטה) | `docs/project/team-100-preplanning/SITEMAP-NEW-SITE-v2-DRAFT.md` |
 | Keep/Merge/Drop | `docs/project/team-100-preplanning/CONTENT-DECISIONS-KEEP-MERGE-DROP-v2.md` |

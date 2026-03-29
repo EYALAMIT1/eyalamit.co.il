@@ -2,7 +2,7 @@
 
 **חבילת גרסה:** 2.0 (2026-03-29) — סנכרון מחקר ראשוני (עזר בלבד מול החלטות אייל), מפת אתר טיוטה, Keep/Merge/Drop, אפיון תהליך ועמודים לאייל.
 
-**נעילת שלב (קונטקסט Cursor / SSOT):** ראו גם [`AGENTS.md`](../../../AGENTS.md) בשורש ה-repo ו-[`docs/sop/SSOT.md`](../../sop/SSOT.md) (גרסה 12.1+) — טבלת שלב נוכחי וקישורים למסמכי v2.
+**נעילת שלב (קונטקסט Cursor / SSOT):** ראו גם [`AGENTS.md`](../../../AGENTS.md) בשורש ה-repo ו-[`docs/sop/SSOT.md`](../../sop/SSOT.md) (גרסה 12.2+) — טבלת שלב נוכחי וקישורים למסמכי v2. **ארכיון הגשות ותשובות לאייל:** [`eyal-ceo-submissions-and-responses/`](../eyal-ceo-submissions-and-responses/README.md).
 
 **הגשה לאייל (קבוע):** רק **Word (.docx) או PDF** — **לא** Markdown.
 

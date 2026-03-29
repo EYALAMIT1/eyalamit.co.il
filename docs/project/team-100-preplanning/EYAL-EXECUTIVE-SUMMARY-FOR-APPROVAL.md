@@ -1,6 +1,6 @@
 # תקציר מנהלים + טופס אישור — אייל עמית
 
-> **חובה קבועה — הגשה לאייל:** אין להעביר ל-CEO קובץ `.md`. מסמך זה הוא **מקור פנימי** (צוות / Git / AI). **להגשה לאייל** משתמשים ב-**`EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx`** (מיוצר מ-[`scripts/build_eyal_approval_docx.py`](../../../scripts/build_eyal_approval_docx.py)) או ב-**PDF** לפי [`README-PDF-FROM-WORD.txt`](./README-PDF-FROM-WORD.txt).
+> **חובה קבועה — הגשה לאייל:** אין להעביר ל-CEO קובץ `.md`. מסמך זה הוא **מקור פנימי** (צוות / Git / AI). **להגשה לאייל** משתמשים ב-**`EYAL-EXECUTIVE-SUMMARY-FOR-EYAL.docx`** (מיוצר מ-[`scripts/build_eyal_approval_docx.py`](../../../scripts/build_eyal_approval_docx.py)) או ב-**PDF** לפי [`README-PDF-FROM-WORD.txt`](./README-PDF-FROM-WORD.txt). **לפני שליחה:** שמרו עותק מתוארך ב-[`../eyal-ceo-submissions-and-responses/to-eyal/`](../eyal-ceo-submissions-and-responses/to-eyal/) ועדכנו את האינדקס ב-[`../eyal-ceo-submissions-and-responses/README.md`](../eyal-ceo-submissions-and-responses/README.md).
 
 **גרסה:** 1.0  
 **תאריך:** 2026-03-29  
