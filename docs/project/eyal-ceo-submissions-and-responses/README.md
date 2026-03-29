@@ -43,7 +43,8 @@ YYYY-MM-DD--short-topic--vN.ext
 | 2026-03-29 | to-eyal | קובץ החלטות (שער 0 + עקרונות תוכן) | [`to-eyal/2026-03-29--decisions-for-approval--v1.docx`](./to-eyal/2026-03-29--decisions-for-approval--v1.docx) | סיכום לאישור; פירוט במאגר |
 | 2026-03-29 | from-eyal | משוב על שלושת המסמכים (גרסה עם הערות בגוף) | [`from-eyal/*.docx`](./from-eyal/) | קבצים שהוחזרו מאייל |
 | 2026-03-30 | פנימי | **טבלת סינתזה — משוב → השלכות → החלטת צוות (v1.2)** | [`EYAL-FEEDBACK-RESPONSE-TABLE-2026-03-30.md`](./EYAL-FEEDBACK-RESPONSE-TABLE-2026-03-30.md) | עמודת נימרוד + מיפוי סעיפים 10/22 |
-| 2026-03-30 | פנימי | **שאלות פתוחות לפני אפיון v1.2** | [`OPEN-QUESTIONS-PRE-SPEC-v1.2-2026-03-30.md`](./OPEN-QUESTIONS-PRE-SPEC-v1.2-2026-03-30.md) | אייל / צוות / חלקי |
+| 2026-03-30 | פנימי | **שאלות פתוחות לפני אפיון v1.2** | [`OPEN-QUESTIONS-PRE-SPEC-v1.2-2026-03-30.md`](./OPEN-QUESTIONS-PRE-SPEC-v1.2-2026-03-30.md) | ארכיון; עדכון אחרי נעילה |
+| 2026-03-30 | to-eyal (מקור MD) | **טופס בחירות לאייל v1.2** | [`FOR-EYAL-CHOICES-v1.2-2026-03-30.md`](./FOR-EYAL-CHOICES-v1.2-2026-03-30.md) | ייצוא Word/PDF להגשה |
 
 ---
 
