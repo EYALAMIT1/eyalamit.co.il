@@ -1,0 +1,43 @@
+---
+description: הקשר פרויקט eyalamit — שלב תכנון v2, יעדים, SSOT ומסמכי צוות 100
+alwaysApply: true
+---
+
+# eyalamit.co.il — קונטקסט פרויקט
+
+## נתיב קוד
+
+`/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il`
+
+## שלב נוכחי (נעילה ראשונית 2026-03-29)
+
+**צוות 100 — מסמכי תכנון v2.** Build והשקה רק אחרי אישור אייל. אינדקס: `docs/project/team-100-preplanning/README.md`.
+
+## יעדים
+
+- WordPress נקי, המרה + SEO; בלי Woo פנימי; QR URLs לפי אייל (`docs/project/team-100-preplanning/QR-URL-POLICY.md`).
+- מיגרציה לאלמנטור; prefix `ea_`; שינויים ב-child theme / mu-plugins בלבד — ראו `docs/sop/SSOT.md`.
+
+## מקורות אמת (סדר)
+
+1. החלטות אייל · 2. מסמכי צוות 100 מסונכרנים · 3. מחקר בשורש workspace — עזר בלבד.  
+`docs/project/team-100-preplanning/RESEARCH-SYNC-AND-SOURCE-OF-TRUTH-v2.md`
+
+## מסמכי תוכנית (שלב נוכחי)
+
+- `docs/sop/SSOT.md` — Master SSOT תפעולי
+- `docs/project/team-100-preplanning/EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md`
+- `docs/project/team-100-preplanning/SITEMAP-NEW-SITE-v2-DRAFT.md`
+- `docs/project/team-100-preplanning/CONTENT-DECISIONS-KEEP-MERGE-DROP-v2.md`
+- `docs/project/team-100-preplanning/07-PROCESS-PRINCIPLES-AND-SITE-SPECIFICATION.md`
+- `docs/project/team-100-preplanning/06-IMPLEMENTATION-MIGRATION-PACK.md`
+- `docs/project/BLOG-REVIVAL-PLAN.md`
+
+## מחקר (לא מחייב)
+
+`/Users/nimrod/Documents/Eyal Amit/CLIENT-DECISION-REPORT-EYALAMIT-2026-03-29.md`  
+`/Users/nimrod/Documents/Eyal Amit/PRELIMINARY-PLANNING-EYALAMIT-2026-03-29.md`
+
+## ענף
+
+`feature/lean-wp-rebuild-2026` (לאמת מול `docs/sop/SSOT.md` אם השתנה).

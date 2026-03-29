@@ -1,8 +1,21 @@
 📖 נוהל עבודה מרכזי (Master SSOT) - eyalamit.co.il
-גרסה: 11.0
+גרסה: 12.0
 סמכות עליונה: CEO אייל עמית
 נתיב פרויקט מחייב: /Users/nimrod/Documents/Eyal Amit/eyalamit.co.il
 סטטוס: ACTIVE & LOCKED
+
+📌 **שלב נוכחי בפרויקט (נעילה ראשונית — 2026-03-29):** תכנון אתר — **צוות 100, חבילת מסמכים v2**. יישום Build, מיגרציה והשקה **רק לאחר** אישור אייל (תקציר מנהלים + מפת אתר טיוטה ומדיניות QR וכו').
+
+| תפקיד | נתיב |
+|--------|------|
+| אינדקס תוכנית העבודה | `docs/project/team-100-preplanning/README.md` |
+| היררכיית מקורות אמת (אייל > מסמכים מסונכרנים > מחקר עזר) | `docs/project/team-100-preplanning/RESEARCH-SYNC-AND-SOURCE-OF-TRUTH-v2.md` |
+| תקציר לאישור + טופס | `docs/project/team-100-preplanning/EYAL-EXECUTIVE-SUMMARY-FOR-APPROVAL.md` |
+| מפת אתר חדש (טיוטה) | `docs/project/team-100-preplanning/SITEMAP-NEW-SITE-v2-DRAFT.md` |
+| Keep / Merge / Drop | `docs/project/team-100-preplanning/CONTENT-DECISIONS-KEEP-MERGE-DROP-v2.md` |
+| עקרונות תהליך ואפיון | `docs/project/team-100-preplanning/07-PROCESS-PRINCIPLES-AND-SITE-SPECIFICATION.md` |
+| דוחות מחקר (עזר בלבד, שורש workspace) | `/Users/nimrod/Documents/Eyal Amit/CLIENT-DECISION-REPORT-EYALAMIT-2026-03-29.md`, `PRELIMINARY-PLANNING-EYALAMIT-2026-03-29.md` |
+
 👑 1. מבנה הצוותים, היררכיה ואחריות (The 6-Tier / 5-Team Model)
 
 העבודה מנוהלת במבנה של 6 דרגים המחולקים ל-5 צוותים ביצועיים בסביבת ה-Cursor:
@@ -320,7 +333,7 @@ WordPress: http://localhost:9090 (PHP 8.3)
 
 phpMyAdmin: http://localhost:9091
 
-Active Branch: wp-6.9-elementor-migration
+Active Branch: feature/lean-wp-rebuild-2026
 
 🛠️ 10. סטנדרט פיתוח והנדסה (Development Standards)
 
@@ -433,5 +446,14 @@ Active Branch: wp-6.9-elementor-migration
 
 ---
 
-Timestamp: 2026-01-13 22:45
-Authority: Master SSOT v11.0 - Full Synchronization - CEO Dispatch Control Locked - Google Drive Sync Complete - Communication Protocol & Testing Tools Organized
+📋 **14. יעדי הפרויקט והקשר (אתר אייל עמית — תכנון מול יישום)**
+
+- **יעד עסקי:** אתר WordPress נקי, ממוקד המרה ו-SEO, ללא WooCommerce פנימי (חשבונית ירוקה חיצונית), עם שימור URLים של QR מודפסים לפי מדיניות אייל.
+- **הקשר טכני:** מיגרציה מאתר legacy (Bridge/WPBakery וכו') לאלמנטור; קוד מותאם עם קידומת `ea_`; ללא עריכת Core/plugins/parent theme — רק child theme ו-mu-plugins.
+- **שלב זה:** השלמת חבילת תכנון v2, אישורי אייל, ואז המשך לפי `06-IMPLEMENTATION-MIGRATION-PACK.md` ו-SSOT סעיפים 5–10.
+- **מסמכי תוכנית נוספים:** `docs/project/team-100-preplanning/01-GATE-ZERO-STRATEGY.md`, `03-SCOPE-MATRIX.md`, `04-IA-SEO-SOCIAL-REQUIREMENTS.md`, `QR-URL-POLICY.md`, `docs/project/BLOG-REVIVAL-PLAN.md`.
+
+---
+
+Timestamp: 2026-03-29 (נעילת שלב תכנון v2) | עדכון קודם: 2026-01-13 22:45
+Authority: Master SSOT v12.0 — Team 100 planning lock + branch sync; CEO Dispatch Control Locked; operational sections v11.0 retained
