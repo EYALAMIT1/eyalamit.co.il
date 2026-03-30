@@ -22,7 +22,9 @@
 |------|--------|
 | [SPEC-V1.2-DECISIONS-LOCK-2026-03-30.md](./SPEC-V1.2-DECISIONS-LOCK-2026-03-30.md) | נעילת החלטות נימרוד + יסודות הגשה לאייל |
 | [FOR-EYAL-CHOICES-v1.2-2026-03-30.md](../eyal-ceo-submissions-and-responses/FOR-EYAL-CHOICES-v1.2-2026-03-30.md) | טופס בחירות (א / ב / ג) לאייל |
-| [GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md](./GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md) | **מנדט מחקר** (§0) לאיגנט — חשבונית ירוקה; תוצר: `GREEN-INVOICE-CAPABILITIES-FINDINGS-*.md` |
+| [FOR-EYAL-GREEN-INVOICE-ACTION-SHEET-2026-03-30.md](../eyal-ceo-submissions-and-responses/FOR-EYAL-GREEN-INVOICE-ACTION-SHEET-2026-03-30.md) | חשבונית ירוקה — תקציר, בדיקות Morning, דוגמה לפיתוח |
+| [GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md](./GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md) | מנדט מחקר (§0) — **הושלם** |
+| [GREEN-INVOICE-CAPABILITIES-FINDINGS-2026-03-30.md](./GREEN-INVOICE-CAPABILITIES-FINDINGS-2026-03-30.md) | **תוצר צוות הבדיקה** — יכולות חשבונית ירוקה / Morning |
 | [HOME-PAGE-DIRECTIONS-v1.2.md](./HOME-PAGE-DIRECTIONS-v1.2.md) | 3 כיווני דף בית + סכמה |
 | [NIMROD-BRIEF-v1.2-INLINE-QA.md](./NIMROD-BRIEF-v1.2-INLINE-QA.md) | תשובות ישירות לשאלות "סודיות" |
 | [GALLERY-DECISION-SCOPE-v1.2.md](./GALLERY-DECISION-SCOPE-v1.2.md) | מה מחליטים בגלריה |

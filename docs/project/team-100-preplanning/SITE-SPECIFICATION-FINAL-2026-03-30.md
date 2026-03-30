@@ -46,7 +46,8 @@
 - **ללא עגלה וסליקה פנימית** ב־WordPress.  
 - **עמודי מוצר/שירות** עם כפתור לסליקה חיצונית (חשבונית ירוקה).  
 - **עמוד קטלוג ראשי:** **שימור נתיב (slug) קיים** — **לא** 301 במקום עמוד כתחליף לתוכן; תוכן **מינימלי** יותר לפי אפיון עמוד.  
-- **שלב 2 (אופציונלי):** התממשקות עמוקה יותר — **אחרי** מחקר יכולות; ראו [`GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md`](./GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md) (**מנדט §0 — להפצה מיידית**).  
+- **מחקר יכולות (הושלם):** [`GREEN-INVOICE-CAPABILITIES-FINDINGS-2026-03-30.md`](./GREEN-INVOICE-CAPABILITIES-FINDINGS-2026-03-30.md) — מסלולים A/B (קישורי תשלום / דפי מכירה חיצוניים); API+Woo בשלב עומק (מנוי Best+). בריף ומנדט: [`GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md`](./GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md) §0.  
+- **שלב 2 (אופציונלי):** התממשקות עמוקה (API וכו') — רק אם נבחר מסלול שכזה והמנוי מאפשר.  
 - **שלב 1 מקביל:** תשתית מקומית ומיפוי — [`PHASE-1-LOCAL-AND-RESEARCH-KICKOFF-2026-03-30.md`](./PHASE-1-LOCAL-AND-RESEARCH-KICKOFF-2026-03-30.md).
 
 ---
@@ -119,3 +120,5 @@
 קבצים מוכנים להגשה (Word/PDF):  
 `docs/project/eyal-ceo-submissions-and-responses/to-eyal/2026-03-30--final-spec-package-for-eyal/`  
 (מיוצרים ע״י `scripts/build_eyal_ceo_deliverables.py`).
+
+**חשבונית ירוקה — מסמך פעולה לאייל:** [`FOR-EYAL-GREEN-INVOICE-ACTION-SHEET-2026-03-30.md`](../eyal-ceo-submissions-and-responses/FOR-EYAL-GREEN-INVOICE-ACTION-SHEET-2026-03-30.md) (גם כ־`…green-invoice-action-sheet….docx` בחבילה).

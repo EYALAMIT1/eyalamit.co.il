@@ -10,13 +10,12 @@
 
 | שדה | ערך |
 |-----|-----|
-| **סטטוס** | **פעיל** — להוציא לביצוע **עכשיו** (לא ממתין אישור נוסף מאייל). |
+| **סטטוס** | **הושלם** (2026-03-30) — תוצר התקבל מצוות הבדיקה. |
 | **מזמין / בעלים** | נימרוד — פותח את השרשרת מול חוקר/איגנט. |
 | **היקף** | יכולות מוצר בלבד (§2); **ללא** ייעוץ משפטי וללא שיח ישיר עם אייל בשלב המחקר. |
-| **תוצר חובה** | דוח קצר (2–4 עמודים או מקביל) + **אופציות A / B / C** ליישום באתר WordPress רזה — ראו §3. |
-| **שם קובץ מוצע לתוצר** | `GREEN-INVOICE-CAPABILITIES-FINDINGS-2026-__-__.md` תחת `team-100-preplanning/`. |
-| **המשך לאייל** | רק **אחרי** סינתזה: עדכון `FOR-EYAL-CHOICES` (v1.2.1) או נספח **docx** — לא לפני. |
-| **Definition of Done** | כל שאלות §2 כיסויות בעובדות או ציון "לא מתועד / לא זמין"; פלט §3 קיים ומקושר ל־[`GREEN-INVOICE-LINK-MAP.md`](./GREEN-INVOICE-LINK-MAP.md) אם רלוונטי. |
+| **תוצר שהוגש** | [`GREEN-INVOICE-CAPABILITIES-FINDINGS-2026-03-30.md`](./GREEN-INVOICE-CAPABILITIES-FINDINGS-2026-03-30.md) — ממצאים + אופציות A/B ליישום WP רזה; API כשלב עומק. |
+| **המשך לאייל** | סינתזה ל־`FOR-EYAL-CHOICES` (**v1.2.1**) או נספח **docx** — לפי החלטת נימרוד. |
+| **Definition of Done** | ✓ דוח התקבל; לעדכן מיפוי סליקה ב־[`GREEN-INVOICE-LINK-MAP.md`](./GREEN-INVOICE-LINK-MAP.md) כשייבחר מסלול סופי. |
 
 **הפניה לאפיון:** [`SITE-SPECIFICATION-FINAL-2026-03-30.md`](./SITE-SPECIFICATION-FINAL-2026-03-30.md) §3.
 
@@ -48,4 +47,5 @@
 
 ## 4. העברה הלאה
 
-לאחר אישור נימרוד — לשלב תוצאות ב־`FOR-EYAL-CHOICES` (גרסה 1.2.1) או נספח חשבונית ירוקה **ב-docx לאייל**.
+- מסמך **לאייל** (תקציר + בדיקות מול Morning + דוגמה לפיתוח): [`../eyal-ceo-submissions-and-responses/FOR-EYAL-GREEN-INVOICE-ACTION-SHEET-2026-03-30.md`](../eyal-ceo-submissions-and-responses/FOR-EYAL-GREEN-INVOICE-ACTION-SHEET-2026-03-30.md) — ייצוא **docx** ב־`build_eyal_ceo_deliverables.py`.  
+- **טופס בחירות:** `FOR-EYAL-CHOICES` (סעיף חשבונית ירוקה) — לעדכן אחרי אישור אייל.

@@ -318,6 +318,32 @@ def build_for_eyal_choices_docx():
     return out
 
 
+def build_green_invoice_action_sheet_docx():
+    _, to_eyal, _ = _paths()
+    eyal_dir = to_eyal.parent
+    md_path = eyal_dir / "FOR-EYAL-GREEN-INVOICE-ACTION-SHEET-2026-03-30.md"
+    out = to_eyal / f"{DELIVERY_DATE}--for-eyal-green-invoice-action-sheet--{VERSION_TAG}.docx"
+
+    doc = Document()
+    t = doc.add_paragraph()
+    t.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    r = t.add_run("חשבונית ירוקה — תקציר, המלצה ובדיקות לאישור אייל")
+    set_run_font(r, size=18, bold=True)
+    add_rtl_paragraph(doc, f"תאריך הגשה: {DELIVERY_DATE}  |  ייצוא אוטומטי מ-Markdown פנימי")
+    add_rtl_paragraph(
+        doc,
+        "לאחר מילוי הבדיקות והדוגמה — להחזיר לנימרוד. מחקר מלא אצל הצוות בלבד.",
+        size=10,
+    )
+    doc.add_paragraph()
+    add_md_file_as_docx(doc, md_path, skip_first_h1=True)
+    doc.add_paragraph()
+    add_rtl_paragraph(doc, "חתימה: __________________  תאריך: __________", bold=True)
+    to_eyal.mkdir(parents=True, exist_ok=True)
+    doc.save(out)
+    return out
+
+
 def build_site_spec_final_docx():
     _, to_eyal, team100 = _paths()
     md_path = team100 / "SITE-SPECIFICATION-FINAL-2026-03-30.md"
@@ -365,7 +391,8 @@ def assemble_final_package(files: tuple[Path, ...]) -> Path:
     readme += """
 מקורות Markdown פנימיים (צוות):
   team-100-preplanning/SITE-SPECIFICATION-FINAL-2026-03-30.md
-  team-100-preplanning/LEGACY-DOCUMENTS-INDEX-2026-03-30.md
+  team-100-preplanning/GREEN-INVOICE-CAPABILITIES-FINDINGS-2026-03-30.md
+  eyal-ceo-submissions-and-responses/FOR-EYAL-GREEN-INVOICE-ACTION-SHEET-2026-03-30.md
 
 לייצוא PDF: פתחו כל .docx ב-Word ושמרו כ-PDF.
 """
@@ -378,8 +405,9 @@ def main():
     s = build_site_map_docx()
     d = build_decisions_docx()
     c = build_for_eyal_choices_docx()
+    g = build_green_invoice_action_sheet_docx()
     f = build_site_spec_final_docx()
-    primary_outputs = (e1, s, d, c, f)
+    primary_outputs = (e1, s, d, c, g, f)
     pkg = assemble_final_package(primary_outputs)
     print("Written:")
     for p in primary_outputs:
