@@ -1,0 +1,16 @@
+# Cursor indexing — WordPress (Eyal Amit)
+
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup*/
+wp-content/backups/
+wp-content/upgrade/
+wp-content/debug.log
+
+**/node_modules/
+**/vendor/
+
+*.sql
+*.sql.gz
+*.zip
+.DS_Store

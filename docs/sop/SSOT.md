@@ -1,7 +1,8 @@
-📖 נוהל עבודה מרכזי (Master SSOT) - eyalamit.co.il
+📖 נוהל עבודה מרכזי (Master SSOT) — Eyal Amit (יישום WP + תכנון 2026)
 גרסה: 12.2
 סמכות עליונה: CEO אייל עמית
-נתיב פרויקט מחייב: /Users/nimrod/Documents/Eyal Amit/eyalamit.co.il
+**מאגר קוד אתר WordPress (יישום — מחייב לעבודה על תמה/תוספים):** `/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il`  
+**מאגר תכנון / אפיון / מסמכי צוותים / תקשורת בין-צוותית:** `/Users/nimrod/Documents/Eyal Amit/EyalAmit.co.il-2026` — נקודת כניסה: `docs/PROJECT-ENTRY.md`, תקשורת: `_communication/`
 סטטוס: ACTIVE & LOCKED
 
 📌 **שלב נוכחי בפרויקט (נעילה ראשונית — 2026-03-29):** תכנון אתר — **צוות 100, חבילת מסמכים v2**. יישום Build, מיגרציה והשקה **רק לאחר** אישור אייל (תקציר מנהלים + מפת אתר טיוטה ומדיניות QR וכו').
