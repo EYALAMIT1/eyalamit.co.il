@@ -37,11 +37,11 @@
 
 ## 3. מנדט — בדיקת חשבונית ירוקה
 
-**מסמך המנדט המלא:** [`GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md`](./GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md) — כולל **§0 מנדט** (מזמין, תוצר, DoD).
+**מסמך המנדט:** [`GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md`](./GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md) §0 — **הושלם** (2026-03-30).
 
-**פעולה מיידית:** להעביר את קובץ הבריף (או קישור למאגר) ל**איגנט/חוקר** עם משימה חד־משמעית: להחזיר תוצר בשם המוצע ב§0.
+**תוצר צוות הבדיקה:** [`GREEN-INVOICE-CAPABILITIES-FINDINGS-2026-03-30.md`](./GREEN-INVOICE-CAPABILITIES-FINDINGS-2026-03-30.md).
 
-**אחרי תוצר:** סינתזה לאופציות לאייל — לא לפני.
+**המשך:** סינתזה לאופציות לאייל — `FOR-EYAL-CHOICES` v1.2.1 או נספח docx (לפי נימרוד).
 
 ---
 
