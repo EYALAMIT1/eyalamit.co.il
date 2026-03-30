@@ -1,7 +1,7 @@
 📖 נוהל עבודה מרכזי (Master SSOT) — Eyal Amit (יישום WP + תכנון 2026)
 גרסה: 12.2
 סמכות עליונה: CEO אייל עמית
-**מאגר קוד אתר WordPress (יישום — מחייב לעבודה על תמה/תוספים):** `/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il`  
+**מאגר קוד אתר WordPress (יישום — מחייב לעבודה על תמה/תוספים):** `/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il-legacy`  
 **מאגר תכנון / אפיון / מסמכי צוותים / תקשורת בין-צוותית:** `/Users/nimrod/Documents/Eyal Amit/EyalAmit.co.il-2026` — נקודת כניסה: `docs/PROJECT-ENTRY.md`, תקשורת: `_communication/`
 סטטוס: ACTIVE & LOCKED
 
@@ -151,7 +151,7 @@ Extra details in professional report: [YES / NO]
 
 **הרצה:**
 ```bash
-cd "/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il"
+cd "/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il-legacy"
 python3 setup_and_sync.py
 # בחר 'g' ל-Generate או 'a' ל-Apply
 ```
@@ -170,7 +170,7 @@ Branch: [current-branch]
 ```
 
 **חובה:** כל מניפסט חייב לכלול:
-- נתיבים מלאים: `/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il/[path]`
+- נתיבים מלאים: `/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il-legacy/[path]`
 - תוכן מלא של קבצים שהשתנו
 - רשימת קבצים שנוספו/הוסרו
 - גרסת סקריפט: v4.7

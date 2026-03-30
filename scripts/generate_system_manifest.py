@@ -13,7 +13,7 @@ from datetime import datetime
 from pathlib import Path
 
 # נתיב הפרויקט המחייב
-REQUIRED_PATH = "/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il"
+REQUIRED_PATH = "/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il-legacy"
 
 def check_path():
     """בדיקה שהסקריפט רץ בתיקיית השורש הנכונה של הפרויקט"""

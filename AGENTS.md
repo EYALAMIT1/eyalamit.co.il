@@ -1,10 +1,13 @@
-# AGENTS — הקשר פרויקט eyalamit.co.il
+# AGENTS — אתר WordPress (legacy)
 
-מסמך זה מיועד לסוכני AI (Cursor וכו') ולבני אדם: **מקור מצוין לקונטקסט**, אך **המסמך המחייב לתפעול צוותים** הוא `docs/sop/SSOT.md` (Master SSOT).
+תיקייה מקומית: **`eyalamit.co.il-legacy`** (מאגר GitHub: `EYALAMIT1/eyalamit.co.il`).  
+**תכנון 2026** — במאגר נפרד: `EyalAmit.co.il-2026/` ([WaldNimrod/EyalAmit](https://github.com/WaldNimrod/EyalAmit)).
+
+מסמך זה לסוכני AI ולבני אדם: **מקור מצוין לקונטקסט**, אך **המסמך המחייב לתפעול צוותים** הוא `docs/sop/SSOT.md` (Master SSOT).
 
 ## נתיב קוד מחייב
 
-`/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il`
+`/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il-legacy`
 
 ## שלב נוכחי (נעילה ראשונית — 2026-03-29)
 

@@ -2,7 +2,7 @@ import os
 import sys
 
 # נתיב הפרויקט המחייב - מאומת ע"י המנכ"ל
-REQUIRED_PATH = "/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il"
+REQUIRED_PATH = "/Users/nimrod/Documents/Eyal Amit/eyalamit.co.il-legacy"
 
 def check_path():
     """בדיקה שהסקריפט רץ בתיקיית השורש הנכונה של הפרויקט"""
