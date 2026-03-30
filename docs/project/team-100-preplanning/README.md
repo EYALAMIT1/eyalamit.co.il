@@ -14,6 +14,7 @@
 |------|--------|
 | [SITE-SPECIFICATION-FINAL-2026-03-30.md](./SITE-SPECIFICATION-FINAL-2026-03-30.md) | **אפיון נקי ומלא** — מקור מחייב לבנייה; Word בחבילת to-eyal |
 | [LEGACY-DOCUMENTS-INDEX-2026-03-30.md](./LEGACY-DOCUMENTS-INDEX-2026-03-30.md) | סימון גרסאות ישנות — לא SSOT |
+| [PHASE-1-LOCAL-AND-RESEARCH-KICKOFF-2026-03-30.md](./PHASE-1-LOCAL-AND-RESEARCH-KICKOFF-2026-03-30.md) | **שלב 1:** תשתית מקומית, סקירות, מיפוי + קישור למנדט חשבונית ירוקה |
 
 ## אפיון v1.2 (נעילת צוות + בחירות לאייל)
 
@@ -21,7 +22,7 @@
 |------|--------|
 | [SPEC-V1.2-DECISIONS-LOCK-2026-03-30.md](./SPEC-V1.2-DECISIONS-LOCK-2026-03-30.md) | נעילת החלטות נימרוד + יסודות הגשה לאייל |
 | [FOR-EYAL-CHOICES-v1.2-2026-03-30.md](../eyal-ceo-submissions-and-responses/FOR-EYAL-CHOICES-v1.2-2026-03-30.md) | טופס בחירות (א / ב / ג) לאייל |
-| [GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md](./GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md) | מנדט מחקר לאיגנט — חשבונית ירוקה |
+| [GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md](./GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md) | **מנדט מחקר** (§0) לאיגנט — חשבונית ירוקה; תוצר: `GREEN-INVOICE-CAPABILITIES-FINDINGS-*.md` |
 | [HOME-PAGE-DIRECTIONS-v1.2.md](./HOME-PAGE-DIRECTIONS-v1.2.md) | 3 כיווני דף בית + סכמה |
 | [NIMROD-BRIEF-v1.2-INLINE-QA.md](./NIMROD-BRIEF-v1.2-INLINE-QA.md) | תשובות ישירות לשאלות "סודיות" |
 | [GALLERY-DECISION-SCOPE-v1.2.md](./GALLERY-DECISION-SCOPE-v1.2.md) | מה מחליטים בגלריה |

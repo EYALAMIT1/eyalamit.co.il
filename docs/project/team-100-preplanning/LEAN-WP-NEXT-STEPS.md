@@ -1,7 +1,10 @@
-# צעדים הבאים — WordPress רזה (אחרי אישור אייל)
+# צעדים הבאים — WordPress רזה
 
 **ענף:** `feature/lean-wp-rebuild-2026`  
-**תאריך:** 2026-03-29  
+**תאריך:** 2026-03-30  
+
+**לפני / במקביל לאישור אייל:** מותר **תשתית מקומית**, **מיפוי**, **מחקר חשבונית ירוקה** — ראו [`PHASE-1-LOCAL-AND-RESEARCH-KICKOFF-2026-03-30.md`](./PHASE-1-LOCAL-AND-RESEARCH-KICKOFF-2026-03-30.md).  
+**אפיון מחייב:** [`SITE-SPECIFICATION-FINAL-2026-03-30.md`](./SITE-SPECIFICATION-FINAL-2026-03-30.md) (מסמכי 01–06 — LEGACY אם סותרים).
 
 ---
 

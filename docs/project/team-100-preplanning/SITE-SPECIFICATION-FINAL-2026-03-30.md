@@ -46,7 +46,8 @@
 - **ללא עגלה וסליקה פנימית** ב־WordPress.  
 - **עמודי מוצר/שירות** עם כפתור לסליקה חיצונית (חשבונית ירוקה).  
 - **עמוד קטלוג ראשי:** **שימור נתיב (slug) קיים** — **לא** 301 במקום עמוד כתחליף לתוכן; תוכן **מינימלי** יותר לפי אפיון עמוד.  
-- **שלב 2 (אופציונלי):** התממשקות עמוקה יותר — **אחרי** מחקר יכולות; ראו [`GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md`](./GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md).
+- **שלב 2 (אופציונלי):** התממשקות עמוקה יותר — **אחרי** מחקר יכולות; ראו [`GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md`](./GREEN-INVOICE-CAPABILITIES-RESEARCH-BRIEF.md) (**מנדט §0 — להפצה מיידית**).  
+- **שלב 1 מקביל:** תשתית מקומית ומיפוי — [`PHASE-1-LOCAL-AND-RESEARCH-KICKOFF-2026-03-30.md`](./PHASE-1-LOCAL-AND-RESEARCH-KICKOFF-2026-03-30.md).
 
 ---
 
